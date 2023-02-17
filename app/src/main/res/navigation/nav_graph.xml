@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/WelcomeFragment">
+
+    <fragment
+        android:id="@+id/WelcomeFragment"
+        android:name="com.llcompany.nerdtranslator.WelcomeFragment"
+        android:label="Welcome"
+        tools:layout="@layout/fragment_welcome">
+
+        <action
+            android:id="@+id/action_WelcomeFragment_to_TranslateFragment"
+            app:destination="@id/TranslateFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/TranslateFragment"
+        android:name="com.llcompany.nerdtranslator.TranslateFragment"
+        android:label="Translate"
+        tools:layout="@layout/fragment_translate">
+
+        <action
+            android:id="@+id/action_TranslateFragment_to_WelcomeFragment"
+            app:destination="@id/WelcomeFragment" />
+    </fragment>
+</navigation>

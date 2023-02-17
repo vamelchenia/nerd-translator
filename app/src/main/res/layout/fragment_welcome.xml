@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/welcomeLayout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".WelcomeFragment">
+
+    <ImageView
+        android:id="@+id/welcomeBoyImageView"
+        android:layout_width="205dp"
+        android:layout_height="417dp"
+        android:layout_marginStart="78dp"
+        android:layout_marginTop="128dp"
+        android:layout_marginEnd="77dp"
+        android:layout_marginBottom="255dp"
+        android:src="@drawable/ic_welcome_boy"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/underBoyImageView"
+        android:layout_width="303dp"
+        android:layout_height="114dp"
+        android:layout_marginStart="29dp"
+        android:layout_marginTop="388dp"
+        android:layout_marginEnd="28dp"
+        android:src="@drawable/ic_welcome_vector"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/welcomeBoyImageView" />
+
+    <TextView
+        android:id="@+id/welcomeTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="44dp"
+        android:layout_marginTop="29dp"
+        android:layout_marginEnd="39dp"
+        android:fontFamily="@font/robotoslab_semibold"
+        android:text="@string/welcomeTextView"
+        android:textAlignment="center"
+        android:textColor="@color/cherryDark"
+        android:textFontWeight="600"
+        android:textSize="38sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/underBoyImageView" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

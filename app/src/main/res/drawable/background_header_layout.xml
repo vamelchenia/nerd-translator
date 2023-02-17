@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:bottom="0dp"
+        android:left="0dp"
+        android:right="0dp"
+        android:top="5dp">
+        <shape android:shape="rectangle">
+            <solid android:color="@color/baseLayoutShadow" />
+            <corners android:radius="5dp" />
+        </shape>
+    </item>
+
+    <item
+        android:bottom="2dp"
+        android:left="0dp"
+        android:right="0dp"
+        android:top="0dp">
+        <shape android:shape="rectangle">
+            <solid android:color="@color/baseLayout" />
+            <corners android:radius="5dp" />
+        </shape>
+    </item>
+
+    <!--    Example with gradient -->
+    <!--    <item>-->
+    <!--        <shape android:shape="rectangle">-->
+    <!--            <solid android:color="#F4F4F4" />-->
+    <!--            <corners android:radius="5dp" />-->
+    <!--            <padding-->
+    <!--                android:bottom="1dp"-->
+    <!--                android:left="1dp"-->
+    <!--                android:right="1dp"-->
+    <!--                android:top="1dp" />-->
+    <!--        </shape>-->
+    <!--    </item>-->
+    <!--    <item>-->
+    <!--        <shape android:shape="rectangle">-->
+    <!--            <gradient-->
+    <!--                android:angle="-90"-->
+    <!--                android:centerColor="#00000000"-->
+    <!--                android:centerX="0.95"-->
+    <!--                android:endColor="#77000000"-->
+    <!--                android:startColor="#00000000" />-->
+    <!--            <corners android:radius="3dp" />-->
+    <!--        </shape>-->
+    <!--    </item>-->
+    <!--    &lt;!&ndash; left &ndash;&gt;-->
+    <!--    <item>-->
+    <!--        <shape android:shape="rectangle">-->
+    <!--            <gradient-->
+    <!--                android:angle="180"-->
+    <!--                android:centerColor="#00000000"-->
+    <!--                android:centerX="0.95"-->
+    <!--                android:gradientRadius="10"-->
+    <!--                android:endColor="#77000000"-->
+    <!--                android:startColor="#00000000" />-->
+    <!--            <corners android:radius="3dp" />-->
+    <!--        </shape>-->
+    <!--    </item>-->
+    <!--    &lt;!&ndash; right &ndash;&gt;-->
+    <!--    <item>-->
+    <!--        <shape android:shape="rectangle">-->
+    <!--            <gradient-->
+    <!--                android:angle="0"-->
+    <!--                android:centerColor="#00000000"-->
+    <!--                android:centerX="0.99"-->
+    <!--                android:endColor="#77000000"-->
+    <!--                android:startColor="#00000000" />-->
+    <!--            <corners android:radius="3dp" />-->
+    <!--        </shape>-->
+    <!--    </item>-->
+
+</layer-list>

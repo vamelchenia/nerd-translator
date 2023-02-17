@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="translateEditText_padding_top">20dp</dimen>
+    <dimen name="translateEditText_padding_bottom">20dp</dimen>
+    <dimen name="translateEditText_padding_left_right">20dp</dimen>
+
+    <dimen name="translateTextLayout_margin_bottom">40dp</dimen>
+    <dimen name="translateEditText_max_height">220dp</dimen>
+</resources>

@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="DesignSurface">
+    <option name="filePathToZoomLevelMap">
+      <map>
+        <entry key="..\:/Projects/NerdTranslator/app/src/main/res/drawable-v24/ic_launcher_background.xml" value="0.1" />
+        <entry key="..\:/Projects/NerdTranslator/app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.3125" />
+        <entry key="..\:/Projects/NerdTranslator/app/src/main/res/drawable-v24/welcome_boy.xml" value="0.324" />
+        <entry key="..\:/Projects/NerdTranslator/app/src/main/res/drawable/background_header_layout.xml" value="0.243" />
+        <entry key="..\:/Projects/NerdTranslator/app/src/main/res/drawable/background_translate_textview.xml" value="0.2365" />
+        <entry key="..\:/Projects/NerdTranslator/app/src/main/res/drawable/checked_icon.xml" value="0.3045" />
+        <entry key="..\:/Projects/NerdTranslator/app/src/main/res/drawable/exclamation_point.xml" value="0.3075" />
+        <entry key="..\:/Projects/NerdTranslator/app/src/main/res/drawable/ic_arrow.xml" value="0.5" />
+        <entry key="..\:/Projects/NerdTranslator/app/src/main/res/drawable/ic_arrow_stroke.xml" value="0.2595" />
+        <entry key="..\:/Projects/NerdTranslator/app/src/main/res/drawable/ic_asset_1_1.xml" value="0.3125" />
+        <entry key="..\:/Projects/NerdTranslator/app/src/main/res/drawable/ic_component_6.xml" value="0.3125" />
+        <entry key="..\:/Projects/NerdTranslator/app/src/main/res/drawable/ic_exclamation_point.xml" value="0.235" />
+        <entry key="..\:/Projects/NerdTranslator/app/src/main/res/drawable/ic_exit_button.xml" value="0.291" />
+        <entry key="..\:/Projects/NerdTranslator/app/src/main/res/drawable/ic_launcher_background.xml" value="0.3125" />
+        <entry key="..\:/Projects/NerdTranslator/app/src/main/res/drawable/ic_settings_fragment_button.xml" value="0.235" />
+        <entry key="..\:/Projects/NerdTranslator/app/src/main/res/drawable/ic_swap_arrows.xml" value="0.25" />
+        <entry key="..\:/Projects/NerdTranslator/app/src/main/res/drawable/ic_translate_button.xml" value="0.1475" />
+        <entry key="..\:/Projects/NerdTranslator/app/src/main/res/drawable/ic_warning.xml" value="0.3125" />
+        <entry key="..\:/Projects/NerdTranslator/app/src/main/res/drawable/ic_warning_1_.xml" value="0.3125" />
+        <entry key="..\:/Projects/NerdTranslator/app/src/main/res/drawable/ic_welcome_boy.xml" value="0.2875" />
+        <entry key="..\:/Projects/NerdTranslator/app/src/main/res/drawable/layout_background.xml" value="0.246" />
+        <entry key="..\:/Projects/NerdTranslator/app/src/main/res/drawable/navigation_layout_background.xml" value="0.235" />
+        <entry key="..\:/Projects/NerdTranslator/app/src/main/res/drawable/qwe.xml" value="0.3045" />
+        <entry key="..\:/Projects/NerdTranslator/app/src/main/res/drawable/scroolbar.xml" value="0.1465" />
+        <entry key="..\:/Projects/NerdTranslator/app/src/main/res/drawable/scroolbar_thumb.xml" value="0.14" />
+        <entry key="..\:/Projects/NerdTranslator/app/src/main/res/drawable/scroolbar_track.xml" value="0.14" />
+        <entry key="..\:/Projects/NerdTranslator/app/src/main/res/drawable/switcher_off_state.xml" value="0.3045" />
+        <entry key="..\:/Projects/NerdTranslator/app/src/main/res/drawable/switcher_on_state.xml" value="0.291" />
+        <entry key="..\:/Projects/NerdTranslator/app/src/main/res/drawable/tags_background.xml" value="0.1645" />
+        <entry key="..\:/Projects/NerdTranslator/app/src/main/res/drawable/tags_border_shadow.xml" value="0.16" />
+        <entry key="..\:/Projects/NerdTranslator/app/src/main/res/drawable/tags_layout_shadow.xml" value="0.1625" />
+        <entry key="..\:/Projects/NerdTranslator/app/src/main/res/drawable/tags_spinner_background.xml" value="0.1645" />
+        <entry key="..\:/Projects/NerdTranslator/app/src/main/res/drawable/translateTextView.xml" value="0.2875" />
+        <entry key="..\:/Projects/NerdTranslator/app/src/main/res/drawable/translate_layout_background.xml" value="0.2875" />
+        <entry key="..\:/Projects/NerdTranslator/app/src/main/res/drawable/translate_textview_background.xml" value="0.2875" />
+        <entry key="..\:/Projects/NerdTranslator/app/src/main/res/drawable/translate_textview_border.xml" value="0.2875" />
+        <entry key="..\:/Projects/NerdTranslator/app/src/main/res/drawable/translate_textview_borders.xml" value="0.2875" />
+        <entry key="..\:/Projects/NerdTranslator/app/src/main/res/drawable/translate_textview_shadow.xml" value="0.2875" />
+        <entry key="..\:/Projects/NerdTranslator/app/src/main/res/drawable/utils_tags_layout_shadow.xml" value="0.2595" />
+        <entry key="..\:/Projects/NerdTranslator/app/src/main/res/drawable/warning.xml" value="0.324" />
+        <entry key="..\:/Projects/NerdTranslator/app/src/main/res/layout/activity_main.xml" value="0.2962962962962963" />
+        <entry key="..\:/Projects/NerdTranslator/app/src/main/res/layout/content_main.xml" value="0.2962962962962963" />
+        <entry key="..\:/Projects/NerdTranslator/app/src/main/res/layout/delete_fragment_lostconnection.xml" value="0.1375" />
+        <entry key="..\:/Projects/NerdTranslator/app/src/main/res/layout/fragment_first.xml" value="0.3333333333333333" />
+        <entry key="..\:/Projects/NerdTranslator/app/src/main/res/layout/fragment_lostconnection.xml" value="0.29483695652173914" />
+        <entry key="..\:/Projects/NerdTranslator/app/src/main/res/layout/fragment_maintranslate.xml" value="0.2962962962962963" />
+        <entry key="..\:/Projects/NerdTranslator/app/src/main/res/layout/fragment_pretranslate.xml" value="0.2962962962962963" />
+        <entry key="..\:/Projects/NerdTranslator/app/src/main/res/layout/fragment_second.xml" value="0.296195652173913" />
+        <entry key="..\:/Projects/NerdTranslator/app/src/main/res/layout/fragment_translate.xml" value="0.2962962962962963" />
+        <entry key="..\:/Projects/NerdTranslator/app/src/main/res/layout/fragment_welcome.xml" value="0.2962962962962963" />
+        <entry key="..\:/Projects/NerdTranslator/app/src/main/res/layout/translate_listview.xml" value="0.13703870387038705" />
+        <entry key="..\:/Projects/NerdTranslator/app/src/main/res/menu/menu_main.xml" value="0.3333333333333333" />
+        <entry key="..\:/Projects/NerdTranslator/app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" value="0.2755" />
+        <entry key="..\:/Projects/NerdTranslator/app/src/main/res/mipmap-anydpi-v26/ic_launcher_round.xml" value="0.2755" />
+        <entry key="..\:/Projects/NerdTranslator/app/src/main/res/mipmap-anydpi-v26/tags_layout_shadow.xml" value="0.2755" />
+      </map>
+    </option>
+  </component>
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="Android Studio default JDK" project-jdk-type="JavaSDK">
+    <output url="file://$PROJECT_DIR$/build/classes" />
+  </component>
+  <component name="ProjectType">
+    <option name="id" value="Android" />
+  </component>
+  <component name="VisualizationToolProject">
+    <option name="state">
+      <ProjectState>
+        <option name="scale" value="0.18" />
+      </ProjectState>
+    </option>
+  </component>
+</project>

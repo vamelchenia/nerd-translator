@@ -1,0 +1,344 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/translateLayout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".TranslateFragment">
+
+    <LinearLayout
+        android:id="@+id/mainLayout"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="30dp"
+        android:layout_marginTop="30dp"
+        android:layout_marginEnd="30dp"
+        android:orientation="vertical"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <LinearLayout
+            android:id="@+id/headerLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:id="@+id/exitButtonImageView"
+                android:layout_width="32dp"
+                android:layout_height="32dp"
+                android:contentDescription="@string/exitButtonImageViewDescription"
+                android:src="@drawable/ic_exit_button"
+                tools:ignore="ImageContrastCheck" />
+
+            <LinearLayout
+
+                android:id="@+id/tagsLayout"
+                android:layout_width="match_parent"
+                android:layout_height="30dp"
+                android:layout_marginStart="15dp"
+                android:background="@drawable/background_header_layout"
+                android:orientation="horizontal">
+
+                <Spinner
+                    android:id="@+id/tagsSpinner"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="fill"
+                    android:layout_weight="1"
+                    android:background="@null"
+                    android:contentDescription="@string/tagsSpinnerDescription"
+                    android:gravity="center_vertical"
+                    tools:ignore="TouchTargetSizeCheck,DuplicateSpeakableTextCheck" />
+
+                <ImageView
+                    android:id="@+id/tagsArrowImageView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginEnd="10dp"
+                    android:background="@drawable/ic_arrow"
+                    android:contentDescription="@string/tagsSpinnerDescription"
+                    android:scaleType="fitXY" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/languageLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:orientation="horizontal">
+
+            <LinearLayout
+
+                android:id="@+id/sourceLanguageLayout"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:layout_weight="1"
+                android:background="@drawable/background_header_layout"
+                android:orientation="horizontal">
+
+                <Spinner
+                    android:id="@+id/sourceLanguageSpinner"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="fill"
+                    android:layout_weight="1"
+                    android:background="@null"
+                    android:contentDescription="@string/tagsSpinnerDescription"
+                    android:gravity="center_vertical"
+                    tools:ignore="TouchTargetSizeCheck,DuplicateSpeakableTextCheck" />
+
+                <ImageView
+                    android:id="@+id/sourceLanguageArrowImageView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginEnd="10dp"
+                    android:background="@drawable/ic_arrow"
+                    android:contentDescription="@string/tagsSpinnerDescription"
+                    android:scaleType="fitXY" />
+
+            </LinearLayout>
+
+            <ImageView
+                android:id="@+id/swapArrowsImageView"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_gravity="center"
+                android:layout_marginStart="20dp"
+                android:layout_marginEnd="20dp"
+                android:contentDescription="@string/swapArrowsImageViewDescription"
+                android:src="@drawable/ic_swap_arrows" />
+
+            <LinearLayout
+
+                android:id="@+id/targetLanguageLayout"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:layout_weight="1"
+                android:background="@drawable/background_header_layout"
+                android:orientation="horizontal">
+
+                <Spinner
+                    android:id="@+id/targetLanguageSpinner"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="fill"
+                    android:layout_weight="1"
+                    android:background="@null"
+                    android:contentDescription="@string/tagsSpinnerDescription"
+                    android:gravity="center_vertical"
+                    tools:ignore="TouchTargetSizeCheck,DuplicateSpeakableTextCheck" />
+
+                <ImageView
+                    android:id="@+id/targetLanguageArrow"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginEnd="10dp"
+                    android:background="@drawable/ic_arrow"
+                    android:contentDescription="@string/tagsSpinnerDescription"
+                    android:scaleType="fitXY" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <RelativeLayout
+        android:id="@+id/translateInputLayout"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="15dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="15dp"
+        android:clickable="false"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toTopOf="@id/translateOutputLayout"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/mainLayout">
+
+        <LinearLayout
+            android:id="@+id/translateTextLayout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginStart="10dp"
+            android:layout_marginEnd="10dp"
+            android:layout_marginBottom="@dimen/translateTextLayout_margin_bottom"
+            android:clickable="false"
+            android:orientation="vertical">
+
+            <com.llcompany.nerdtranslator.ExtendsEditText
+                android:id="@+id/translateEditText"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:autofillHints="@null"
+                android:background="@drawable/background_translate_textview"
+                android:clickable="true"
+                android:cursorVisible="true"
+                android:fadeScrollbars="false"
+                android:fontFamily="@font/robotoslab_regular"
+                android:gravity="top"
+                android:hint="@string/translatePlaceHolder"
+                android:inputType="textMultiLine"
+                android:overScrollMode="always"
+                android:paddingStart="@dimen/translateEditText_padding_left_right"
+                android:paddingTop="@dimen/translateEditText_padding_top"
+                android:paddingEnd="@dimen/translateEditText_padding_left_right"
+                android:paddingBottom="@dimen/translateEditText_padding_bottom"
+                android:scrollbarSize="10dp"
+                android:scrollbarStyle="insideInset"
+                android:scrollbarThumbVertical="@drawable/scrollbar_thumb"
+                android:scrollbarTrackVertical="@drawable/scrollbar_track"
+                android:scrollbars="vertical"
+                android:textColor="@color/translateText"
+                android:textColorHint="@color/placeHolder"
+                android:textSize="19sp" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/translateButtonLayout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_alignBottom="@id/translateTextLayout"
+            android:layout_marginBottom="-35dp"
+            android:gravity="bottom|end"
+            android:orientation="vertical">
+
+            <ImageView
+                android:id="@+id/translateButtonImageView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:contentDescription="@string/translatePlaceHolder"
+                android:src="@drawable/ic_translate_button" />
+        </LinearLayout>
+
+    </RelativeLayout>
+
+    <LinearLayout
+        android:id="@+id/translateOutputLayout"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="30dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="30dp"
+        android:orientation="vertical"
+        android:visibility="gone"
+        app:layout_constraintBottom_toTopOf="@id/lostConnectionLayout"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/translateInputLayout"
+        tools:visibility="visible">
+
+        <TextView
+            android:id="@+id/translateOutputTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/robotoslab_medium"
+            android:text="@string/translateVerbTextViewExample"
+            android:textAlignment="textStart"
+            android:textColor="@color/translateText"
+            android:textSize="18sp" />
+
+        <ListView
+            android:id="@+id/translateOutputListView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="35dp"
+            android:layout_marginEnd="35dp"
+            android:choiceMode="multipleChoice"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"></ListView>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/lostConnectionLayout"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="70dp"
+        android:orientation="vertical"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toTopOf="@id/navigationLayout"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/translateOutputLayout"
+        tools:visibility="gone">
+
+        <ImageView
+            android:id="@+id/exclamationPointImageView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:contentDescription="@string/lostConnectionTextView"
+            android:src="@drawable/ic_exclamation_point" />
+
+        <TextView
+            android:id="@+id/lostConnectionTextView"
+            android:layout_width="180dp"
+            android:layout_height="85dp"
+            android:layout_gravity="center"
+            android:layout_marginTop="20dp"
+            android:fontFamily="@font/robotoslab_medium"
+            android:gravity="center"
+            android:text="@string/lostConnectionTextView"
+            android:textAlignment="center"
+            android:textColor="@color/black"
+            android:textSize="18sp" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/navigationLayout"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:background="@drawable/background_navigation_layout"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toBottomOf="parent"
+        tools:layout_editor_absoluteX="70dp">
+
+        <ImageView
+            android:id="@+id/translateNavigationImageView"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_marginStart="85dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="10dp"
+            android:layout_weight="1"
+            android:contentDescription="@string/translateNavigationImageViewDescription"
+            android:src="@drawable/ic_translate_fragment_button_no_shadow" />
+
+        <ImageView
+            android:id="@+id/favoritesNavigationImageView"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_marginStart="35dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="35dp"
+            android:layout_marginBottom="10dp"
+            android:layout_weight="1"
+            android:contentDescription="@string/favoritesNavigationImageViewDescription"
+            android:src="@drawable/ic_favourites_fragment_button_no_shadow" />
+
+        <ImageView
+            android:id="@+id/settingsNavigatetionImageView"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="85dp"
+            android:layout_marginBottom="10dp"
+            android:layout_weight="1"
+            android:contentDescription="@string/settingsNavigationImageViewDescription"
+            android:src="@drawable/ic_settings_fragment_button" />
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

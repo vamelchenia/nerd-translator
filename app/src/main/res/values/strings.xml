@@ -1,0 +1,56 @@
+<resources>
+<!--    <string name="action_settings">Settings</string>-->
+<!--    &lt;!&ndash; Strings used for fragments for navigation &ndash;&gt;-->
+<!--    <string name="first_fragment_label">First Fragment</string>-->
+<!--    <string name="second_fragment_label">Second Fragment</string>-->
+
+    <string name="appName">NerdTranslator</string>-->
+
+    <string name="welcomeTextView">Let\'s translate!</string>
+    <string name="welcomeYearTextView">2022</string>
+
+    <string name="lostConnectionTextView">Please check your Internet connection and try again</string>
+
+    <string name="translatePlaceHolder">Enter your text here</string>
+    <string name="translateTextViewExample">book</string>
+    <string name="translateVerbTextViewExample">Verb</string>
+    <string name="translateNounTextViewExample">Noun</string>
+
+    <string name="tagsSpinnerDescription">Set or create tag</string>
+    <string name="exitButtonImageViewDescription">Exit</string>
+    <string name="swapArrowsImageViewDescription">Swap</string>
+    <string name="translateNavigationImageViewDescription">Translate</string>
+    <string name="favoritesNavigationImageViewDescription">Favorites</string>
+    <string name="settingsNavigationImageViewDescription">Settings</string>
+    <string name="exclamationPointImageViewDescription">Lost connection</string>
+
+    <string-array name="cat_names">
+        <item>Рыжик</item>
+        <item>Барсик</item>
+        <item>Мурзик</item>
+        <item>Мурка</item>
+        <item>Васька</item>
+        <item>Томасина</item>
+        <item>Кристина</item>
+        <item>Пушок</item>
+        <item>Дымка</item>
+        <item>Кузя</item>
+        <item>Китти</item>
+        <item>Масяня</item>
+        <item>Симба</item>
+    </string-array>
+
+</resources>
+
+<!--<resources>-->
+<!--    <string name="app_name">NerdTranslator</string>-->
+<!--    <string name="action_settings">Settings</string>-->
+<!--    &lt;!&ndash; Strings used for fragments for navigation &ndash;&gt;-->
+<!--    <string name="first_fragment_label">First Fragment</string>-->
+<!--    <string name="second_fragment_label">Second Fragment</string>-->
+<!--    <string name="next">Next</string>-->
+<!--    <string name="previous">Previous</string>-->
+
+<!--    <string name="hello_first_fragment">Hello first fragment</string>-->
+<!--    <string name="hello_second_fragment">Hello second fragment. Arg: %1$s</string>-->
+<!--</resources>-->
