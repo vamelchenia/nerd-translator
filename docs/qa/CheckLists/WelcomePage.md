@@ -1,0 +1,11 @@
+| №     | Description                                                                                                                                                          | Requirement | Commentary |
+| ----- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ----------- | ---------- |
+|       | Welcome page                                                                                                                                                         |             |            |
+| Welc1 | A simple animation for the app logo appears smoothly and gradually.                                                                                                  |             |            |
+| Welc2 | Ensure the app logo is displayed for precisely 2 seconds                                                                                                             |             |            |
+| Welc3 | App logo is in high-resolution to ensure clarity and visual appeal,the image is similar to the "welcome" Figma example.                                              |             |            |
+| Welc4 | App logo at a visually prominent location, ideally centered on the screen.                                                                                           |             |            |
+| Welc5 | App logo is sized appropriately for various device screen sizes and orientations (for now check only on your own devices, in further development use android studio) |             |            |
+| Welc6 | App logo has a clear and non-distracting background                                                                                                                  |             |            |
+| Welc7 | App logo consistent with our brand's visual identity (color scheme, typography, style)                                                                               |             |            |
+| Welc8 | After the logo display, transition seamlessly to the main app interface or the next relevant screen.                                                                 |             |            |
