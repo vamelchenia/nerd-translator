@@ -14,7 +14,9 @@ import androidx.compose.ui.tooling.preview.Preview
 import com.example.rijksdataexplorer.R
 import com.llcompany.nerdtranslator.core.NerdTranslatorApp
 import com.llcompany.nerdtranslator.main.ui.theme.NerdTranslatorTheme
+import dagger.hilt.android.AndroidEntryPoint
 
+@AndroidEntryPoint
 class MainActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
