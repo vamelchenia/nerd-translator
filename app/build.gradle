@@ -18,6 +18,9 @@ android {
         versionName "1.0"
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+        vectorDrawables {
+            useSupportLibrary true
+        }
     }
 
     buildTypes {
@@ -39,10 +42,20 @@ android {
         jvmTarget = "1.8"
         freeCompilerArgs += "-opt-in=androidx.compose.material3.ExperimentalMaterial3Api"
     }
+    composeOptions {
+        kotlinCompilerExtensionVersion '1.4.3'
+    }
+    packagingOptions {
+        resources {
+            excludes += '/META-INF/{AL2.0,LGPL2.1}'
+        }
+    }
 }
 
 dependencies {
 
+    implementation platform('androidx.compose:compose-bom:2023.03.00')
+    androidTestImplementation platform('androidx.compose:compose-bom:2023.03.00')
     constraints {
         implementation("org.jetbrains.kotlin:kotlin-stdlib-jdk8:1.8.0") {
             because 'align all versions of kotlin transitive dependencies'
