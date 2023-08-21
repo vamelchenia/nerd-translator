@@ -3,6 +3,7 @@ plugins {
     id 'org.jetbrains.kotlin.android'
     id 'kotlin-kapt'
     id 'kotlin-android'
+    id 'com.google.dagger.hilt.android'
 }
 
 android {
@@ -75,6 +76,8 @@ dependencies {
 
     implementation "com.google.dagger:dagger:2.44.2"
     kapt "com.google.dagger:dagger-compiler:2.44.2"
+    implementation "com.google.dagger:hilt-android:2.44"
+    kapt "com.google.dagger:hilt-compiler:2.44"
 
     androidTestImplementation "androidx.test.ext:junit:1.1.5"
     androidTestImplementation "androidx.test.espresso:espresso-core:3.5.1"
