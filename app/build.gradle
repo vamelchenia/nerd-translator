@@ -7,11 +7,11 @@ plugins {
 }
 
 android {
-    namespace 'com.example.rijksdataexplorer'
+    namespace 'com.llcompany.nerdtranslator'
     compileSdk 33
 
     defaultConfig {
-        applicationId "com.example.rijksdataexplorer"
+        applicationId "com.llcompany.nerdtranslator"
         minSdk 24
         targetSdk 33
         versionCode 1
