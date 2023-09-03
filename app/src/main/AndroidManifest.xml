@@ -14,7 +14,7 @@
         android:theme="@style/Theme.NerdTranslator"
         tools:targetApi="31">
         <activity
-            android:name=".main.MainActivity"
+            android:name=".base.main.MainActivity"
             android:exported="true"
             android:label="@string/appName"
             android:theme="@style/Theme.NerdTranslator">
