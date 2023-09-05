@@ -1,4 +1,4 @@
-package com.llcompany.nerdtranslator.main.ui.theme
+package com.llcompany.nerdtranslator.base.main.ui.theme
 
 import androidx.compose.material3.Typography
 import androidx.compose.ui.text.TextStyle
