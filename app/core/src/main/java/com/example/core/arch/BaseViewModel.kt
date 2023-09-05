@@ -1,4 +1,4 @@
-package com.llcompany.nerdtranslator.core.arch
+package com.example.core.arch
 
 import androidx.compose.runtime.MutableState
 import androidx.compose.runtime.State
