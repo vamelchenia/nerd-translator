@@ -1,6 +1,6 @@
 package com.example.mainscreen
 
-import com.llcompany.nerdtranslator.core.arch.BaseViewModel
+import com.example.core.arch.BaseViewModel
 
 class MainScreenViewModel
     : BaseViewModel<MainScreenContract.State, MainScreenContract.Event, MainScreenContract.Effect>() {

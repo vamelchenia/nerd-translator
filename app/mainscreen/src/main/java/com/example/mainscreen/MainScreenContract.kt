@@ -1,8 +1,8 @@
 package com.example.mainscreen
 
-import com.llcompany.nerdtranslator.core.arch.ViewEffect
-import com.llcompany.nerdtranslator.core.arch.ViewEvent
-import com.llcompany.nerdtranslator.core.arch.ViewState
+import com.example.core.arch.ViewEffect
+import com.example.core.arch.ViewEvent
+import com.example.core.arch.ViewState
 
 class MainScreenContract {
 
