@@ -11,50 +11,67 @@ import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
-import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import com.example.mainscreen.R
 
 private val roundingSize = 5.dp
 private val buttonPaddings = PaddingValues(30.dp, 10.dp, 20.dp, 10.dp)
+private val errorColor = Color(0xFFF2575D)
 
 @Composable
 fun LanguageSelector(
     languageName: String,
-    isError: Boolean = false,
-    isExpanded: Boolean = false
+    isError: Boolean = true,
+    isExpanded: Boolean = false,
+    onClick: () -> Unit = {}
 ) {
     Box(
         modifier = Modifier.padding(8.dp)
     ) {
+        val selectorContainerColor = when {
+            isExpanded -> MaterialTheme.colorScheme.primary
+            else -> MaterialTheme.colorScheme.tertiary
+        }
+
         Button(
             onClick = {},
             shape = RoundedCornerShape(roundingSize),
             colors = ButtonDefaults.buttonColors(
-                containerColor = MaterialTheme.colorScheme.tertiary
+                containerColor = selectorContainerColor
             ),
             contentPadding = buttonPaddings
         ) {
+
+            val textColor = when {
+                isError -> errorColor
+                isExpanded -> MaterialTheme.colorScheme.tertiary
+                else -> MaterialTheme.colorScheme.primary
+            }
+
             Text(
                 text = languageName,
-                color = MaterialTheme.colorScheme.primary
+                color = textColor
             )
+
+            val iconPainter = when {
+                isExpanded -> painterResource(R.drawable.arrow_up_ic_24)
+                else -> painterResource(R.drawable.arrow_down_ic_24)
+            }
+
+            val iconTint = when {
+                isError -> errorColor
+                isExpanded -> MaterialTheme.colorScheme.tertiary
+                else -> MaterialTheme.colorScheme.secondary
+            }
+
             Icon(
-                painter = painterResource(R.drawable.arrow_down_ic_24),
+                painter = iconPainter,
                 contentDescription = stringResource(R.string.language_selector_expand_more),
-                tint = MaterialTheme.colorScheme.secondary
+                tint = iconTint
             )
         }
     }
-}
-
-@Preview(showBackground = true)
-@Composable
-fun LanguageSelectorPreview() {
-    LanguageSelector(
-        "ENGLISG",
-        false
-    )
 }
