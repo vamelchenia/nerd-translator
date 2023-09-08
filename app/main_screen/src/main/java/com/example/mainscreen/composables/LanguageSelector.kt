@@ -23,7 +23,8 @@ private val buttonPaddings = PaddingValues(30.dp, 10.dp, 20.dp, 10.dp)
 @Composable
 fun LanguageSelector(
     languageName: String,
-    isError: Boolean
+    isError: Boolean = false,
+    isExpanded: Boolean = false
 ) {
     Box(
         modifier = Modifier.padding(8.dp)
@@ -53,7 +54,7 @@ fun LanguageSelector(
 @Composable
 fun LanguageSelectorPreview() {
     LanguageSelector(
-        "English",
+        "ENGLISG",
         false
     )
 }
