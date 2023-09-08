@@ -56,6 +56,6 @@ android {
 }
 
 dependencies {
-    implementation(project(":app:mainscreen"))
+    implementation(project(":app:main_screen"))
     implementation(project(":app:core"))
 }
