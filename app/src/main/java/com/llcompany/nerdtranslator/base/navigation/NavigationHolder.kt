@@ -14,6 +14,11 @@ fun NavigationHolder() {
         navController,
         startDestination = Navigation.Routes.MAIN_SCREEN
     ) {
+        composable(
+            route = Navigation.Routes.MAIN_SCREEN
+        ) {
+            MainScreenDestination()
+        }
 
         composable(
             route = Navigation.Routes.CREATE_TAG_SCREEN
