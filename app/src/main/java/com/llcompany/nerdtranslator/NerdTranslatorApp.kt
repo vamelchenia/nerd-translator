@@ -1,4 +1,4 @@
-package com.llcompany.nerdtranslator.core
+package com.llcompany.nerdtranslator
 
 import android.app.Application
 import org.koin.android.ext.koin.androidContext
