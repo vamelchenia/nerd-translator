@@ -1,5 +1,6 @@
 package com.example.mainscreen.composables
 
+import androidx.compose.foundation.BorderStroke
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.PaddingValues
 import androidx.compose.foundation.layout.padding
@@ -24,7 +25,7 @@ private val errorColor = Color(0xFFF2575D)
 @Composable
 fun LanguageSelector(
     languageName: String,
-    isError: Boolean = true,
+    isError: Boolean = false,
     isExpanded: Boolean = false,
     onClick: () -> Unit = {}
 ) {
@@ -36,13 +37,19 @@ fun LanguageSelector(
             else -> MaterialTheme.colorScheme.tertiary
         }
 
+        val selectorBorder = when {
+            isError -> BorderStroke(1.dp, errorColor)
+            else -> null
+        }
+
         Button(
             onClick = {},
             shape = RoundedCornerShape(roundingSize),
             colors = ButtonDefaults.buttonColors(
                 containerColor = selectorContainerColor
             ),
-            contentPadding = buttonPaddings
+            contentPadding = buttonPaddings,
+            border = selectorBorder
         ) {
 
             val textColor = when {
