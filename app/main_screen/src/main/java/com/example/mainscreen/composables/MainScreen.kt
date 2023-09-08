@@ -11,7 +11,7 @@ fun MainScreen(
     onEventSent: (event: MainScreenContract.Event) -> Unit,
 ) {
     LanguageSelector(
-        languageName = "English",
+        languageName = "ENGLISH",
         isError = false
     )
 }
