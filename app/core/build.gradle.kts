@@ -3,6 +3,8 @@ plugins {
     id("org.jetbrains.kotlin.android")
 }
 
+val compose_version = "1.5.0"
+
 android {
     namespace = "com.example.core"
     compileSdk = 34
@@ -23,6 +25,15 @@ android {
             )
         }
     }
+
+    buildFeatures {
+        compose = true
+    }
+
+    composeOptions {
+        kotlinCompilerExtensionVersion = compose_version
+    }
+
     compileOptions {
         sourceCompatibility = JavaVersion.VERSION_1_8
         targetCompatibility = JavaVersion.VERSION_1_8
@@ -38,7 +49,6 @@ dependencies {
     val core_ctx_version = "1.10.1"
     val app_compat_version = "1.6.1"
     val activity_compose_version = "1.7.2"
-    val compose_version = "1.5.0"
 
     val material3_version = "1.1.1"
 
