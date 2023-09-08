@@ -24,7 +24,7 @@ fun LanguageSelector(
         Text(
             color = MaterialTheme.colorScheme.primary,
             text = languageName
-            )
+        )
     }
 }
 
