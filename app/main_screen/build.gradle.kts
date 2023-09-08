@@ -7,6 +7,13 @@ android {
     namespace = "com.example.mainscreen"
     compileSdk = 34
 
+    defaultConfig {
+        minSdk = 24
+        targetSdk = 34
+
+        testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
+    }
+
     buildTypes {
         release {
             isMinifyEnabled = false
