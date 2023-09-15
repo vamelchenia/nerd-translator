@@ -1,18 +1,17 @@
 plugins {
-    id("com.android.application")
+    id("com.android.library")
     id("org.jetbrains.kotlin.android")
 }
 
+val compose_version = "1.5.0"
+
 android {
     namespace = "com.example.core"
-    compileSdk = 33
+    compileSdk = 34
 
     defaultConfig {
-        applicationId = "com.example.core"
         minSdk = 24
-        targetSdk = 33
-        versionCode = 1
-        versionName = "1.0"
+        targetSdk = 34
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
     }
@@ -26,6 +25,15 @@ android {
             )
         }
     }
+
+    buildFeatures {
+        compose = true
+    }
+
+    composeOptions {
+        kotlinCompilerExtensionVersion = compose_version
+    }
+
     compileOptions {
         sourceCompatibility = JavaVersion.VERSION_1_8
         targetCompatibility = JavaVersion.VERSION_1_8
@@ -41,9 +49,7 @@ dependencies {
     val core_ctx_version = "1.10.1"
     val app_compat_version = "1.6.1"
     val activity_compose_version = "1.7.2"
-    val compose_version = "1.5.0"
 
-    val material_version = "1.6.0"
     val material3_version = "1.1.1"
 
     val lifecycle_ktx_version = "2.6.1"
@@ -61,7 +67,7 @@ dependencies {
     api("androidx.compose.ui:ui-graphics:$compose_version")
     api("androidx.compose.ui:ui-tooling-preview:$compose_version")
     api("androidx.compose.material3:material3:$material3_version")
-    api("androidx.compose.material:material:$material_version")
+    api("androidx.compose.material:material:$compose_version")
 
     api("androidx.legacy:legacy-support-v4:1.0.0")
     api("androidx.lifecycle:lifecycle-runtime-ktx:$lifecycle_ktx_version")

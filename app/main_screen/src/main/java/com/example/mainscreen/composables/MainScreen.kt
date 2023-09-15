@@ -10,4 +10,7 @@ fun MainScreen(
     effectFlow: Flow<MainScreenContract.Effect>?,
     onEventSent: (event: MainScreenContract.Event) -> Unit,
 ) {
+    LanguageSelector(
+        languageName = "ENGLISH"
+    )
 }

@@ -34,6 +34,10 @@ android {
         compose = true
     }
 
+    composeOptions {
+        kotlinCompilerExtensionVersion = "1.5.0"
+    }
+
     compileOptions {
         sourceCompatibility = JavaVersion.VERSION_1_8
         targetCompatibility = JavaVersion.VERSION_1_8
@@ -56,6 +60,6 @@ android {
 }
 
 dependencies {
-    implementation(project(":app:mainscreen"))
+    implementation(project(":app:main_screen"))
     implementation(project(":app:core"))
 }
