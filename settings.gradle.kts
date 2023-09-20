@@ -8,3 +8,5 @@ dependencyResolutionManagement {
     }
 }
 rootProject.name = "NerdTranslator"
+include(":app:main_screen")
+include(":app:core")

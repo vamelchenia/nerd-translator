@@ -18,4 +18,5 @@
     <string name="favoritesNavigationImageViewDescription">Favorites</string>
     <string name="settingsNavigationImageViewDescription">Settings</string>
     <string name="exclamationPointImageViewDescription">Lost connection</string>
+    <string name="title_main_screen">Main Screen</string>
 </resources>

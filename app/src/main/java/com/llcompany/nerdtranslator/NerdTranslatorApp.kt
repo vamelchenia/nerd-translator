@@ -1,6 +1,7 @@
-package com.llcompany.nerdtranslator.core
+package com.llcompany.nerdtranslator
 
 import android.app.Application
+import com.llcompany.nerdtranslator.base.di.appModules
 import org.koin.android.ext.koin.androidContext
 import org.koin.android.ext.koin.androidLogger
 import org.koin.core.context.startKoin
@@ -13,7 +14,7 @@ class NerdTranslatorApp : Application() {
         startKoin {
             androidLogger(Level.ERROR)
             androidContext(this@NerdTranslatorApp)
-            modules() // todo: include modules
+            modules(appModules)
         }
     }
 }
