@@ -16,6 +16,7 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
+import com.example.mainscreen.MainScreenContract
 import com.example.mainscreen.R
 
 private val roundingSize = 5.dp
@@ -24,21 +25,18 @@ private val errorColor = Color(0xFFF2575D)
 
 @Composable
 fun LanguageSelector(
-    languageName: String,
-    isError: Boolean = false,
-    isExpanded: Boolean = false,
-    onClick: () -> Unit = {}
+    state: MainScreenContract.LanguageSelectorState
 ) {
     Box(
         modifier = Modifier.padding(8.dp)
     ) {
         val selectorContainerColor = when {
-            isExpanded -> MaterialTheme.colorScheme.primary
+            state.isExpanded -> MaterialTheme.colorScheme.primary
             else -> MaterialTheme.colorScheme.tertiary
         }
 
         val selectorBorder = when {
-            isError -> BorderStroke(1.dp, errorColor)
+            state.isError -> BorderStroke(1.dp, errorColor)
             else -> null
         }
 
@@ -53,24 +51,24 @@ fun LanguageSelector(
         ) {
 
             val textColor = when {
-                isError -> errorColor
-                isExpanded -> MaterialTheme.colorScheme.tertiary
+                state.isError -> errorColor
+                state.isExpanded -> MaterialTheme.colorScheme.tertiary
                 else -> MaterialTheme.colorScheme.primary
             }
 
             Text(
-                text = languageName,
+                text = state.languageName,
                 color = textColor
             )
 
             val iconPainter = when {
-                isExpanded -> painterResource(R.drawable.arrow_up_ic_24)
+                state.isExpanded -> painterResource(R.drawable.arrow_up_ic_24)
                 else -> painterResource(R.drawable.arrow_down_ic_24)
             }
 
             val iconTint = when {
-                isError -> errorColor
-                isExpanded -> MaterialTheme.colorScheme.tertiary
+                state.isError -> errorColor
+                state.isExpanded -> MaterialTheme.colorScheme.tertiary
                 else -> MaterialTheme.colorScheme.secondary
             }
 

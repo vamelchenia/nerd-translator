@@ -14,10 +14,17 @@ class MainScreenContract {
     data class State(
         val query: String,
         val translatedQuery: String,
-        val sourceLanguage: String,
-        val destinationLanguage: String,
+        val sourceSelectorState: LanguageSelectorState,
+        val destinationSelectorState: LanguageSelectorState,
         val isValid: Boolean
     ) : ViewState
+
+    data class LanguageSelectorState(
+        val languageName: String,
+        val isError: Boolean = false,
+        val isExpanded: Boolean = false,
+        val onClick: () -> Unit = {}
+    )
 
     sealed class Effect : ViewEffect {
         // TODO: implement
