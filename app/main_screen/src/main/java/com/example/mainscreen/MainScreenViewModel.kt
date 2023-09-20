@@ -8,8 +8,8 @@ class MainScreenViewModel
         return MainScreenContract.State(
             query = "",
             translatedQuery = "",
-            sourceLanguage = "English",
-            destinationLanguage = "Russian",
+            sourceSelectorState = MainScreenContract.LanguageSelectorState("Russian"),
+            destinationSelectorState = MainScreenContract.LanguageSelectorState("English"),
             isValid = true
         )
     }
