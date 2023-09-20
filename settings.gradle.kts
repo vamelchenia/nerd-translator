@@ -10,3 +10,4 @@ dependencyResolutionManagement {
 rootProject.name = "NerdTranslator"
 include(":app:main_screen")
 include(":app:core")
+include(":app:tags_overview_screen")
