@@ -23,6 +23,7 @@ fun LanguageSelectorRow(
     ) {
         LanguageSelector(state = sourceState)
 
+        // TODO: make icon clickable and switch states on click
         Icon(
             painter = iconPainter,
             contentDescription = stringResource(R.string.language_selector_row_switch),
