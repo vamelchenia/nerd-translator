@@ -2,4 +2,5 @@
     <string name="app_name">MainScreen</string>
     <string name="language_selector_expand_more">Expand more languages</string>
     <string name="language_selector_row_switch">Switch languages</string>
+    <string name="main_screen_image">Main Screen Image</string>
 </resources>
