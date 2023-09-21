@@ -3,4 +3,6 @@
     <string name="language_selector_expand_more">Expand more languages</string>
     <string name="language_selector_row_switch">Switch languages</string>
     <string name="main_screen_image">Main Screen Image</string>
+    <string name="under_image_hint_primary">Add the translations to favorites, organizing it with tags.</string>
+    <string name="under_image_hint_secondary">You\'ll always be able to review what you\'ve learned.</string>
 </resources>
