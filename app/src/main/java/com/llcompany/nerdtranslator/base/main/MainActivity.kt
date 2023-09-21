@@ -7,6 +7,7 @@ import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Surface
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.graphics.Color
 import com.llcompany.nerdtranslator.base.main.ui.theme.NerdTranslatorTheme
 import com.llcompany.nerdtranslator.base.navigation.NavigationHolder
 
@@ -17,7 +18,7 @@ class MainActivity : ComponentActivity() {
             NerdTranslatorTheme {
                 Surface(
                     modifier = Modifier.fillMaxSize(),
-                    color = MaterialTheme.colorScheme.background
+                    color = Color(0xFFEEF4F8)
                 ) {
                     NavigationHolder()
                 }

@@ -32,7 +32,7 @@ fun LanguageSelector(
     ) {
         val selectorContainerColor = when {
             state.isExpanded -> MaterialTheme.colorScheme.primary
-            else -> MaterialTheme.colorScheme.tertiary
+            else -> MaterialTheme.colorScheme.background
         }
 
         val selectorBorder = when {
@@ -52,7 +52,7 @@ fun LanguageSelector(
 
             val textColor = when {
                 state.isError -> errorColor
-                state.isExpanded -> MaterialTheme.colorScheme.tertiary
+                state.isExpanded -> MaterialTheme.colorScheme.background
                 else -> MaterialTheme.colorScheme.primary
             }
 
@@ -68,7 +68,7 @@ fun LanguageSelector(
 
             val iconTint = when {
                 state.isError -> errorColor
-                state.isExpanded -> MaterialTheme.colorScheme.tertiary
+                state.isExpanded -> MaterialTheme.colorScheme.background
                 else -> MaterialTheme.colorScheme.secondary
             }
 
