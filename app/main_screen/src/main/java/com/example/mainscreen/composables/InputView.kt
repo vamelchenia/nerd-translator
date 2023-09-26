@@ -10,9 +10,6 @@ import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.text.input.TextFieldValue
-import androidx.compose.ui.unit.dp
-
-private val roundingSize = 20.dp
 
 @Composable
 fun defaultTextFieldColors() =
