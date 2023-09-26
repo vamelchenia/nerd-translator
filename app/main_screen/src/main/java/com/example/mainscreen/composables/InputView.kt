@@ -25,11 +25,11 @@ fun DefaultTextFieldColors() =
 fun InputView(
     textFieldColors: TextFieldColors = DefaultTextFieldColors()
 ) {
-    var textValue by remember { mutableStateOf("Sample text") }
+    var textFieldValue by remember { mutableStateOf(TextFieldValue("Sample text")) }
 
     TextField(
-        value = TextFieldValue(textValue),
-        onValueChange = { textValue = it.text },
+        value = textFieldValue,
+        onValueChange = { textFieldValue = it },
         colors = textFieldColors
     )
 }
