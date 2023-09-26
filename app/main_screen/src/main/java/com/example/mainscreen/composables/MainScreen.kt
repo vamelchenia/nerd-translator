@@ -21,5 +21,7 @@ fun MainScreen(
             sourceState = state.sourceSelectorState,
             destinationState = state.destinationSelectorState
         )
+
+        InputView()
     }
 }
