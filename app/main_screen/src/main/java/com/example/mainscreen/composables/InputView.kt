@@ -15,7 +15,7 @@ import androidx.compose.ui.unit.dp
 private val roundingSize = 20.dp
 
 @Composable
-fun DefaultTextFieldColors() =
+fun defaultTextFieldColors() =
     TextFieldDefaults.colors(
         focusedContainerColor = MaterialTheme.colorScheme.background,
         unfocusedContainerColor = MaterialTheme.colorScheme.background
@@ -23,7 +23,7 @@ fun DefaultTextFieldColors() =
 
 @Composable
 fun InputView(
-    textFieldColors: TextFieldColors = DefaultTextFieldColors()
+    textFieldColors: TextFieldColors = defaultTextFieldColors()
 ) {
     var textFieldValue by remember { mutableStateOf(TextFieldValue("Sample text")) }
 
