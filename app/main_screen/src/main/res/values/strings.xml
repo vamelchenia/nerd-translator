@@ -5,4 +5,5 @@
     <string name="main_screen_image">Main Screen Image</string>
     <string name="under_image_hint_primary">Add the translations to favorites,\n organizing it with tags.</string>
     <string name="under_image_hint_secondary">You\'ll always be able to review\n what you\'ve learned.</string>
+    <string name="input_view_hint">Enter your text here</string>
 </resources>
