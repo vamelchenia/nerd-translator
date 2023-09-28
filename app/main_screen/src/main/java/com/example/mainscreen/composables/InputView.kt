@@ -39,6 +39,7 @@ fun inputViewTextStyle(
     color = textColor
 )
 
+// TODO: configure maximum vertical expansion
 @Composable
 fun InputView(
     textFieldColors: TextFieldColors = defaultTextFieldColors()
