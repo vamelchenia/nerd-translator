@@ -3,6 +3,7 @@ package com.example.mainscreen.composables
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.height
+import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.shape.RoundedCornerShape
@@ -81,6 +82,7 @@ fun InputView(
             }
         )
 
+        // TODO: fix placement
         PasteButtonContainer(
             pasteButtonContainerModifier = Modifier
                 .constrainAs(pasteButton) {
@@ -121,13 +123,21 @@ fun PasteButtonContainer(pasteButtonContainerModifier: Modifier) {
         Button(
             onClick = { /*TODO*/ },
             modifier = Modifier
+                .padding(8.dp)
                 .width(90.dp)
-                .height(36.dp),
+                .height(36.dp)
+            ,
             colors = pasteButtonColors()
         ) {
             Text(stringResource(R.string.paste_button_text))
         }
 
-        Text(stringResource(R.string.paste_button_hint))
+        Text(
+            text = stringResource(R.string.paste_button_hint),
+            style = TextStyle(
+                fontSize = 12.sp,
+                color = Color(0xFFA3ADB5),
+            )
+        )
     }
 }
