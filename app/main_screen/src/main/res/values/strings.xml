@@ -8,4 +8,5 @@
     <string name="input_view_hint">Enter your text here</string>
     <string name="input_view_keyboard_button">Show keyboard</string>
     <string name="paste_button_text">Paste</string>
+    <string name="paste_button_hint">from the clipboard</string>
 </resources>
