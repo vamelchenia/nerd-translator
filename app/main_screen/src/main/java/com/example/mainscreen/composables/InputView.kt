@@ -24,7 +24,6 @@ import androidx.compose.ui.text.input.TextFieldValue
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.constraintlayout.compose.ConstraintLayout
-import androidx.constraintlayout.widget.ConstraintLayout
 import com.example.mainscreen.R
 
 private val roundingSize = 20.dp
