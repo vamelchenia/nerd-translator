@@ -74,6 +74,7 @@ fun InputView(
             }
         )
 
+        // TODO: make clickable
         Icon(
             painter = painterResource(R.drawable.btn_keyboard),
             contentDescription = stringResource(R.string.language_selector_expand_more),
