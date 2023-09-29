@@ -1,6 +1,7 @@
 package com.example.mainscreen.composables
 
 import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material3.Icon
 import androidx.compose.material3.IconButton
@@ -75,16 +76,19 @@ fun InputView(
             }
         )
 
-        // TODO: make clickable
-        IconButton(onClick = { /*TODO*/ }) {
-            Icon(
-                painter = painterResource(R.drawable.btn_keyboard),
-                contentDescription = stringResource(R.string.language_selector_expand_more),
-                tint = Color.Unspecified,
-                modifier = Modifier.constrainAs(keyboardButton) {
+        IconButton(
+            onClick = { /*TODO*/ },
+            modifier = Modifier
+                .constrainAs(keyboardButton) {
                     centerHorizontallyTo(inputArea)
                     bottom.linkTo(inputArea.bottom, margin = 24.5.dp)
                 }
+                .size(70.dp)
+        ) {
+            Icon(
+                painter = painterResource(R.drawable.btn_keyboard),
+                contentDescription = stringResource(R.string.language_selector_expand_more),
+                tint = Color.Unspecified
             )
         }
     }
