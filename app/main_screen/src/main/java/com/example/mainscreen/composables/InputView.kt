@@ -20,6 +20,7 @@ import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
 import androidx.compose.runtime.setValue
+import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.res.painterResource
@@ -59,7 +60,7 @@ fun InputView(
     ConstraintLayout(
         modifier = Modifier.fillMaxSize()
     ) {
-        val (inputArea, keyboardButton) = createRefs()
+        val (inputArea, pasteButton, keyboardButton) = createRefs()
 
         TextField(
             value = textFieldValue,
@@ -78,6 +79,14 @@ fun InputView(
                     style = inputViewTextStyle(Color(0xFFA3ADB5))
                 )
             }
+        )
+
+        PasteButtonContainer(
+            pasteButtonContainerModifier = Modifier
+                .constrainAs(pasteButton) {
+                    centerVerticallyTo(inputArea)
+                    start.linkTo(inputArea.start)
+                }
         )
 
         // TODO: hide on click
@@ -104,8 +113,11 @@ fun pasteButtonColors() =
     ButtonDefaults.buttonColors(containerColor = MaterialTheme.colorScheme.tertiary)
 
 @Composable
-fun PasteButtonContainer() {
-    Row {
+fun PasteButtonContainer(pasteButtonContainerModifier: Modifier) {
+    Row(
+        modifier = pasteButtonContainerModifier,
+        verticalAlignment = Alignment.CenterVertically
+    ) {
         Button(
             onClick = { /*TODO*/ },
             modifier = Modifier
