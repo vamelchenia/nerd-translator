@@ -76,6 +76,7 @@ fun InputView(
             }
         )
 
+        // TODO: hide on click
         IconButton(
             onClick = { /*TODO*/ },
             modifier = Modifier
