@@ -82,11 +82,10 @@ fun InputView(
             }
         )
 
-        // TODO: fix placement
         PasteButtonContainer(
             pasteButtonContainerModifier = Modifier
                 .constrainAs(pasteButton) {
-                    centerVerticallyTo(inputArea)
+                    top.linkTo(inputArea.top, margin = 70.dp)
                     start.linkTo(inputArea.start)
                 }
         )
