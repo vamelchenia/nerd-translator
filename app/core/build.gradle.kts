@@ -68,6 +68,7 @@ dependencies {
     api("androidx.compose.ui:ui-tooling-preview:$compose_version")
     api("androidx.compose.material3:material3:$material3_version")
     api("androidx.compose.material:material:$compose_version")
+    api("androidx.constraintlayout:constraintlayout-compose:1.0.1")
 
     api("androidx.legacy:legacy-support-v4:1.0.0")
     api("androidx.lifecycle:lifecycle-runtime-ktx:$lifecycle_ktx_version")
