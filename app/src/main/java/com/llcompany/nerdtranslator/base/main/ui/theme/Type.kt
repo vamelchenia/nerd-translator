@@ -12,6 +12,7 @@ private val defaultLetterSpacing = 0.5.sp
 
 // Set of Material typography styles to start with
 val Typography = Typography(
+    // bodyLarge style is for short source text
     bodyLarge = TextStyle(
         fontFamily = FontFamily(interFont),
         fontWeight = FontWeight.Normal,
@@ -19,6 +20,7 @@ val Typography = Typography(
         lineHeight = 24.sp,
         letterSpacing = defaultLetterSpacing
     ),
+    // bodyMedium is for long source text
     bodyMedium = TextStyle(
         fontFamily = FontFamily(interFont),
         fontWeight = FontWeight.Normal,
@@ -26,6 +28,7 @@ val Typography = Typography(
         lineHeight = 24.sp,
         letterSpacing = defaultLetterSpacing
     ),
+    // headlineLarge style is for titles of screens (Create a tag, Select tags to duplicate, etc.)
     headlineLarge = TextStyle(
         fontFamily = FontFamily(interFont),
         fontWeight = FontWeight.SemiBold,
@@ -33,20 +36,4 @@ val Typography = Typography(
         lineHeight = 28.sp,
         letterSpacing = defaultLetterSpacing
     )
-    /* Other default text styles to override
-    titleLarge = TextStyle(
-        fontFamily = FontFamily.Default,
-        fontWeight = FontWeight.Normal,
-        fontSize = 22.sp,
-        lineHeight = 28.sp,
-        letterSpacing = 0.sp
-    ),
-    labelSmall = TextStyle(
-        fontFamily = FontFamily.Default,
-        fontWeight = FontWeight.Medium,
-        fontSize = 11.sp,
-        lineHeight = 16.sp,
-        letterSpacing = 0.5.sp
-    )
-    */
 )
