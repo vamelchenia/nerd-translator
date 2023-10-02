@@ -8,6 +8,7 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.sp
 
 private val interFont = Font(com.example.mainscreen.R.font.inter_black)
+private val defaultLetterSpacing = 0.5.sp
 
 // Set of Material typography styles to start with
 val Typography = Typography(
@@ -16,21 +17,21 @@ val Typography = Typography(
         fontWeight = FontWeight.Normal,
         fontSize = 20.sp,
         lineHeight = 24.sp,
-        letterSpacing = 0.5.sp
+        letterSpacing = defaultLetterSpacing
     ),
     bodyMedium = TextStyle(
         fontFamily = FontFamily(interFont),
         fontWeight = FontWeight.Normal,
         fontSize = 16.sp,
         lineHeight = 24.sp,
-        letterSpacing = 0.5.sp
+        letterSpacing = defaultLetterSpacing
     ),
     headlineLarge = TextStyle(
         fontFamily = FontFamily(interFont),
         fontWeight = FontWeight.SemiBold,
         fontSize = 20.sp,
         lineHeight = 28.sp,
-        letterSpacing = 0.5.sp
+        letterSpacing = defaultLetterSpacing
     )
     /* Other default text styles to override
     titleLarge = TextStyle(
