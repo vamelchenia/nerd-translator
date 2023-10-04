@@ -58,7 +58,8 @@ fun LanguageSelector(
 
             Text(
                 text = state.languageName,
-                color = textColor
+                color = textColor,
+                style = MaterialTheme.typography.bodySmall
             )
 
             val iconPainter = when {

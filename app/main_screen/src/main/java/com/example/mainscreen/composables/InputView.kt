@@ -2,10 +2,9 @@ package com.example.mainscreen.composables
 
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.fillMaxSize
-import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
-import androidx.compose.foundation.layout.width
+import androidx.compose.foundation.layout.wrapContentSize
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material3.Button
 import androidx.compose.material3.ButtonDefaults
@@ -26,10 +25,8 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
-import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.text.input.TextFieldValue
 import androidx.compose.ui.unit.dp
-import androidx.compose.ui.unit.sp
 import androidx.constraintlayout.compose.ConstraintLayout
 import com.example.mainscreen.R
 
@@ -45,9 +42,7 @@ fun defaultTextFieldColors() =
 @Composable
 fun inputViewTextStyle(
     textColor: Color = Color(0xFF001F35)
-) = TextStyle(
-    fontSize = 20.sp,
-    lineHeight = 28.sp,
+) = MaterialTheme.typography.bodyLarge.copy(
     color = textColor
 )
 
@@ -77,7 +72,8 @@ fun InputView(
             placeholder = {
                 Text(
                     text = stringResource(R.string.input_view_hint),
-                    style = inputViewTextStyle(Color(0xFFA3ADB5))
+                    style = inputViewTextStyle(Color(0xFFA3ADB5)),
+                    modifier = Modifier.padding(horizontal = 8.dp, vertical = 8.dp)
                 )
             }
         )
@@ -122,20 +118,21 @@ fun PasteButtonContainer(pasteButtonContainerModifier: Modifier) {
         Button(
             onClick = { /*TODO*/ },
             modifier = Modifier
-                .padding(8.dp)
-                .width(90.dp)
-                .height(36.dp)
+                .padding(start = 20.dp, top = 9.dp, end = 8.dp, bottom = 9.dp)
+                .wrapContentSize()
             ,
             colors = pasteButtonColors()
         ) {
-            Text(stringResource(R.string.paste_button_text))
+            Text(
+                text = stringResource(R.string.paste_button_text),
+                style = MaterialTheme.typography.titleSmall,
+            )
         }
 
         Text(
             text = stringResource(R.string.paste_button_hint),
-            style = TextStyle(
-                fontSize = 12.sp,
-                color = Color(0xFFA3ADB5),
+            style = MaterialTheme.typography.displaySmall.copy(
+                color = Color(0xFFA3ADB5)
             )
         )
     }
