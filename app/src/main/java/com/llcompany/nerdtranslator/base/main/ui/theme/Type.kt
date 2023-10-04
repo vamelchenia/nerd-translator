@@ -29,7 +29,7 @@ val Typography = Typography(
         fontFamily = interFontFamily,
         fontWeight = FontWeight.Normal,
         fontSize = 20.sp,
-        lineHeight = 24.sp,
+        lineHeight = 28.sp,
         letterSpacing = defaultLetterSpacing
     ),
     // bodyMedium is for long source text
