@@ -21,7 +21,7 @@ fun MainScreen(
     ) {
         MainScreenImage()
 
-        val selectorsPaddingValues = PaddingValues(0.dp, 0.dp, 0.dp, 8.dp)
+        val selectorsPaddingValues = PaddingValues(0.dp, 0.dp, 0.dp, 14.dp)
 
         LanguageSelectorRow(
             sourceState = state.sourceSelectorState,

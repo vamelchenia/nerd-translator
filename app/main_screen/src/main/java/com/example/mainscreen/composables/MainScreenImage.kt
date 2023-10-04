@@ -13,13 +13,12 @@ import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
-import androidx.compose.ui.unit.sp
 import com.example.mainscreen.R
 
 @Composable
 fun MainScreenImage() {
-    val topHintMargins = PaddingValues(0.dp, 8.dp, 0.dp, 8.dp)
-    val bottomHintMargins = PaddingValues(0.dp, 0.dp, 0.dp, 8.dp)
+    val topHintMargins = PaddingValues(0.dp, 10.dp, 0.dp, 12.dp)
+    val bottomHintMargins = PaddingValues(0.dp, 0.dp, 0.dp, 24.dp)
 
     Column(
         horizontalAlignment = Alignment.CenterHorizontally
@@ -32,8 +31,7 @@ fun MainScreenImage() {
         Text(
             text = stringResource(R.string.under_image_hint_primary),
             color = MaterialTheme.colorScheme.secondary,
-            fontSize = 14.sp,
-            lineHeight = 16.sp,
+            style = MaterialTheme.typography.labelLarge,
             textAlign = TextAlign.Center,
             modifier = Modifier.padding(topHintMargins)
         )
@@ -41,8 +39,7 @@ fun MainScreenImage() {
         Text(
             text = stringResource(R.string.under_image_hint_secondary),
             color = MaterialTheme.colorScheme.tertiary,
-            fontSize = 12.sp,
-            lineHeight = 14.sp,
+            style = MaterialTheme.typography.labelMedium,
             textAlign = TextAlign.Center,
             modifier = Modifier.padding(bottomHintMargins)
         )
