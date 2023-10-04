@@ -17,8 +17,8 @@ import com.example.mainscreen.R
 
 @Composable
 fun MainScreenImage() {
-    val topHintMargins = PaddingValues(0.dp, 8.dp, 0.dp, 8.dp)
-    val bottomHintMargins = PaddingValues(0.dp, 0.dp, 0.dp, 8.dp)
+    val topHintMargins = PaddingValues(0.dp, 10.dp, 0.dp, 12.dp)
+    val bottomHintMargins = PaddingValues(0.dp, 0.dp, 0.dp, 24.dp)
 
     Column(
         horizontalAlignment = Alignment.CenterHorizontally
