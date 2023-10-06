@@ -1,6 +1,7 @@
 package com.llcompany.nerdtranslator.base.main.ui.theme
 
 import androidx.compose.material3.Typography
+import androidx.compose.ui.text.PlatformTextStyle
 import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.text.font.Font
 import androidx.compose.ui.text.font.FontFamily
@@ -8,7 +9,7 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.sp
 import com.llcompany.nerdtranslator.R
 
-private val defaultLetterSpacing = 0.5.sp
+private val defaultLetterSpacing = 0.1.sp
 
 private val interFontFamily = FontFamily(
     Font(R.font.inter_thin, FontWeight.Thin),
@@ -30,7 +31,8 @@ val Typography = Typography(
         fontWeight = FontWeight.Normal,
         fontSize = 20.sp,
         lineHeight = 28.sp,
-        letterSpacing = defaultLetterSpacing
+        letterSpacing = defaultLetterSpacing,
+        platformStyle = defaultPlatformTextStyle()
     ),
     // bodyMedium is for long source text
     bodyMedium = TextStyle(
@@ -38,14 +40,16 @@ val Typography = Typography(
         fontWeight = FontWeight.Normal,
         fontSize = 16.sp,
         lineHeight = 24.sp,
-        letterSpacing = defaultLetterSpacing
+        letterSpacing = defaultLetterSpacing,
+        platformStyle = defaultPlatformTextStyle()
     ),
     // bodySmall is for language selector text
     bodySmall = TextStyle(
         fontFamily = interFontFamily,
         fontWeight = FontWeight.SemiBold,
         fontSize = 12.sp,
-        letterSpacing = defaultLetterSpacing
+        letterSpacing = defaultLetterSpacing,
+        platformStyle = defaultPlatformTextStyle()
     ),
     // displayLarge is for short destination text
     displayLarge = TextStyle(
@@ -53,7 +57,8 @@ val Typography = Typography(
         fontWeight = FontWeight.SemiBold,
         fontSize = 20.sp,
         lineHeight = 24.sp,
-        letterSpacing = defaultLetterSpacing
+        letterSpacing = defaultLetterSpacing,
+        platformStyle = defaultPlatformTextStyle()
     ),
     // displayMedium is for long destination text
     displayMedium = TextStyle(
@@ -61,7 +66,8 @@ val Typography = Typography(
         fontWeight = FontWeight.SemiBold,
         fontSize = 16.sp,
         lineHeight = 24.sp,
-        letterSpacing = defaultLetterSpacing
+        letterSpacing = defaultLetterSpacing,
+        platformStyle = defaultPlatformTextStyle()
     ),
     // displaySmall is for "create a tag and use it..." hint under the input view
     displaySmall = TextStyle(
@@ -69,7 +75,8 @@ val Typography = Typography(
         fontWeight = FontWeight.Normal,
         fontSize = 12.sp,
         lineHeight = 28.sp,
-        letterSpacing = defaultLetterSpacing
+        letterSpacing = defaultLetterSpacing,
+        platformStyle = defaultPlatformTextStyle()
     ),
     // titleLarge is for titles of screens (Create a tag, Select tags to duplicate, etc.)
     titleLarge = TextStyle(
@@ -77,48 +84,58 @@ val Typography = Typography(
         fontWeight = FontWeight.SemiBold,
         fontSize = 20.sp,
         lineHeight = 28.sp,
-        letterSpacing = defaultLetterSpacing
+        letterSpacing = defaultLetterSpacing,
+        platformStyle = defaultPlatformTextStyle()
     ),
     // titleMedium is for tags (e.g. on "select tags" screen)
     titleMedium = TextStyle(
         fontFamily = interFontFamily,
         fontWeight = FontWeight.Normal,
         fontSize = 16.sp,
-        letterSpacing = defaultLetterSpacing
+        letterSpacing = defaultLetterSpacing,
+        platformStyle = defaultPlatformTextStyle()
     ),
     // titleSmall is for filled buttons (e.g. "create", "done", "paste")
     titleSmall = TextStyle(
         fontFamily = interFontFamily,
         fontWeight = FontWeight.Bold,
         fontSize = 15.sp,
-        letterSpacing = defaultLetterSpacing
+        platformStyle = defaultPlatformTextStyle()
     ),
     // labelLarge is for hint labels (e.g. under pre-translate image)
     labelLarge = TextStyle(
         fontFamily = interFontFamily,
         fontWeight = FontWeight.Medium,
         fontSize = 14.sp,
-        letterSpacing = defaultLetterSpacing
+        letterSpacing = defaultLetterSpacing,
+        platformStyle = defaultPlatformTextStyle()
     ),
     // labelMedium is for smaller hint labels (e.g. under pre-translate image)
     labelMedium = TextStyle(
         fontFamily = interFontFamily,
         fontWeight = FontWeight.Medium,
         fontSize = 12.sp,
-        letterSpacing = defaultLetterSpacing
+        letterSpacing = defaultLetterSpacing,
+        platformStyle = defaultPlatformTextStyle()
     ),
     // headlineMedium is for dialogs texts
     headlineMedium = TextStyle(
         fontFamily = interFontFamily,
         fontWeight = FontWeight.Normal,
         fontSize = 13.sp,
-        letterSpacing = defaultLetterSpacing
+        letterSpacing = defaultLetterSpacing,
+        platformStyle = defaultPlatformTextStyle()
     ),
     // headlineSmall is for extra small hints (e.g. like "Currently you add to favorites as tag")
     headlineSmall = TextStyle(
         fontFamily = interFontFamily,
         fontWeight = FontWeight.Normal,
         fontSize = 11.sp,
-        letterSpacing = defaultLetterSpacing
+        letterSpacing = defaultLetterSpacing,
+        platformStyle = defaultPlatformTextStyle()
     ),
+)
+
+private fun defaultPlatformTextStyle() = PlatformTextStyle(
+    includeFontPadding = false,
 )

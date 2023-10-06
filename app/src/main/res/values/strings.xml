@@ -15,7 +15,7 @@
     <string name="exitButtonImageViewDescription">Exit</string>
     <string name="swapArrowsImageViewDescription">Swap</string>
     <string name="translateNavigationImageViewDescription">Translate</string>
-    <string name="favoritesNavigationImageViewDescription">Favorites</string>
+    <string name="favouritesNavigationImageViewDescription">Favourites</string>
     <string name="settingsNavigationImageViewDescription">Settings</string>
     <string name="exclamationPointImageViewDescription">Lost connection</string>
     <string name="title_main_screen">Main Screen</string>

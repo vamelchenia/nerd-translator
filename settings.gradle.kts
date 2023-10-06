@@ -8,6 +8,7 @@ dependencyResolutionManagement {
     }
 }
 rootProject.name = "NerdTranslator"
-include(":app:main_screen")
 include(":app:core")
-include(":app:tags_overview_screen")
+include(":app:main_screen")
+include(":app:favourites_screen")
+include(":app:create_tag_sheet")

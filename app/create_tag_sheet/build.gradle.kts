@@ -1,23 +1,17 @@
 plugins {
-    id("com.android.application")
+    id("com.android.library")
     id("org.jetbrains.kotlin.android")
 }
 
 android {
-    namespace = "com.llcompany.nerdtranslator"
+    namespace = "com.example.createtagsheet"
     compileSdk = 34
 
     defaultConfig {
-        applicationId = "com.llcompany.nerdtranslator"
         minSdk = 24
         targetSdk = 34
-        versionCode = 1
-        versionName = "1.0"
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
-        vectorDrawables {
-            useSupportLibrary = true
-        }
     }
 
     buildTypes {
@@ -45,23 +39,9 @@ android {
 
     kotlinOptions {
         jvmTarget = "1.8"
-        freeCompilerArgs += "-opt-in=androidx.compose.material3.ExperimentalMaterial3Api"
-    }
-
-    composeOptions {
-        kotlinCompilerExtensionVersion = "1.5.1"
-    }
-
-    packagingOptions {
-        resources {
-            excludes += "/META-INF/{AL2.0,LGPL2.1}"
-        }
     }
 }
 
 dependencies {
     implementation(project(":app:core"))
-    implementation(project(":app:main_screen"))
-    implementation(project(":app:favourites_screen"))
-    implementation(project(":app:create_tag_sheet"))
 }

@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">FavouritesScreen</string>
+    <string name="favourites_screen_image">Favourites Screen Image</string>
+    <string name="under_image_hint">Here will be your added words \nas soon as you create tags and start \nadding to favourites.</string>
+</resources>
