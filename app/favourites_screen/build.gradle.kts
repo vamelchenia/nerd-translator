@@ -1,10 +1,10 @@
 plugins {
-    id("com.android.application")
+    id("com.android.library")
     id("org.jetbrains.kotlin.android")
 }
 
 android {
-    namespace = "com.example.tags_overview_screen"
+    namespace = "com.example.favouritesscreen"
     compileSdk = 34
 
     defaultConfig {
