@@ -9,13 +9,11 @@ import androidx.compose.material3.ButtonDefaults
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
-import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
-import androidx.compose.ui.text.PlatformTextStyle
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
-import androidx.compose.ui.unit.sp
-import com.example.favouritesscreen.FavouritesScreenContract
+import com.example.favouritesscreen.R
 
 private val buttonColorPrimaryNormal = Color(0xFFF2575D)
 private val buttonTextColor = Color(0xFFFFFFFF)
@@ -32,22 +30,22 @@ private fun createButtonColors() = ButtonDefaults.buttonColors(
 )
 
 @Composable
-fun CreateButton(state: FavouritesScreenContract.ButtonState) {
-
-    Button(onClick = {},
+fun CreateButton() {
+    Button(
+        onClick = {},
         contentPadding = buttonPaddings,
         shape = RoundedCornerShape(size = 32.dp),
         modifier = Modifier
             .width(137.dp)
             .height(48.dp),
-        colors = createButtonColors(),
-        content = {
-            Text(
-                text = state.buttonName,
-                modifier = Modifier
-                    .width(77.dp)
-                    .height(18.dp),
-                style = createButtonTextStyle(),
-            )
-        })
+        colors = createButtonColors()
+    ) {
+        Text(
+            text = stringResource(R.string.create_button_name),
+            modifier = Modifier
+                .width(77.dp)
+                .height(18.dp),
+            style = createButtonTextStyle(),
+        )
+    }
 }

@@ -1,22 +1,5 @@
 <resources>
-    <string name="appName">NerdTranslator</string>-->
-
-    <string name="welcomeTextView">Let\'s translate!</string>
-    <string name="welcomeYearTextView">2022</string>
-
-    <string name="lostConnectionTextView">Please check your Internet connection and try again</string>
-
-    <string name="translatePlaceHolder">Enter your text here</string>
-    <string name="translateTextViewExample">book</string>
-    <string name="translateVerbTextViewExample">Verb</string>
-    <string name="translateNounTextViewExample">Noun</string>
-
-    <string name="tagsSpinnerDescription">Set or create tag</string>
-    <string name="exitButtonImageViewDescription">Exit</string>
-    <string name="swapArrowsImageViewDescription">Swap</string>
-    <string name="translateNavigationImageViewDescription">Translate</string>
-    <string name="favouritesNavigationImageViewDescription">Favourites</string>
-    <string name="settingsNavigationImageViewDescription">Settings</string>
-    <string name="exclamationPointImageViewDescription">Lost connection</string>
+    <string name="app_name">NerdTranslator</string>-->
     <string name="title_main_screen">Main Screen</string>
+    <string name="title_favourites_screen">Favourites Screen</string>
 </resources>

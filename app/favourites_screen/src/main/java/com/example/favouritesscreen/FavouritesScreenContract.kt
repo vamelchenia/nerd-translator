@@ -10,15 +10,8 @@ class FavouritesScreenContract {
     }
 
     data class State(
-        val isValid: Boolean,
-        val buttonState: ButtonState
+        val isValid: Boolean
     ) : ViewState
-
-    data class ButtonState(
-        val buttonName: String,
-        val onClick: () -> Unit = {},
-        val isError: Boolean = false
-        )
 
     sealed class Effect : ViewEffect {
 
