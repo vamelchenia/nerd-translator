@@ -18,10 +18,11 @@ class MainActivity : ComponentActivity() {
         setContent {
             NerdTranslatorTheme {
                 Surface(
-                    modifier = Modifier.fillMaxSize(),
-                    color = MaterialTheme.colorScheme.surface
+                    modifier = Modifier.fillMaxSize()
                 ) {
-                    Scaffold { paddingValues ->
+                    Scaffold(
+                        containerColor = MaterialTheme.colorScheme.surface
+                    ) { paddingValues ->
                         NavigationHolder(
                             navHolderModifier = Modifier.padding(paddingValues)
                         )
