@@ -1,6 +1,9 @@
 package com.llcompany.nerdtranslator.base.navigation
 
+import androidx.compose.foundation.layout.padding
+import androidx.compose.material3.Scaffold
 import androidx.compose.runtime.Composable
+import androidx.compose.ui.Modifier
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
@@ -10,29 +13,31 @@ fun NavigationHolder() {
 
     val navController = rememberNavController()
 
-    NavHost(
-        navController,
-        //startDestination = Navigation.Routes.MAIN_SCREEN
-        startDestination = Navigation.Routes.FAVOURITES_SCREEN
-    ) {
-        composable(
-            route = Navigation.Routes.MAIN_SCREEN
+    Scaffold { paddingValues ->
+        NavHost(
+            navController,
+            startDestination = Navigation.Routes.MAIN_SCREEN,
+            modifier = Modifier.padding(paddingValues)
         ) {
-            MainScreenDestination()
-        }
+            composable(
+                route = Navigation.Routes.MAIN_SCREEN
+            ) {
+                MainScreenDestination()
+            }
 
-        composable(
-            route = Navigation.Routes.FAVOURITES_SCREEN
-        ) {
-            FavouritesScreenDestination()
-        }
+            composable(
+                route = Navigation.Routes.FAVOURITES_SCREEN
+            ) {
+                FavouritesScreenDestination()
+            }
 
-        composable(
-            route = Navigation.Routes.CREATE_TAG_SHEET
-        ) {
-            // Create Tag Screen Destination Call
-        }
+            composable(
+                route = Navigation.Routes.CREATE_TAG_SHEET
+            ) {
+                // Create Tag Screen Destination Call
+            }
 
+        }
     }
 }
 
