@@ -6,6 +6,7 @@ import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.text.font.Font
 import androidx.compose.ui.text.font.FontFamily
 import androidx.compose.ui.text.font.FontWeight
+import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.sp
 import com.llcompany.nerdtranslator.R
 
@@ -24,6 +25,10 @@ private val interFontFamily = FontFamily(
     Font(R.font.inter_bold, FontWeight.Bold),
     Font(R.font.inter_extra_bold, FontWeight.ExtraBold),
     Font(R.font.inter_black, FontWeight.Black),
+)
+
+private val robotoFontFamily = FontFamily(
+    Font(R.font.robotoslab_semibold, FontWeight.SemiBold)
 )
 
 // Set of Material typography styles to start with
@@ -137,6 +142,15 @@ val Typography = Typography(
         letterSpacing = defaultLetterSpacing,
         platformStyle = defaultPlatformTextStyle
     ),
+    headlineLarge = TextStyle(
+        fontFamily = robotoFontFamily,
+        fontWeight = FontWeight.SemiBold,
+        fontSize = 18.sp,
+        letterSpacing = defaultLetterSpacing,
+        platformStyle = defaultPlatformTextStyle,
+        lineHeight = 28.sp,
+        textAlign = TextAlign.Center
+    )
 )
 
 private fun defaultPlatformTextStyle(includePadding: Boolean = INCLUDE_FONT_PADDING) = PlatformTextStyle(
