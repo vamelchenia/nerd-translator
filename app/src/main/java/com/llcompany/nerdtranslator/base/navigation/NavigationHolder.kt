@@ -12,7 +12,8 @@ fun NavigationHolder() {
 
     NavHost(
         navController,
-        startDestination = Navigation.Routes.MAIN_SCREEN
+        //startDestination = Navigation.Routes.MAIN_SCREEN
+        startDestination = Navigation.Routes.FAVOURITES_SCREEN
     ) {
         composable(
             route = Navigation.Routes.MAIN_SCREEN
@@ -21,16 +22,17 @@ fun NavigationHolder() {
         }
 
         composable(
-            route = Navigation.Routes.CREATE_TAG_SCREEN
+            route = Navigation.Routes.FAVOURITES_SCREEN
+        ) {
+            FavouritesScreenDestination()
+        }
+
+        composable(
+            route = Navigation.Routes.CREATE_TAG_SHEET
         ) {
             // Create Tag Screen Destination Call
         }
 
-        composable(
-            route = Navigation.Routes.TAGS_OVERVIEW_SCREEN
-        ) {
-            // Tags Overview Screen Destination Call
-        }
     }
 }
 
@@ -38,7 +40,7 @@ object Navigation {
 
     object Routes {
         const val MAIN_SCREEN = "main"
-        const val CREATE_TAG_SCREEN = "create_tag"
-        const val TAGS_OVERVIEW_SCREEN = "tags_overview"
+        const val FAVOURITES_SCREEN = "favourites"
+        const val CREATE_TAG_SHEET = "create_tag"
     }
 }
