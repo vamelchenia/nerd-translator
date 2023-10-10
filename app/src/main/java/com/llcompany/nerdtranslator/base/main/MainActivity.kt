@@ -9,6 +9,7 @@ import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Scaffold
 import androidx.compose.material3.Surface
 import androidx.compose.ui.Modifier
+import com.llcompany.nerdtranslator.base.main.ui.composables.NerdTranslatorAppBar
 import com.llcompany.nerdtranslator.base.main.ui.theme.NerdTranslatorTheme
 import com.llcompany.nerdtranslator.base.navigation.NavigationHolder
 
@@ -21,7 +22,8 @@ class MainActivity : ComponentActivity() {
                     modifier = Modifier.fillMaxSize()
                 ) {
                     Scaffold(
-                        containerColor = MaterialTheme.colorScheme.surface
+                        containerColor = MaterialTheme.colorScheme.surface,
+                        topBar = { NerdTranslatorAppBar() }
                     ) { paddingValues ->
                         NavigationHolder(
                             navHolderModifier = Modifier.padding(paddingValues)
