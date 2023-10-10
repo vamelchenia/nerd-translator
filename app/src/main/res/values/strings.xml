@@ -2,4 +2,7 @@
     <string name="app_name">NerdTranslator</string>-->
     <string name="title_main_screen">Main Screen</string>
     <string name="title_favourites_screen">Favourites Screen</string>
+    <string name="top_app_bar_title">Nerd Translator</string>
+    <string name="favourites_icon_content_desc">Go to Favourites</string>
+    <string name="settings_icon_content_desc">Go to Settings</string>
 </resources>

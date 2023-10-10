@@ -1,19 +1,20 @@
 package com.llcompany.nerdtranslator.base.navigation
 
 import androidx.compose.runtime.Composable
+import androidx.compose.ui.Modifier
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
 
 @Composable
-fun NavigationHolder() {
+fun NavigationHolder(navHolderModifier: Modifier) {
 
     val navController = rememberNavController()
 
     NavHost(
         navController,
-        //startDestination = Navigation.Routes.MAIN_SCREEN
-        startDestination = Navigation.Routes.FAVOURITES_SCREEN
+        startDestination = Navigation.Routes.MAIN_SCREEN,
+        modifier = navHolderModifier
     ) {
         composable(
             route = Navigation.Routes.MAIN_SCREEN
@@ -32,7 +33,6 @@ fun NavigationHolder() {
         ) {
             // Create Tag Screen Destination Call
         }
-
     }
 }
 
