@@ -9,6 +9,9 @@ val viewModelModule =
     module {
         viewModel {
             MainScreenViewModel()
+        }
+
+        viewModel {
             FavouritesScreenViewModel()
         }
     }
