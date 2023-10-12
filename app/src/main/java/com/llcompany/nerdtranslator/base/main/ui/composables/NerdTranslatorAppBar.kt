@@ -6,17 +6,46 @@ import androidx.compose.material3.IconButton
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
 import com.llcompany.nerdtranslator.R
+import com.llcompany.nerdtranslator.base.main.TopAppBarContract
+import kotlinx.coroutines.flow.Flow
+import kotlinx.coroutines.flow.collect
+import kotlinx.coroutines.flow.onEach
 
 @Composable
-fun NerdTranslatorAppBar() {
+fun NerdTranslatorAppBar(
+    state: TopAppBarContract.State,
+    effectFlow: Flow<TopAppBarContract.Effect>?,
+    onEventSent: (event: TopAppBarContract.Event) -> Unit,
+    navigateToFavourites: () -> Unit,
+    navigateToSettings: () -> Unit,
+) {
+    LaunchedEffect(true) {
+        effectFlow?.onEach { effect ->
+            when (effect) {
+                is TopAppBarContract.Effect.Navigation.ToFavourites -> {
+                    navigateToFavourites()
+                }
+
+                is TopAppBarContract.Effect.Navigation.ToSettings -> {
+                    navigateToSettings()
+                }
+            }
+        }?.collect()
+    }
+
     CenterAlignedTopAppBar(
         title = { TopAppBarTitle() },
         actions = {
-            ActionButtonFavourites()
-            ActionButtonSettings()
+            ActionButtonFavourites {
+                onEventSent(TopAppBarContract.Event.FavouritesActionClick)
+            }
+            ActionButtonSettings {
+                onEventSent(TopAppBarContract.Event.SettingsActionClick)
+            }
         }
     )
 }
@@ -32,9 +61,9 @@ fun TopAppBarTitle() {
 }
 
 @Composable
-fun ActionButtonFavourites() {
+fun ActionButtonFavourites(onClickAction: () -> Unit) {
     IconButton(
-        onClick = { /*TODO*/ }
+        onClick = { onClickAction() }
     ) {
         Icon(
             painter = painterResource(R.drawable.icon_favourites),
@@ -45,9 +74,9 @@ fun ActionButtonFavourites() {
 }
 
 @Composable
-fun ActionButtonSettings() {
+fun ActionButtonSettings(onClickAction: () -> Unit) {
     IconButton(
-        onClick = { /*TODO*/ }
+        onClick = { onClickAction() }
     ) {
         Icon(
             painter = painterResource(R.drawable.icon_settings),
