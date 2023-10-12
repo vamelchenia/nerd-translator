@@ -15,12 +15,12 @@ class TopAppBarViewModel : BaseViewModel<
         when(event) {
             TopAppBarContract.Event.FavouritesActionClick -> {
                 applyEffect {
-                    TopAppBarContract.Effect.NavigateToFavourites
+                    TopAppBarContract.Effect.Navigation.ToFavourites
                 }
             }
             TopAppBarContract.Event.SettingsActionClick -> {
                 applyEffect {
-                    TopAppBarContract.Effect.NavigateToSettings
+                    TopAppBarContract.Effect.Navigation.ToSettings
                 }
             }
         }

@@ -15,8 +15,11 @@ class TopAppBarContract {
     object State : ViewState
 
     sealed class Effect : ViewEffect {
-        data object NavigateToFavourites : Effect()
 
-        data object NavigateToSettings : Effect()
+        sealed class Navigation : Effect() {
+            data object ToFavourites : Effect()
+
+            data object ToSettings : Effect()
+        }
     }
 }

@@ -9,14 +9,25 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
 import com.llcompany.nerdtranslator.R
+import com.llcompany.nerdtranslator.base.main.TopAppBarContract
+import kotlinx.coroutines.flow.Flow
 
 @Composable
-fun NerdTranslatorAppBar() {
+fun NerdTranslatorAppBar(
+    state: TopAppBarContract.State,
+    effectFlow: Flow<TopAppBarContract.Effect>?,
+    onEventSent: (event: TopAppBarContract.Event) -> Unit,
+    onNavigationRequested: () -> Unit
+) {
     CenterAlignedTopAppBar(
         title = { TopAppBarTitle() },
         actions = {
-            ActionButtonFavourites()
-            ActionButtonSettings()
+            ActionButtonFavourites {
+                onEventSent(TopAppBarContract.Event.FavouritesActionClick)
+            }
+            ActionButtonSettings {
+                onEventSent(TopAppBarContract.Event.SettingsActionClick)
+            }
         }
     )
 }
@@ -32,9 +43,9 @@ fun TopAppBarTitle() {
 }
 
 @Composable
-fun ActionButtonFavourites() {
+fun ActionButtonFavourites(onClickAction: () -> Unit) {
     IconButton(
-        onClick = { /*TODO*/ }
+        onClick = { onClickAction }
     ) {
         Icon(
             painter = painterResource(R.drawable.icon_favourites),
@@ -45,7 +56,7 @@ fun ActionButtonFavourites() {
 }
 
 @Composable
-fun ActionButtonSettings() {
+fun ActionButtonSettings(onClickAction: () -> Unit) {
     IconButton(
         onClick = { /*TODO*/ }
     ) {
