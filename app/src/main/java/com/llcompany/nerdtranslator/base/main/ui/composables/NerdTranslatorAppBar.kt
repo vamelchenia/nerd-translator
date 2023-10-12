@@ -20,14 +20,14 @@ fun NerdTranslatorAppBar(
     state: TopAppBarContract.State,
     effectFlow: Flow<TopAppBarContract.Effect>?,
     onEventSent: (event: TopAppBarContract.Event) -> Unit,
-    navigateToFavouries: () -> Unit,
+    navigateToFavourites: () -> Unit,
     navigateToSettings: () -> Unit,
 ) {
     LaunchedEffect(true) {
         effectFlow?.onEach { effect ->
             when (effect) {
                 is TopAppBarContract.Effect.Navigation.ToFavourites -> {
-                    navigateToFavouries()
+                    navigateToFavourites()
                 }
 
                 is TopAppBarContract.Effect.Navigation.ToSettings -> {

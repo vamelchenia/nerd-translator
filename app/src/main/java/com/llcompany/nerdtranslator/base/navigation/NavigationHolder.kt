@@ -26,7 +26,7 @@ fun NavigationHolder() {
                 state = appBarViewModel.getState().value,
                 effectFlow = appBarViewModel.currentEffect,
                 onEventSent = { appBarViewModel.onEventReceived(it) },
-                navigateToFavouries = { navController.navigateToFavourites() },
+                navigateToFavourites = { navController.navigateToFavourites() },
                 navigateToSettings = {}
             )
         }
