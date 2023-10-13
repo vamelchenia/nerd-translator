@@ -7,6 +7,10 @@ import org.koin.androidx.compose.getViewModel
 
 @Composable
 fun FavouritesScreenDestination() {
-    getViewModel<FavouritesScreenViewModel>()
-    FavouritesScreen()
+    val viewModel = getViewModel<FavouritesScreenViewModel>()
+    FavouritesScreen(
+        viewModel.getState().value,
+        viewModel.currentEffect,
+        onEventSent = { event -> viewModel.onEventReceived(event)  }
+    )
 }

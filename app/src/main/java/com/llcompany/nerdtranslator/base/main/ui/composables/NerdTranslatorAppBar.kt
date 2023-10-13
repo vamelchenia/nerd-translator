@@ -22,6 +22,7 @@ fun NerdTranslatorAppBar(
     onEventSent: (event: TopAppBarContract.Event) -> Unit,
     navigateToFavourites: () -> Unit,
     navigateToSettings: () -> Unit,
+    navigateToBackSheet: () -> Unit,
 ) {
     LaunchedEffect(true) {
         effectFlow?.onEach { effect ->
@@ -32,6 +33,10 @@ fun NerdTranslatorAppBar(
 
                 is TopAppBarContract.Effect.Navigation.ToSettings -> {
                     navigateToSettings()
+                }
+
+                is TopAppBarContract.Effect.Navigation.ToBackSheet -> {
+                    navigateToBackSheet()
                 }
             }
         }?.collect()
@@ -46,6 +51,9 @@ fun NerdTranslatorAppBar(
             ActionButtonSettings {
                 onEventSent(TopAppBarContract.Event.SettingsActionClick)
             }
+//            ActionButtonBackSheet {
+//                onEventSent(TopAppBarContract.Event.BackSheetActionClick)
+//            }
         }
     )
 }
@@ -80,7 +88,20 @@ fun ActionButtonSettings(onClickAction: () -> Unit) {
     ) {
         Icon(
             painter = painterResource(R.drawable.icon_settings),
-            contentDescription = stringResource(R.string.favourites_icon_content_desc),
+            contentDescription = stringResource(R.string.settings_icon_content_desc),
+            tint = MaterialTheme.colorScheme.onSurface
+        )
+    }
+}
+
+@Composable
+fun ActionButtonBackSheet(onClickAction: () -> Unit) {
+    IconButton(
+        onClick = { onClickAction() }
+    ) {
+        Icon(
+            painter = painterResource(R.drawable.icon_back_sheet),
+            contentDescription = stringResource(R.string.back_sheet_icon_content_desc),
             tint = MaterialTheme.colorScheme.onSurface
         )
     }

@@ -27,7 +27,8 @@ fun NavigationHolder() {
                 effectFlow = appBarViewModel.currentEffect,
                 onEventSent = { appBarViewModel.onEventReceived(it) },
                 navigateToFavourites = { navController.navigateToFavourites() },
-                navigateToSettings = {}
+                navigateToSettings = {},
+                navigateToBackSheet = { navController.navigateToBackSheet() }
             )
         }
     ) { paddingValues ->
@@ -69,5 +70,11 @@ object Navigation {
 fun NavController.navigateToFavourites() {
     navigate(
         route = Navigation.Routes.FAVOURITES_SCREEN
+    )
+}
+
+fun NavController.navigateToBackSheet() {
+    navigate(
+        route = Navigation.Routes.MAIN_SCREEN
     )
 }

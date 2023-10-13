@@ -10,6 +10,8 @@ class TopAppBarContract {
         data object FavouritesActionClick : Event()
 
         data object SettingsActionClick : Event()
+
+        data object BackSheetActionClick : Event()
     }
 
     object State : ViewState
@@ -20,6 +22,8 @@ class TopAppBarContract {
             data object ToFavourites : Effect()
 
             data object ToSettings : Effect()
+
+            data object ToBackSheet : Effect()
         }
     }
 }

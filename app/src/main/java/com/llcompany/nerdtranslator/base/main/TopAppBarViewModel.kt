@@ -23,6 +23,11 @@ class TopAppBarViewModel : BaseViewModel<
                     TopAppBarContract.Effect.Navigation.ToSettings
                 }
             }
+            TopAppBarContract.Event.BackSheetActionClick -> {
+                applyEffect {
+                    TopAppBarContract.Effect.Navigation.ToBackSheet
+                }
+            }
         }
     }
 }
