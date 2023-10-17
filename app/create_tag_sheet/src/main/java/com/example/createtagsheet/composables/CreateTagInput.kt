@@ -20,6 +20,7 @@ import androidx.compose.runtime.remember
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.graphics.SolidColor
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.input.TextFieldValue
 import androidx.compose.ui.text.style.TextAlign
@@ -33,16 +34,17 @@ private val textMargins = PaddingValues(15.dp, 10.dp, 15.dp, 10.dp)
 private val borderColor = Color(0xFFF2575D)
 private val textColor = Color(0xFF001F35)
 private val labelColor = Color(0xFFF2575D)
+private val cursorColor = Color(0xFF99AEBD)
 private val roundingSize = 8.dp
 
 @Composable
-fun inputViewTextStyle(defaultTextColor: Color = textColor) =
+private fun textStyle(defaultTextColor: Color = textColor) =
     MaterialTheme.typography.bodyLarge.copy(
         color = defaultTextColor
     )
 
 @Composable
-private fun inputViewLabelTextStyle(defaultTextColor: Color = labelColor) =
+private fun labelTextStyle(defaultTextColor: Color = labelColor) =
     MaterialTheme.typography.titleMedium.copy(
         fontSize = 12.sp,
         textAlign = TextAlign.Center,
@@ -50,7 +52,7 @@ private fun inputViewLabelTextStyle(defaultTextColor: Color = labelColor) =
     )
 
 @Composable
-fun CreateTagInputView() {
+fun CreateTagInput() {
     var textFieldValue by remember { mutableStateOf(TextFieldValue("")) }
 
     ConstraintLayout(
@@ -64,15 +66,19 @@ fun CreateTagInputView() {
                 .width(286.dp)
                 .height(48.dp)
                 .border(1.dp, borderColor, RoundedCornerShape(roundingSize))
-                .background(MaterialTheme.colorScheme.background)
+                .background(
+                    MaterialTheme.colorScheme.background,
+                    shape = RoundedCornerShape(roundingSize)
+                ),
         ) {
             BasicTextField(
                 value = textFieldValue,
                 onValueChange = { textFieldValue = it },
-                textStyle = inputViewTextStyle(),
+                textStyle = textStyle(),
                 modifier = Modifier
                     .fillMaxSize()
-                    .padding(textMargins)
+                    .padding(textMargins),
+                cursorBrush = SolidColor(cursorColor),
             )
         }
 
@@ -82,7 +88,7 @@ fun CreateTagInputView() {
                 .height(15.dp)
                 .offset(10.dp, 48.dp),
             text = stringResource(R.string.create_tag_label),
-            style = inputViewLabelTextStyle()
+            style = labelTextStyle()
         )
     }
 }

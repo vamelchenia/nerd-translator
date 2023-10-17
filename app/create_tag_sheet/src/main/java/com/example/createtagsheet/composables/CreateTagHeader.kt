@@ -23,7 +23,7 @@ private val labelColor = Color(0xFF001F35)
 private val hintColor = Color(0xFF5A798F)
 
 @Composable
-private fun labelTextStyle(textColor: Color = labelColor) = MaterialTheme.typography.titleLarge.copy(
+private fun titleTextStyle(textColor: Color = labelColor) = MaterialTheme.typography.titleLarge.copy(
     textAlign = TextAlign.Center,
     color = textColor,
 )
@@ -36,7 +36,7 @@ private fun hintTextStyle(textColor: Color = hintColor) = MaterialTheme.typograp
 )
 
 @Composable
-fun CreateTagImage() {
+fun CreateTagHeader() {
     Column(
         horizontalAlignment = Alignment.CenterHorizontally
     ) {
@@ -48,7 +48,7 @@ fun CreateTagImage() {
         Text(
             modifier = Modifier.padding(labelMargins),
             text = stringResource(R.string.create_tag_title),
-            style = labelTextStyle()
+            style = titleTextStyle()
         )
 
         Text(

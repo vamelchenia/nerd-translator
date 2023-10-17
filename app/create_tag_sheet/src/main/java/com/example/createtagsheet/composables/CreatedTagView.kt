@@ -7,14 +7,13 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 
 @Composable
-fun CreateTagView() {
+fun CreatedTagView() {
     Column(
         horizontalAlignment = Alignment.CenterHorizontally,
         modifier = Modifier.fillMaxSize()
     ) {
-        CreateTagHeader()
-        CreateTagInput()
+        CreatedTagHeader()
         AdditionalHint()
-        CreateButton()
+        DoneButton()
     }
 }
