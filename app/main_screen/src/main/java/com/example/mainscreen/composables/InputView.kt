@@ -1,5 +1,8 @@
 package com.example.mainscreen.composables
 
+import androidx.compose.foundation.interaction.Interaction
+import androidx.compose.foundation.interaction.MutableInteractionSource
+import androidx.compose.foundation.interaction.PressInteraction
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.padding
@@ -16,6 +19,7 @@ import androidx.compose.material3.TextField
 import androidx.compose.material3.TextFieldColors
 import androidx.compose.material3.TextFieldDefaults
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
@@ -29,6 +33,7 @@ import androidx.compose.ui.text.input.TextFieldValue
 import androidx.compose.ui.unit.dp
 import androidx.constraintlayout.compose.ConstraintLayout
 import com.example.mainscreen.R
+import kotlinx.coroutines.flow.collect
 
 private val roundingSize = 20.dp
 
@@ -49,6 +54,7 @@ fun inputViewTextStyle(
 // TODO: configure maximum vertical expansion
 @Composable
 fun InputView(
+    onClick: () -> Unit = {},
     textFieldColors: TextFieldColors = defaultTextFieldColors()
 ) {
     var textFieldValue by remember { mutableStateOf(TextFieldValue("")) }
@@ -75,7 +81,17 @@ fun InputView(
                     style = inputViewTextStyle(Color(0xFFA3ADB5)),
                     modifier = Modifier.padding(horizontal = 8.dp, vertical = 8.dp)
                 )
-            }
+            },
+            interactionSource = remember { MutableInteractionSource() }
+                .also { source ->
+                    LaunchedEffect(source) {
+                        source.interactions.collect {
+                            when(it) {
+                                is PressInteraction.Release -> onClick()
+                            }
+                        }
+                    }
+                }
         )
 
         PasteButtonContainer(
