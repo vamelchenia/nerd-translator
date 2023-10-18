@@ -10,11 +10,27 @@ class MainScreenViewModel
             translatedQuery = "",
             sourceSelectorState = MainScreenContract.LanguageSelectorState("RUSSIAN"),
             destinationSelectorState = MainScreenContract.LanguageSelectorState("ENGLISH"),
-            isValid = true
+            isValid = true,
+            shouldShowPreTranslateImage = true
         )
     }
 
     override fun onEventReceived(event: MainScreenContract.Event) {
+        when(event) {
+            is MainScreenContract.Event.InputViewClick -> {
+                processInputViewClick()
+            }
+            else -> {
+                // TODO: implement
+            }
+        }
+    }
 
+    private fun processInputViewClick() {
+        setState {
+            copy(
+                shouldShowPreTranslateImage = false
+            )
+        }
     }
 }

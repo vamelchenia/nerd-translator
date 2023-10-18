@@ -9,6 +9,8 @@ class MainScreenContract {
     sealed class Event : ViewEvent {
         object RunTranslation : Event()
         object Retry : Event()
+
+        object InputViewClick: Event()
     }
 
     data class State(
@@ -16,7 +18,8 @@ class MainScreenContract {
         val translatedQuery: String,
         val sourceSelectorState: LanguageSelectorState,
         val destinationSelectorState: LanguageSelectorState,
-        val isValid: Boolean
+        val isValid: Boolean,
+        val shouldShowPreTranslateImage: Boolean
     ) : ViewState
 
     data class LanguageSelectorState(

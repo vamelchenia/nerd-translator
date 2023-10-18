@@ -19,7 +19,9 @@ fun MainScreen(
     Column(
         horizontalAlignment = Alignment.CenterHorizontally
     ) {
-        MainScreenImage()
+        if (state.shouldShowPreTranslateImage) {
+            MainScreenImage()
+        }
 
         val selectorsPaddingValues = PaddingValues(0.dp, 0.dp, 0.dp, 14.dp)
 
