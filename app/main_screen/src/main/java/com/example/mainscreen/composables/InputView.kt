@@ -30,7 +30,6 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.Color
-import androidx.compose.ui.graphics.SolidColor
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.input.TextFieldValue
@@ -81,6 +80,7 @@ fun InputView(
     ) {
         val (inputArea, pasteButton, keyboardButton) = createRefs()
 
+        // TODO: fix cursor
         BasicTextField(
             value = textFieldValue,
             onValueChange = { textFieldValue = it },
@@ -91,9 +91,7 @@ fun InputView(
                 .constrainAs(inputArea) {
                     centerHorizontallyTo(parent)
                 },
-            textStyle = inputViewTextStyle(),
             interactionSource = interactionSource,
-            cursorBrush = SolidColor(Color.Black)
         ) {
             TextFieldDefaults.DecorationBox(
                 value = textFieldValue.text,
@@ -106,7 +104,8 @@ fun InputView(
                     ) {
                         Text(
                             text = textFieldValue.text,
-                            modifier = Modifier.padding(horizontal = 12.dp, vertical = 12.dp)
+                            modifier = Modifier.padding(horizontal = 20.dp, vertical = 12.dp),
+                            style = inputViewTextStyle()
                         )
                     }
                 },
