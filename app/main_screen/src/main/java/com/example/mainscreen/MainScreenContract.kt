@@ -20,7 +20,8 @@ class MainScreenContract {
         val destinationSelectorState: LanguageSelectorState,
         val isValid: Boolean,
         val shouldShowPreTranslateImage: Boolean,
-        val shouldShowKeyboardButton: Boolean
+        val shouldShowKeyboardButton: Boolean,
+        val shouldShowPlaceholder: Boolean
     ) : ViewState
 
     data class LanguageSelectorState(

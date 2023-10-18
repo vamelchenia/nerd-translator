@@ -12,7 +12,8 @@ class MainScreenViewModel
             destinationSelectorState = MainScreenContract.LanguageSelectorState("ENGLISH"),
             isValid = true,
             shouldShowPreTranslateImage = true, // TODO: change if tag exist
-            shouldShowKeyboardButton = true
+            shouldShowKeyboardButton = true,
+            shouldShowPlaceholder = true
         )
     }
 
@@ -30,7 +31,9 @@ class MainScreenViewModel
     private fun processInputViewClick() {
         setState {
             copy(
-                shouldShowPreTranslateImage = false
+                shouldShowPreTranslateImage = false,
+                shouldShowKeyboardButton = false,
+                shouldShowPlaceholder = false
             )
         }
     }

@@ -33,6 +33,7 @@ fun MainScreen(
 
         InputView(
             isKeyboardButtonVisible = state.shouldShowKeyboardButton,
+            isPlaceholderVisible = state.shouldShowPlaceholder,
             onClick = { onEventSent(MainScreenContract.Event.InputViewClick) }
         )
     }

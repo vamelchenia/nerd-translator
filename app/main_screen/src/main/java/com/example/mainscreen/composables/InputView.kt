@@ -52,6 +52,7 @@ fun inputViewTextStyle(
 @Composable
 fun InputView(
     isKeyboardButtonVisible: Boolean,
+    isPlaceholderVisible: Boolean,
     onClick: () -> Unit = {},
     textFieldColors: TextFieldColors = defaultTextFieldColors()
 ) {
@@ -74,11 +75,9 @@ fun InputView(
             shape = RoundedCornerShape(roundingSize, roundingSize, 0.dp, 0.dp),
             textStyle = inputViewTextStyle(),
             placeholder = {
-                Text(
-                    text = stringResource(R.string.input_view_hint),
-                    style = inputViewTextStyle(Color(0xFFA3ADB5)),
-                    modifier = Modifier.padding(horizontal = 8.dp, vertical = 8.dp)
-                )
+                if (isPlaceholderVisible) {
+                    Placeholder()
+                }
             },
             interactionSource = remember { MutableInteractionSource() }
                 .also { source ->
@@ -118,6 +117,15 @@ fun InputView(
             }
         }
     }
+}
+
+@Composable
+fun Placeholder() {
+    Text(
+        text = stringResource(R.string.input_view_hint),
+        style = inputViewTextStyle(Color(0xFFA3ADB5)),
+        modifier = Modifier.padding(horizontal = 8.dp, vertical = 8.dp)
+    )
 }
 
 @Composable
