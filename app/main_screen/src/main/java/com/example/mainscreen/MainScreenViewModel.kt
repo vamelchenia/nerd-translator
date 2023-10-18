@@ -11,7 +11,8 @@ class MainScreenViewModel
             sourceSelectorState = MainScreenContract.LanguageSelectorState("RUSSIAN"),
             destinationSelectorState = MainScreenContract.LanguageSelectorState("ENGLISH"),
             isValid = true,
-            shouldShowPreTranslateImage = true
+            shouldShowPreTranslateImage = true, // TODO: change if tag exist
+            shouldShowKeyboardButton = true
         )
     }
 

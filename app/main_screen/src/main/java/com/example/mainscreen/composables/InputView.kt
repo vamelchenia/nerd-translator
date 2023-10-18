@@ -51,9 +51,9 @@ fun inputViewTextStyle(
     color = textColor
 )
 
-// TODO: configure maximum vertical expansion
 @Composable
 fun InputView(
+    isKeyboardButtonVisible: Boolean,
     onClick: () -> Unit = {},
     textFieldColors: TextFieldColors = defaultTextFieldColors()
 ) {
@@ -102,21 +102,22 @@ fun InputView(
                 }
         )
 
-        // TODO: hide on click
-        IconButton(
-            onClick = { /*TODO*/ },
-            modifier = Modifier
-                .constrainAs(keyboardButton) {
-                    centerHorizontallyTo(inputArea)
-                    bottom.linkTo(inputArea.bottom, margin = 24.5.dp)
-                }
-                .size(70.dp)
-        ) {
-            Icon(
-                painter = painterResource(R.drawable.btn_keyboard),
-                contentDescription = stringResource(R.string.language_selector_expand_more),
-                tint = Color.Unspecified
-            )
+        if (isKeyboardButtonVisible) {
+            IconButton(
+                onClick = { onClick() },
+                modifier = Modifier
+                    .constrainAs(keyboardButton) {
+                        centerHorizontallyTo(inputArea)
+                        bottom.linkTo(inputArea.bottom, margin = 24.5.dp)
+                    }
+                    .size(70.dp)
+            ) {
+                Icon(
+                    painter = painterResource(R.drawable.btn_keyboard),
+                    contentDescription = stringResource(R.string.language_selector_expand_more),
+                    tint = Color.Unspecified
+                )
+            }
         }
     }
 }

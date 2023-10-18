@@ -31,6 +31,9 @@ fun MainScreen(
             rowModifier = Modifier.padding(selectorsPaddingValues)
         )
 
-        InputView()
+        InputView(
+            isKeyboardButtonVisible = state.shouldShowKeyboardButton,
+            onClick = { onEventSent(MainScreenContract.Event.InputViewClick) }
+        )
     }
 }
