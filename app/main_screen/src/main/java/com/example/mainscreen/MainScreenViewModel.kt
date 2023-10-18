@@ -3,7 +3,8 @@ package com.example.mainscreen
 import com.example.core.arch.BaseViewModel
 
 class MainScreenViewModel
-    : BaseViewModel<MainScreenContract.State, MainScreenContract.Event, MainScreenContract.Effect>() {
+    :
+    BaseViewModel<MainScreenContract.State, MainScreenContract.Event, MainScreenContract.Effect>() {
     override fun setInitialState(): MainScreenContract.State {
         return MainScreenContract.State(
             query = "",
@@ -11,14 +12,13 @@ class MainScreenViewModel
             sourceSelectorState = MainScreenContract.LanguageSelectorState("RUSSIAN"),
             destinationSelectorState = MainScreenContract.LanguageSelectorState("ENGLISH"),
             isValid = true,
-            shouldShowPreTranslateImage = true, // TODO: change if tag exist
-            shouldShowKeyboardButton = true,
-            shouldShowPlaceholder = true
+            shouldShowPreTranslateImage = true,
+            shouldShowSecondaryInputViews = true
         )
     }
 
     override fun onEventReceived(event: MainScreenContract.Event) {
-        when(event) {
+        when (event) {
             is MainScreenContract.Event.InputViewClick -> {
                 processInputViewClick()
             }
@@ -32,8 +32,7 @@ class MainScreenViewModel
         setState {
             copy(
                 shouldShowPreTranslateImage = false,
-                shouldShowKeyboardButton = false,
-                shouldShowPlaceholder = false
+                shouldShowSecondaryInputViews = false
             )
         }
     }

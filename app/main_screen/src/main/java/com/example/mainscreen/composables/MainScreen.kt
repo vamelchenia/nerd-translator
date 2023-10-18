@@ -32,8 +32,7 @@ fun MainScreen(
         )
 
         InputView(
-            isKeyboardButtonVisible = state.shouldShowKeyboardButton,
-            isPlaceholderVisible = state.shouldShowPlaceholder,
+            areSecondaryViewsVisible = state.shouldShowSecondaryInputViews,
             onClick = { onEventSent(MainScreenContract.Event.InputViewClick) }
         )
     }
