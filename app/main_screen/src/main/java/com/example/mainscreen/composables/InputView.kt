@@ -1,6 +1,5 @@
 package com.example.mainscreen.composables
 
-import androidx.compose.foundation.interaction.Interaction
 import androidx.compose.foundation.interaction.MutableInteractionSource
 import androidx.compose.foundation.interaction.PressInteraction
 import androidx.compose.foundation.layout.Row
@@ -33,7 +32,6 @@ import androidx.compose.ui.text.input.TextFieldValue
 import androidx.compose.ui.unit.dp
 import androidx.constraintlayout.compose.ConstraintLayout
 import com.example.mainscreen.R
-import kotlinx.coroutines.flow.collect
 
 private val roundingSize = 20.dp
 
