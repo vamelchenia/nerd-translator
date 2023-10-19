@@ -17,12 +17,11 @@ fun TagContainer() {
             FlowRow(
                 modifier = Modifier.padding(containerMargins).fillMaxWidth(),
             ) {
-                Tag("#Lesson1", "8", false)
-                Tag("#Homework", "12", false)
-                Tag("ertwsgh","23", false)
-                Tag("sdfadgdfghasdfh", "23", true)
-                Tag("sdfasf", "23", false)
-                Tag("asdfasd", "23", false)
+                Tag("Lesson1", 8, false)
+                Tag("Homework", 12, false)
+                Tag("AliceInWonderland",23, false)
+                Tag("MyFavouriteBook", 4, true)
+                Tag("LearnThis", 1, false)
             }
 
 

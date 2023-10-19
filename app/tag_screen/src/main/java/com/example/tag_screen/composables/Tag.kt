@@ -43,7 +43,7 @@ private fun tagCountTextStyle() = MaterialTheme.typography.titleSmall.copy(
 
 
 @Composable
-fun Tag(tagName : String, tagCount : String, active : Boolean) {
+fun Tag(tagName : String, tagCount : Int, active : Boolean) {
 
     Button(
         onClick = {},
@@ -56,7 +56,7 @@ fun Tag(tagName : String, tagCount : String, active : Boolean) {
         colors = tagButtonColors()
     ) {
         Text(
-            text = tagName,
+            text = "#$tagName",
             modifier = Modifier
                 .height(19.dp),
             style = editButtonTextStyle(),
