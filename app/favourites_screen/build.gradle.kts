@@ -44,4 +44,5 @@ android {
 
 dependencies {
     implementation(project(":app:core"))
+    implementation(project(":app:create_tag_sheet"))
 }
