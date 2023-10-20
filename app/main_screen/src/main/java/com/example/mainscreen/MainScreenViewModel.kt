@@ -25,6 +25,9 @@ class MainScreenViewModel
             is MainScreenContract.Event.InputViewClick -> {
                 processInputViewClick()
             }
+            is MainScreenContract.Event.PasteButtonClick -> {
+                processPasteButtonClick(event.text)
+            }
             else -> {
                 // TODO: implement
             }
@@ -41,6 +44,15 @@ class MainScreenViewModel
             copy(
                 shouldShowPreTranslateImage = false,
                 inputViewState = newInputViewState
+            )
+        }
+    }
+
+    private fun processPasteButtonClick(text: String?) {
+        text ?: return
+        setState {
+            copy(
+                query = text
             )
         }
     }
