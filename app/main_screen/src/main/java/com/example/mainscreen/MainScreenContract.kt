@@ -7,10 +7,10 @@ import com.example.core.arch.ViewState
 class MainScreenContract {
 
     sealed class Event : ViewEvent {
-        object RunTranslation : Event()
-        object Retry : Event()
+        data object RunTranslation : Event()
+        data object Retry : Event()
 
-        object InputViewClick: Event()
+        data object InputViewClick: Event()
     }
 
     data class State(
