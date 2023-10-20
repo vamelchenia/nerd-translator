@@ -13,7 +13,10 @@ class MainScreenViewModel
             destinationSelectorState = MainScreenContract.LanguageSelectorState("ENGLISH"),
             isValid = true,
             shouldShowPreTranslateImage = true,
-            shouldShowSecondaryInputViews = true
+            inputViewState = MainScreenContract.InputViewState(
+                shouldShowSecondaryInputViews = true,
+                isFocused = false
+            )
         )
     }
 
@@ -30,9 +33,14 @@ class MainScreenViewModel
 
     private fun processInputViewClick() {
         setState {
+            val newInputViewState = inputViewState.copy(
+                shouldShowSecondaryInputViews = false,
+                isFocused = true
+            )
+
             copy(
                 shouldShowPreTranslateImage = false,
-                shouldShowSecondaryInputViews = false
+                inputViewState = newInputViewState
             )
         }
     }

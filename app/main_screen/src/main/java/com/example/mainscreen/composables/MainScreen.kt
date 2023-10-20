@@ -1,5 +1,6 @@
 package com.example.mainscreen.composables
 
+import androidx.compose.animation.AnimatedVisibility
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.PaddingValues
 import androidx.compose.foundation.layout.padding
@@ -17,22 +18,23 @@ fun MainScreen(
     onEventSent: (event: MainScreenContract.Event) -> Unit,
 ) {
     Column(
-        horizontalAlignment = Alignment.CenterHorizontally
+        horizontalAlignment = Alignment.CenterHorizontally,
     ) {
-        if (state.shouldShowPreTranslateImage) {
+        AnimatedVisibility(visible = state.shouldShowPreTranslateImage) {
             MainScreenImage()
         }
 
         val selectorsPaddingValues = PaddingValues(0.dp, 0.dp, 0.dp, 14.dp)
 
         LanguageSelectorRow(
+            modifier = Modifier.padding(selectorsPaddingValues),
             sourceState = state.sourceSelectorState,
-            destinationState = state.destinationSelectorState,
-            rowModifier = Modifier.padding(selectorsPaddingValues)
+            destinationState = state.destinationSelectorState
         )
 
         InputView(
-            areSecondaryViewsVisible = state.shouldShowSecondaryInputViews,
+            modifier = Modifier.weight(1f),
+            state = state.inputViewState,
             onClick = { onEventSent(MainScreenContract.Event.InputViewClick) }
         )
     }

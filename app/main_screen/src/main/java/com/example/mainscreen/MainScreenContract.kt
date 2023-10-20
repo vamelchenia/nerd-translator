@@ -20,7 +20,7 @@ class MainScreenContract {
         val destinationSelectorState: LanguageSelectorState,
         val isValid: Boolean,
         val shouldShowPreTranslateImage: Boolean,
-        val shouldShowSecondaryInputViews: Boolean
+        val inputViewState: InputViewState
     ) : ViewState
 
     data class LanguageSelectorState(
@@ -28,7 +28,12 @@ class MainScreenContract {
         val isError: Boolean = false,
         val isExpanded: Boolean = false,
         val onClick: () -> Unit = {}
-    )
+    ) : ViewState
+
+    data class InputViewState(
+        val shouldShowSecondaryInputViews: Boolean,
+        val isFocused: Boolean
+    ) : ViewState
 
     sealed class Effect : ViewEffect {
         // TODO: implement

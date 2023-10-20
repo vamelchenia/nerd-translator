@@ -18,7 +18,6 @@ import androidx.compose.material3.Icon
 import androidx.compose.material3.IconButton
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Text
-import androidx.compose.material3.TextFieldColors
 import androidx.compose.material3.TextFieldDefaults
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.LaunchedEffect
@@ -36,16 +35,10 @@ import androidx.compose.ui.text.input.TextFieldValue
 import androidx.compose.ui.text.input.VisualTransformation
 import androidx.compose.ui.unit.dp
 import androidx.constraintlayout.compose.ConstraintLayout
+import com.example.mainscreen.MainScreenContract
 import com.example.mainscreen.R
 
 private val roundingSize = 20.dp
-
-@Composable
-fun defaultTextFieldColors() =
-    TextFieldDefaults.colors(
-        focusedContainerColor = MaterialTheme.colorScheme.background,
-        unfocusedContainerColor = MaterialTheme.colorScheme.background
-    )
 
 @Composable
 fun inputViewTextStyle(
@@ -58,9 +51,9 @@ fun inputViewTextStyle(
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun InputView(
-    areSecondaryViewsVisible: Boolean,
-    onClick: () -> Unit = {},
-    textFieldColors: TextFieldColors = defaultTextFieldColors()
+    modifier: Modifier = Modifier,
+    state: MainScreenContract.InputViewState,
+    onClick: () -> Unit = {}
 ) {
     var textFieldValue by remember { mutableStateOf(TextFieldValue("")) }
     val interactionSource = remember { MutableInteractionSource() }
@@ -68,7 +61,11 @@ fun InputView(
             LaunchedEffect(source) {
                 source.interactions.collect {
                     when (it) {
-                        is PressInteraction.Release -> onClick()
+                        is PressInteraction.Release -> {
+                            if (!state.isFocused) {
+                                onClick()
+                            }
+                        }
                     }
                 }
             }
@@ -76,16 +73,14 @@ fun InputView(
     val shape = RoundedCornerShape(roundingSize, roundingSize, 0.dp, 0.dp)
 
     ConstraintLayout(
-        modifier = Modifier.fillMaxSize()
+        modifier = modifier
     ) {
         val (inputArea, pasteButton, keyboardButton) = createRefs()
 
-        // TODO: fix cursor
         BasicTextField(
             value = textFieldValue,
             onValueChange = { textFieldValue = it },
             modifier = Modifier
-                .fillMaxSize()
                 .clip(shape)
                 .background(color = MaterialTheme.colorScheme.background)
                 .constrainAs(inputArea) {
@@ -97,10 +92,11 @@ fun InputView(
                 value = textFieldValue.text,
                 innerTextField = {
                     Row(
-                        modifier = Modifier.background(
-                            color = MaterialTheme.colorScheme.background,
-                            shape = shape
-                        ).fillMaxSize()
+                        modifier = Modifier
+                            .background(
+                                color = MaterialTheme.colorScheme.background,
+                                shape = shape
+                            ).fillMaxSize()
                     ) {
                         Text(
                             text = textFieldValue.text,
@@ -112,7 +108,7 @@ fun InputView(
                 enabled = true,
                 singleLine = false,
                 placeholder = {
-                    if (areSecondaryViewsVisible) {
+                    if (state.shouldShowSecondaryInputViews) {
                         Placeholder()
                     }
                 },
@@ -122,7 +118,7 @@ fun InputView(
             )
         }
 
-        if (areSecondaryViewsVisible) {
+        if (state.shouldShowSecondaryInputViews) {
             PasteButtonContainer(
                 pasteButtonContainerModifier = Modifier
                     .constrainAs(pasteButton) {
