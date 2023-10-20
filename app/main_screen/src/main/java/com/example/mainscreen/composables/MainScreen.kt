@@ -7,6 +7,7 @@ import androidx.compose.foundation.layout.padding
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.platform.LocalClipboardManager
 import androidx.compose.ui.unit.dp
 import com.example.mainscreen.MainScreenContract
 import kotlinx.coroutines.flow.Flow
@@ -20,6 +21,8 @@ fun MainScreen(
     Column(
         horizontalAlignment = Alignment.CenterHorizontally,
     ) {
+        val clipboardManager = LocalClipboardManager.current.getText()
+
         AnimatedVisibility(visible = state.shouldShowPreTranslateImage) {
             MainScreenImage()
         }
@@ -35,7 +38,11 @@ fun MainScreen(
         InputView(
             modifier = Modifier.weight(1f),
             state = state.inputViewState,
-            onClick = { onEventSent(MainScreenContract.Event.InputViewClick) }
+            inputAreaOnClick = { onEventSent(MainScreenContract.Event.InputViewClick) },
+            pasteButtonOnClick = {
+                val text = clipboardManager?.text
+                onEventSent(MainScreenContract.Event.PasteButtonClick(text))
+            }
         )
     }
 }

@@ -53,7 +53,8 @@ fun inputViewTextStyle(
 fun InputView(
     modifier: Modifier = Modifier,
     state: MainScreenContract.InputViewState,
-    onClick: () -> Unit = {}
+    inputAreaOnClick: () -> Unit = {},
+    pasteButtonOnClick: () -> Unit = {}
 ) {
     var textFieldValue by remember { mutableStateOf(TextFieldValue("")) }
     val interactionSource = remember { MutableInteractionSource() }
@@ -63,7 +64,7 @@ fun InputView(
                     when (it) {
                         is PressInteraction.Release -> {
                             if (!state.isFocused) {
-                                onClick()
+                                inputAreaOnClick()
                             }
                         }
                     }
@@ -96,7 +97,8 @@ fun InputView(
                             .background(
                                 color = MaterialTheme.colorScheme.background,
                                 shape = shape
-                            ).fillMaxSize()
+                            )
+                            .fillMaxSize()
                     ) {
                         Text(
                             text = textFieldValue.text,
@@ -120,15 +122,16 @@ fun InputView(
 
         if (state.shouldShowSecondaryInputViews) {
             PasteButtonContainer(
-                pasteButtonContainerModifier = Modifier
+                modifier = Modifier
                     .constrainAs(pasteButton) {
                         top.linkTo(inputArea.top, margin = 70.dp)
                         start.linkTo(inputArea.start)
-                    }
+                    },
+                onClick = pasteButtonOnClick
             )
 
             IconButton(
-                onClick = { onClick() },
+                onClick = { inputAreaOnClick() },
                 modifier = Modifier
                     .constrainAs(keyboardButton) {
                         centerHorizontallyTo(inputArea)
@@ -160,13 +163,16 @@ fun pasteButtonColors() =
     ButtonDefaults.buttonColors(containerColor = MaterialTheme.colorScheme.tertiary)
 
 @Composable
-fun PasteButtonContainer(pasteButtonContainerModifier: Modifier) {
+fun PasteButtonContainer(
+    modifier: Modifier,
+    onClick: () -> Unit = {}
+) {
     Row(
-        modifier = pasteButtonContainerModifier,
+        modifier = modifier,
         verticalAlignment = Alignment.CenterVertically
     ) {
         Button(
-            onClick = { /*TODO*/ },
+            onClick = { onClick() },
             modifier = Modifier
                 .padding(start = 20.dp, top = 9.dp, end = 8.dp, bottom = 9.dp)
                 .wrapContentSize(),

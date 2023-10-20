@@ -10,7 +10,11 @@ class MainScreenContract {
         data object RunTranslation : Event()
         data object Retry : Event()
 
-        data object InputViewClick: Event()
+        data object InputViewClick : Event()
+
+        data class PasteButtonClick(
+            val text: String?
+        ) : Event()
     }
 
     data class State(
