@@ -5,10 +5,9 @@ import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
-import com.example.createtagsheet.CreateTagSheetViewModel
 
 @Composable
-fun CreatedTagView(createTagSheetViewModel: CreateTagSheetViewModel) {
+fun CreatedTagView() {
     Column(
         horizontalAlignment = Alignment.CenterHorizontally,
         modifier = Modifier
@@ -16,6 +15,6 @@ fun CreatedTagView(createTagSheetViewModel: CreateTagSheetViewModel) {
     ) {
         CreatedTagHeader()
         AdditionalHint()
-        DoneButton(createTagSheetViewModel)
+        DoneButton()
     }
 }

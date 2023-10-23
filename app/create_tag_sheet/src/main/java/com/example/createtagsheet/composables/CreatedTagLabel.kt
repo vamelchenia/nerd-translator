@@ -18,11 +18,10 @@ import androidx.constraintlayout.compose.ConstraintLayout
 
 private val layoutMargins = PaddingValues(bottom = 18.dp)
 private val textMargins = PaddingValues(20.dp, 10.dp, 20.dp, 10.dp)
-private val textColor = Color(0xFF001F35)
 private val roundingSize = 35.dp
 
 @Composable
-private fun textStyle(defaultTextColor: Color = textColor) =
+private fun textStyle(defaultTextColor: Color = MaterialTheme.colorScheme.primary) =
     MaterialTheme.typography.bodyMedium.copy(
         color = defaultTextColor
     )
@@ -46,7 +45,6 @@ fun CreatedTagLabel() {
                     MaterialTheme.colorScheme.background,
                     shape = RoundedCornerShape(roundingSize)
                 ),
-//            contentAlignment = Alignment.Center
         ) {
             Text(
                 tagName,
@@ -56,23 +54,5 @@ fun CreatedTagLabel() {
                     .padding(textMargins)
             )
         }
-
-//        Box(
-//            modifier = Modifier
-//                .width(286.dp)
-//                .height(48.dp)
-//                .border(0.dp, , RoundedCornerShape(roundingSize))
-//                .background(MaterialTheme.colorScheme.background)
-//        ) {
-//
-//            BasicTextField(
-//                value = tagName,
-//                onValueChange = { tagName = it },
-//                textStyle = textStyle(),
-//                modifier = Modifier
-//                    .fillMaxSize()
-//                    .padding(textMargins),
-//            )
-//        }
     }
 }

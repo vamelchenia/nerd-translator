@@ -32,19 +32,16 @@ import com.example.createtagsheet.R
 private val layoutMargins = PaddingValues(bottom = 18.dp)
 private val textMargins = PaddingValues(15.dp, 10.dp, 15.dp, 10.dp)
 private val borderColor = Color(0xFFF2575D)
-private val textColor = Color(0xFF001F35)
-private val labelColor = Color(0xFFF2575D)
-private val cursorColor = Color(0xFF99AEBD)
 private val roundingSize = 8.dp
 
 @Composable
-private fun textStyle(defaultTextColor: Color = textColor) =
+private fun textStyle(defaultTextColor: Color = MaterialTheme.colorScheme.primary) =
     MaterialTheme.typography.bodyLarge.copy(
         color = defaultTextColor
     )
 
 @Composable
-private fun labelTextStyle(defaultTextColor: Color = labelColor) =
+private fun labelTextStyle(defaultTextColor: Color = borderColor) =
     MaterialTheme.typography.titleMedium.copy(
         fontSize = 12.sp,
         textAlign = TextAlign.Center,
@@ -78,7 +75,7 @@ fun CreateTagInput() {
                 modifier = Modifier
                     .fillMaxSize()
                     .padding(textMargins),
-                cursorBrush = SolidColor(cursorColor),
+                cursorBrush = SolidColor(MaterialTheme.colorScheme.tertiary),
             )
         }
 

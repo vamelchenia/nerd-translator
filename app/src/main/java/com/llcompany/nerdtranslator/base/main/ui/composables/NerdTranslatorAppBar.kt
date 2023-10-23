@@ -51,9 +51,6 @@ fun NerdTranslatorAppBar(
             ActionButtonSettings {
                 onEventSent(TopAppBarContract.Event.SettingsActionClick)
             }
-//            ActionButtonBackSheet {
-//                onEventSent(TopAppBarContract.Event.BackSheetActionClick)
-//            }
         }
     )
 }

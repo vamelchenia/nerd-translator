@@ -1,7 +1,5 @@
 package com.example.createtagsheet
 
-import androidx.compose.foundation.layout.PaddingValues
-import androidx.compose.ui.unit.dp
 import com.example.core.arch.BaseViewModel
 
 class CreateTagSheetViewModel :
@@ -11,12 +9,17 @@ class CreateTagSheetViewModel :
         return CreateTagSheetContract.State(
             isValid = false,
             isCreated = false,
-            contentPaddingBottomSheet = PaddingValues(0.dp)
         )
     }
 
     override fun onEventReceived(event: CreateTagSheetContract.Event) {
-
+        when (event) {
+            CreateTagSheetContract.Event.CreateButtonActionClick -> {
+                applyEffect {
+                    CreateTagSheetContract.Effect.Navigation.CreateTag
+                }
+            }
+        }
     }
 
     fun switchIsValid(isValid: Boolean) {
@@ -28,12 +31,6 @@ class CreateTagSheetViewModel :
     fun switchIsCreated(isCreated: Boolean) {
         setState {
             copy(isCreated = isCreated)
-        }
-    }
-
-    fun updateContentPaddingBottomSheet(contentPaddingBottomSheet: PaddingValues) {
-        setState {
-            copy(contentPaddingBottomSheet = contentPaddingBottomSheet)
         }
     }
 }

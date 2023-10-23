@@ -13,16 +13,14 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
-import com.example.createtagsheet.CreateTagSheetViewModel
 import com.example.createtagsheet.R
 
 private val buttonColorPrimaryNormal = Color(0xFFF2575D)
-private val buttonTextColor = Color(0xFFFFFFFF)
 private val buttonTextPaddings = PaddingValues(30.dp, 15.dp, 30.dp, 15.dp)
 
 @Composable
 private fun doneButtonTextStyle() = MaterialTheme.typography.titleSmall.copy(
-    color = buttonTextColor,
+    color = MaterialTheme.colorScheme.background,
 )
 
 @Composable
@@ -31,9 +29,9 @@ private fun doneButtonColors() = ButtonDefaults.buttonColors(
 )
 
 @Composable
-fun DoneButton(createTagSheetViewModel: CreateTagSheetViewModel) {
+fun DoneButton() {
     Button(
-        onClick = { createTagSheetViewModel.switchIsValid(true) },
+        onClick = {},
         contentPadding = buttonTextPaddings,
         shape = RoundedCornerShape(size = 32.dp),
         modifier = Modifier

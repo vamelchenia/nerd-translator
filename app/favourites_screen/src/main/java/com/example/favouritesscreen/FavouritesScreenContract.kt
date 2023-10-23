@@ -7,6 +7,7 @@ import com.example.core.arch.ViewState
 class FavouritesScreenContract {
 
     sealed class Event : ViewEvent {
+        data object CreateTagActionClick : Event()
     }
 
     data class State(
@@ -14,6 +15,8 @@ class FavouritesScreenContract {
     ) : ViewState
 
     sealed class Effect : ViewEffect {
-
+        sealed class Navigation : Effect() {
+            data object ToCreateTagSheet : Effect()
+        }
     }
 }

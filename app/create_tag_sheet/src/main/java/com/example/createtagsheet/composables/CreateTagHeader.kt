@@ -19,17 +19,15 @@ import com.example.createtagsheet.R
 
 private val labelMargins = PaddingValues(top = 10.dp, bottom = 6.dp)
 private val hintMargins = PaddingValues(bottom = 16.dp)
-private val labelColor = Color(0xFF001F35)
-private val hintColor = Color(0xFF5A798F)
 
 @Composable
-private fun titleTextStyle(textColor: Color = labelColor) = MaterialTheme.typography.titleLarge.copy(
+private fun titleTextStyle(textColor: Color = MaterialTheme.colorScheme.primary) = MaterialTheme.typography.titleLarge.copy(
     textAlign = TextAlign.Center,
     color = textColor,
 )
 
 @Composable
-private fun hintTextStyle(textColor: Color = hintColor) = MaterialTheme.typography.titleMedium.copy(
+private fun hintTextStyle(textColor: Color = MaterialTheme.colorScheme.secondary) = MaterialTheme.typography.titleMedium.copy(
     fontSize = 14.sp,
     textAlign = TextAlign.Center,
     color = textColor,

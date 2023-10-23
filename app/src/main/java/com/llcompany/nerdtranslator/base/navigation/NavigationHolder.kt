@@ -28,7 +28,7 @@ fun NavigationHolder() {
                 onEventSent = { appBarViewModel.onEventReceived(it) },
                 navigateToFavourites = { navController.navigateToFavourites() },
                 navigateToSettings = {},
-                navigateToBackSheet = { navController.navigateToBackSheet() }
+                navigateToBackSheet = { navController.popBackStack() }
             )
         }
     ) { paddingValues ->
@@ -46,13 +46,28 @@ fun NavigationHolder() {
             composable(
                 route = Navigation.Routes.FAVOURITES_SCREEN
             ) {
-                FavouritesScreenDestination()
+                FavouritesScreenDestination(
+                    navigateToCreateTagSheet = { navController.navigateToCreateTagSheet() })
             }
 
             composable(
                 route = Navigation.Routes.CREATE_TAG_SHEET
             ) {
-                CreateTagSheetDestination()
+                CreateTagSheetDestination(
+                    navigateToFavourites = { navController.navigateToFavourites() },
+                    navigateToCreatedTagSheet = { navController.navigateToCreatedTagSheet() },
+                    tagCreated = !isTagCreated(),
+                )
+            }
+
+            composable(
+                route = Navigation.Routes.CREATED_TAG_SHEET
+            ) {
+                CreateTagSheetDestination(
+                    navigateToFavourites = { navController.navigateToFavourites() },
+                    navigateToCreatedTagSheet = { },
+                    tagCreated = isTagCreated(),
+                )
             }
         }
     }
@@ -64,6 +79,7 @@ object Navigation {
         const val MAIN_SCREEN = "main"
         const val FAVOURITES_SCREEN = "favourites"
         const val CREATE_TAG_SHEET = "create_tag"
+        const val CREATED_TAG_SHEET = "created_tag"
     }
 }
 
@@ -73,8 +89,19 @@ fun NavController.navigateToFavourites() {
     )
 }
 
-fun NavController.navigateToBackSheet() {
+fun NavController.navigateToCreateTagSheet() {
     navigate(
-        route = Navigation.Routes.MAIN_SCREEN
+        route = Navigation.Routes.CREATE_TAG_SHEET
     )
 }
+
+fun NavController.navigateToCreatedTagSheet() {
+    navigate(
+        route = Navigation.Routes.CREATED_TAG_SHEET
+    )
+}
+
+fun isTagCreated(): Boolean {
+    return true
+}
+

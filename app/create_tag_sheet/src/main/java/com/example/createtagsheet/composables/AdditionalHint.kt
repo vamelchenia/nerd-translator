@@ -17,10 +17,9 @@ import androidx.constraintlayout.compose.ConstraintLayout
 import com.example.createtagsheet.R
 
 private val layoutMargins = PaddingValues(bottom = 18.dp)
-private val hintColor = Color(0xFF99AEBD)
 
 @Composable
-private fun textStyle(textColor: Color = hintColor) =
+private fun textStyle(textColor: Color = MaterialTheme.colorScheme.tertiary) =
     MaterialTheme.typography.titleMedium.copy(
         fontSize = 12.sp,
         textAlign = TextAlign.Center,

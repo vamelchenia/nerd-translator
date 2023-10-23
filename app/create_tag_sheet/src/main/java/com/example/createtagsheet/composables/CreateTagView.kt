@@ -6,10 +6,10 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.constraintlayout.compose.ConstraintLayout
-import com.example.createtagsheet.CreateTagSheetViewModel
+import com.example.createtagsheet.CreateTagSheetContract
 
 @Composable
-fun CreateTagView(createTagSheetViewModel: CreateTagSheetViewModel) {
+fun CreateTagView(onEventSent: (event: CreateTagSheetContract.Event) -> Unit) {
     ConstraintLayout(
         modifier = Modifier
             .fillMaxSize()
@@ -22,7 +22,7 @@ fun CreateTagView(createTagSheetViewModel: CreateTagSheetViewModel) {
             CreateTagHeader()
             CreateTagInput()
             AdditionalHint()
-            CreateButton(createTagSheetViewModel)
+            CreateButton { onEventSent(CreateTagSheetContract.Event.CreateButtonActionClick) }
         }
     }
 }

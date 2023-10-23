@@ -17,12 +17,11 @@ import androidx.compose.ui.unit.dp
 import com.example.favouritesscreen.R
 
 private val buttonColorPrimaryNormal = Color(0xFFF2575D)
-private val buttonTextColor = Color(0xFFFFFFFF)
 private val buttonPaddings = PaddingValues(30.dp, 15.dp, 30.dp, 15.dp)
 
 @Composable
 private fun createButtonTextStyle() = MaterialTheme.typography.titleSmall.copy(
-    color = buttonTextColor,
+    color = MaterialTheme.colorScheme.background,
 )
 
 @Composable
@@ -31,9 +30,9 @@ private fun createButtonColors() = ButtonDefaults.buttonColors(
 )
 
 @Composable
-fun CreateButton(onShowBottomSheetChanged: (Boolean) -> Unit) {
+fun CreateTag(onCreateTagClick: () -> Unit) {
     Button(
-        onClick = {onShowBottomSheetChanged(true)},
+        onClick = {onCreateTagClick()},
         contentPadding = buttonPaddings,
         shape = RoundedCornerShape(size = 32.dp),
         modifier = Modifier
