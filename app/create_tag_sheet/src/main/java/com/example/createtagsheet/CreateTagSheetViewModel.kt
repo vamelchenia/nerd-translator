@@ -7,7 +7,6 @@ class CreateTagSheetViewModel :
 
     override fun setInitialState(): CreateTagSheetContract.State {
         return CreateTagSheetContract.State(
-            isValid = false,
             isCreated = false,
         )
     }
@@ -19,16 +18,17 @@ class CreateTagSheetViewModel :
                     CreateTagSheetContract.Effect.Navigation.CreateTag
                 }
             }
+
+            CreateTagSheetContract.Event.TagCreatedButtonActionClick -> {
+                applyEffect {
+                    CreateTagSheetContract.Effect.Navigation.TagCreated
+                }
+            }
+
         }
     }
 
-    fun switchIsValid(isValid: Boolean) {
-        setState {
-            copy(isValid = isValid)
-        }
-    }
-
-    fun switchIsCreated(isCreated: Boolean) {
+    fun setIsCreated(isCreated: Boolean) {
         setState {
             copy(isCreated = isCreated)
         }

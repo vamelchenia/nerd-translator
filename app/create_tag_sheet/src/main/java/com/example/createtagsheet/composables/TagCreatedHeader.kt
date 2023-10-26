@@ -34,18 +34,18 @@ private fun hintTextStyle(textColor: Color = MaterialTheme.colorScheme.secondary
 )
 
 @Composable
-fun CreatedTagHeader() {
+fun TagCreatedHeader() {
     Column(
         horizontalAlignment = Alignment.CenterHorizontally
     ) {
         Image(
-            painter = painterResource(R.drawable.created_tag_image),
-            contentDescription = stringResource(R.string.created_tag_image),
+            painter = painterResource(R.drawable.tag_created_image),
+            contentDescription = stringResource(R.string.tag_created_image),
         )
 
         Text(
             modifier = Modifier.padding(labelMargins),
-            text = stringResource(R.string.created_tag_title),
+            text = stringResource(R.string.tag_created_title),
             style = titleTextStyle()
         )
 
@@ -53,7 +53,7 @@ fun CreatedTagHeader() {
 
         Text(
             modifier = Modifier.padding(hintMargins),
-            text = stringResource(R.string.created_tag_hint),
+            text = stringResource(R.string.tag_created_hint),
             style = hintTextStyle()
         )
     }

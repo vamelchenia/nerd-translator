@@ -7,17 +7,15 @@ import org.koin.androidx.compose.getViewModel
 
 @Composable
 fun CreateTagSheetDestination(
-    navigateToFavourites: () -> Unit,
-    navigateToCreatedTagSheet: () -> Unit,
-    tagCreated: Boolean,
+    createNewTag: () -> Unit,
+    tagCreated: () -> Unit,
 ) {
     val viewModel = getViewModel<CreateTagSheetViewModel>()
     CreateTagSheet(
         viewModel.getState().value,
         viewModel.currentEffect,
         onEventSent = { event -> viewModel.onEventReceived(event) },
-        navigateToFavourites = navigateToFavourites,
-        navigateToCreatedTagSheet = navigateToCreatedTagSheet,
-        tagCreated = tagCreated,
+        createNewTag = createNewTag,
+        tagCreated = tagCreated
     )
 }

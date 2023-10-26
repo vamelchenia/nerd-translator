@@ -8,8 +8,8 @@
     <string name="additional_hint">You can always manage your tags by renaming, adding,\n or deleting them in the Favourites section.</string>
     <string name="create_button_name">Create</string>
 
-    <string name="created_tag_image">Created Tag Sheet Image</string>
-    <string name="created_tag_title">Your tag has been created!</string>
-    <string name="created_tag_hint">Now you can add the translation to Favourites\n using this tag.</string>
-    <string name="done_button_name">Done</string>
+    <string name="tag_created_image">Tag Created Sheet Image</string>
+    <string name="tag_created_title">Your tag has been created!</string>
+    <string name="tag_created_hint">Now you can add the translation to Favourites\n using this tag.</string>
+    <string name="tag_created_button_name">Done</string>
 </resources>

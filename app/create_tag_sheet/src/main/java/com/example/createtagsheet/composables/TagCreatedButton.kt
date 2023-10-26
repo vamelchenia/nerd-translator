@@ -19,32 +19,32 @@ private val buttonColorPrimaryNormal = Color(0xFFF2575D)
 private val buttonTextPaddings = PaddingValues(30.dp, 15.dp, 30.dp, 15.dp)
 
 @Composable
-private fun doneButtonTextStyle() = MaterialTheme.typography.titleSmall.copy(
+private fun buttonTextStyle() = MaterialTheme.typography.titleSmall.copy(
     color = MaterialTheme.colorScheme.background,
 )
 
 @Composable
-private fun doneButtonColors() = ButtonDefaults.buttonColors(
+private fun buttonColors() = ButtonDefaults.buttonColors(
     containerColor = buttonColorPrimaryNormal
 )
 
 @Composable
-fun DoneButton() {
+fun TagCreatedButton(onCreateButtonClick: () -> Unit) {
     Button(
-        onClick = {},
+        onClick = { onCreateButtonClick() },
         contentPadding = buttonTextPaddings,
         shape = RoundedCornerShape(size = 32.dp),
         modifier = Modifier
             .width(99.dp)
             .height(48.dp),
-        colors = doneButtonColors()
+        colors = buttonColors()
     ) {
         Text(
-            text = stringResource(R.string.done_button_name),
+            text = stringResource(R.string.tag_created_button_name),
             modifier = Modifier
                 .width(39.dp)
                 .height(18.dp),
-            style = doneButtonTextStyle(),
+            style = buttonTextStyle(),
         )
     }
 }

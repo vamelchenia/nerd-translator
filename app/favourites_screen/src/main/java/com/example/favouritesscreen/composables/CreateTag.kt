@@ -32,7 +32,7 @@ private fun createButtonColors() = ButtonDefaults.buttonColors(
 @Composable
 fun CreateTag(onCreateTagClick: () -> Unit) {
     Button(
-        onClick = {onCreateTagClick()},
+        onClick = { onCreateTagClick() },
         contentPadding = buttonPaddings,
         shape = RoundedCornerShape(size = 32.dp),
         modifier = Modifier

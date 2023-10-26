@@ -3,7 +3,7 @@
     <string name="language_selector_expand_more">Expand more languages</string>
     <string name="language_selector_row_switch">Switch languages</string>
     <string name="main_screen_image">Main Screen Image</string>
-    <string name="under_image_hint_primary">Add the translations to favourites,\n organizing it with tags.</string>
+    <string name="under_image_hint_primary">Add the translations to Favourites,\n organizing it with tags.</string>
     <string name="under_image_hint_secondary">You\'ll always be able to review\n what you\'ve learned.</string>
     <string name="input_view_hint">Enter your text here</string>
     <string name="input_view_keyboard_button">Show keyboard</string>

@@ -8,16 +8,17 @@ class CreateTagSheetContract {
 
     sealed class Event : ViewEvent {
         data object CreateButtonActionClick : Event()
+        data object TagCreatedButtonActionClick : Event()
     }
 
     data class State(
-        val isValid: Boolean,
         var isCreated: Boolean,
     ) : ViewState
 
     sealed class Effect : ViewEffect {
         sealed class Navigation : Effect() {
             data object CreateTag : Effect()
+            data object TagCreated : Effect()
         }
     }
 }
