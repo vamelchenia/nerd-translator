@@ -28,6 +28,9 @@ class MainScreenViewModel
             is MainScreenContract.Event.PasteButtonClick -> {
                 processPasteButtonClick(event.text)
             }
+            is MainScreenContract.Event.SwapLanguages -> {
+                processSwapLanguages()
+            }
             else -> {
                 // TODO: implement
             }
@@ -53,6 +56,23 @@ class MainScreenViewModel
         setState {
             copy(
                 query = text
+            )
+        }
+    }
+
+    private fun processSwapLanguages() {
+        setState {
+            val destinationSelectorNewState = destinationSelectorState.copy(
+                languageName = sourceSelectorState.languageName
+            )
+
+            val sourceSelectorNewState = sourceSelectorState.copy(
+                languageName = destinationSelectorState.languageName
+            )
+
+            copy(
+                sourceSelectorState = sourceSelectorNewState,
+                destinationSelectorState = destinationSelectorNewState
             )
         }
     }

@@ -32,7 +32,8 @@ fun MainScreen(
         LanguageSelectorRow(
             modifier = Modifier.padding(selectorsPaddingValues),
             sourceState = state.sourceSelectorState,
-            destinationState = state.destinationSelectorState
+            destinationState = state.destinationSelectorState,
+            swapButtonOnClick = { onEventSent(MainScreenContract.Event.SwapLanguages) }
         )
 
         InputView(
