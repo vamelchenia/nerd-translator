@@ -17,6 +17,7 @@ fun LanguageSelectorRow(
     modifier: Modifier,
     sourceState: MainScreenContract.LanguageSelectorState,
     destinationState: MainScreenContract.LanguageSelectorState,
+    swapButtonOnClick: () -> Unit = {}
 ) {
     val iconPainter = painterResource(R.drawable.change_icon)
 
@@ -27,7 +28,7 @@ fun LanguageSelectorRow(
         LanguageSelector(state = sourceState)
 
         // TODO: make icon clickable and switch states on click
-        IconButton(onClick = { /*TODO*/ }) {
+        IconButton(onClick = swapButtonOnClick) {
             Icon(
                 painter = iconPainter,
                 contentDescription = stringResource(R.string.language_selector_row_switch),
