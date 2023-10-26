@@ -13,15 +13,15 @@ import com.example.mainscreen.R
 
 @Composable
 fun LanguageSelectorRow(
+    modifier: Modifier,
     sourceState: MainScreenContract.LanguageSelectorState,
     destinationState: MainScreenContract.LanguageSelectorState,
-    rowModifier: Modifier
 ) {
     val iconPainter = painterResource(R.drawable.change_icon)
 
     Row(
         verticalAlignment = Alignment.CenterVertically,
-        modifier = rowModifier
+        modifier = modifier
     ) {
         LanguageSelector(state = sourceState)
 
