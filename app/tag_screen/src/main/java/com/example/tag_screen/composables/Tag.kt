@@ -28,7 +28,7 @@ private val tagPaddings = PaddingValues(15.dp, 4.dp, 15.dp, 6.dp)
 
 @Composable
 private fun editButtonTextStyle() = MaterialTheme.typography.titleSmall.copy(
-    color = tagTextColor,
+    color = tagTextColor
 )
 
 @Composable
@@ -38,7 +38,7 @@ private fun tagButtonColors() = ButtonDefaults.buttonColors(
 
 @Composable
 private fun tagCountTextStyle() = MaterialTheme.typography.titleSmall.copy(
-    color = tagCountColor,
+    color = tagCountColor
 )
 
 
@@ -70,7 +70,5 @@ fun Tag(tagName : String = "TagElement",
                 .height(19.dp),
             style = tagCountTextStyle(),
         )
-
-
     }
 }

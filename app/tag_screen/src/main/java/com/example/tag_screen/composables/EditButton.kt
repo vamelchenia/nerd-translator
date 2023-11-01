@@ -11,7 +11,6 @@ import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
-import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 
 
@@ -21,7 +20,7 @@ private val buttonPaddings = PaddingValues(30.dp, 12.dp, 30.dp, 12.dp)
 
 @Composable
 private fun editButtonTextStyle() = MaterialTheme.typography.titleSmall.copy(
-    color = buttonTextColor,
+    color = buttonTextColor
 )
 
 @Composable
