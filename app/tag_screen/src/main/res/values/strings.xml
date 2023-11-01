@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">TagScreen</string>
+    <string name="create_button_name">Create new</string>
+    <string name="tag_screen_image">Tag screen image</string>
+</resources>
