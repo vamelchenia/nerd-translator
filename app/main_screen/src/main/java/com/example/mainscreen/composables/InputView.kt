@@ -2,7 +2,7 @@ package com.example.mainscreen.composables
 
 import androidx.compose.foundation.background
 import androidx.compose.foundation.interaction.MutableInteractionSource
-import androidx.compose.foundation.interaction.PressInteraction
+import androidx.compose.foundation.interaction.collectIsPressedAsState
 import androidx.compose.foundation.layout.PaddingValues
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.fillMaxSize
@@ -20,7 +20,6 @@ import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Text
 import androidx.compose.material3.TextFieldDefaults
 import androidx.compose.runtime.Composable
-import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
@@ -58,19 +57,13 @@ fun InputView(
 ) {
     var textFieldValue by remember { mutableStateOf(TextFieldValue("")) }
     val interactionSource = remember { MutableInteractionSource() }
-        .also { source ->
-            LaunchedEffect(source) {
-                source.interactions.collect {
-                    when (it) {
-                        is PressInteraction.Release -> {
-                            if (!state.isFocused) {
-                                inputAreaOnClick()
-                            }
-                        }
-                    }
-                }
-            }
+
+    if (interactionSource.collectIsPressedAsState().value) {
+        if (!state.isFocused) {
+            inputAreaOnClick()
         }
+    }
+
     val shape = RoundedCornerShape(roundingSize, roundingSize, 0.dp, 0.dp)
 
     ConstraintLayout(
