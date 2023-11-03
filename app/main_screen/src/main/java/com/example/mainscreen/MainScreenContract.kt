@@ -14,6 +14,8 @@ class MainScreenContract {
 
         data object SwapLanguages : Event()
 
+        data object MakePasteAvailable : Event()
+
         data class PasteButtonClick(
             val text: String?
         ) : Event()

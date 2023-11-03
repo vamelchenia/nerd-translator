@@ -34,6 +34,9 @@ class MainScreenViewModel
             is MainScreenContract.Event.SwapLanguages -> {
                 processSwapLanguages()
             }
+            is MainScreenContract.Event.MakePasteAvailable -> {
+                processMakePasteAvailable()
+            }
             else -> {
                 // TODO: implement
             }
@@ -76,6 +79,20 @@ class MainScreenViewModel
             copy(
                 sourceSelectorState = sourceSelectorNewState,
                 destinationSelectorState = destinationSelectorNewState
+            )
+        }
+    }
+
+    private fun processMakePasteAvailable() {
+        setState {
+            val newPasteButtonState = inputViewState.pasteButtonState.copy(
+                isVisible = true
+            )
+
+            copy(
+                inputViewState = inputViewState.copy(
+                    pasteButtonState = newPasteButtonState
+                )
             )
         }
     }
