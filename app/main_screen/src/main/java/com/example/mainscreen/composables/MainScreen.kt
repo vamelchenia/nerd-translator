@@ -22,6 +22,9 @@ fun MainScreen(
         horizontalAlignment = Alignment.CenterHorizontally,
     ) {
         val clipboardManager = LocalClipboardManager.current.getText()
+        if (clipboardManager?.text?.isNotEmpty() == true) {
+            onEventSent(MainScreenContract.Event.MakePasteAvailable)
+        }
 
         AnimatedVisibility(visible = state.shouldShowPreTranslateImage) {
             MainScreenImage()
