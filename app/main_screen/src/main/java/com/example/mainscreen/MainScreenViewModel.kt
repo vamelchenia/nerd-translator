@@ -15,7 +15,10 @@ class MainScreenViewModel
             shouldShowPreTranslateImage = true,
             inputViewState = MainScreenContract.InputViewState(
                 shouldShowSecondaryInputViews = true,
-                isFocused = false
+                isFocused = false,
+                pasteButtonState = MainScreenContract.PasteButtonState(
+                    isVisible = true
+                )
             )
         )
     }
