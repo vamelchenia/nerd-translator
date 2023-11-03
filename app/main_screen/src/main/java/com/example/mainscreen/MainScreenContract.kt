@@ -14,6 +14,8 @@ class MainScreenContract {
 
         data object SwapLanguages : Event()
 
+        data object MakePasteAvailable : Event()
+
         data class PasteButtonClick(
             val text: String?
         ) : Event()
@@ -38,7 +40,12 @@ class MainScreenContract {
 
     data class InputViewState(
         val shouldShowSecondaryInputViews: Boolean,
-        val isFocused: Boolean
+        val isFocused: Boolean,
+        val pasteButtonState: PasteButtonState
+    ) : ViewState
+
+    data class PasteButtonState(
+        val isVisible: Boolean
     ) : ViewState
 
     sealed class Effect : ViewEffect {
