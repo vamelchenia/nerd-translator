@@ -17,7 +17,6 @@ import androidx.navigation.NavController
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
-import com.example.createtagsheet.CreateTagSheetViewModel
 import com.llcompany.nerdtranslator.base.main.BottomSheetContract
 import com.llcompany.nerdtranslator.base.main.BottomSheetViewModel
 import com.llcompany.nerdtranslator.base.main.TopAppBarViewModel
@@ -34,7 +33,6 @@ fun NavigationHolder() {
     val navController = rememberNavController()
     val appBarViewModel = getViewModel<TopAppBarViewModel>()
     val bottomSheetViewModel = getViewModel<BottomSheetViewModel>()
-    val createTagSheetViewModel = getViewModel<CreateTagSheetViewModel>()
     val sheetState = rememberModalBottomSheetState(true)
     var bottomSheetRoute by remember { mutableStateOf("") }
 
@@ -66,7 +64,6 @@ fun NavigationHolder() {
                         ) {
                             CreateTagSheetDestination(
                                 createNewTag = {
-                                    createTagSheetViewModel.setIsCreated(true)
                                     bottomSheetRoute = ""
                                     bottomSheetViewModel.onEventReceived(
                                         BottomSheetContract.Event.CreateTagActionClick

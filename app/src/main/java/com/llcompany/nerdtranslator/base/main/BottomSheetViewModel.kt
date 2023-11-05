@@ -6,6 +6,7 @@ class BottomSheetViewModel : BaseViewModel<
         BottomSheetContract.State,
         BottomSheetContract.Event,
         BottomSheetContract.Effect>() {
+
     override fun setInitialState(): BottomSheetContract.State {
         return BottomSheetContract.State
     }
@@ -25,7 +26,6 @@ class BottomSheetViewModel : BaseViewModel<
             }
 
             BottomSheetContract.Event.TagCreatedActionClick -> {}
-
         }
     }
 }

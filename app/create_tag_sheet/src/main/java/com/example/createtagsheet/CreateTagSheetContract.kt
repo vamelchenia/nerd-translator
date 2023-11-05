@@ -9,6 +9,7 @@ class CreateTagSheetContract {
     sealed class Event : ViewEvent {
         data object CreateButtonActionClick : Event()
         data object TagCreatedButtonActionClick : Event()
+        data class SetIsCreated(val isCreated: Boolean) : Event()
     }
 
     data class State(

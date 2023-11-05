@@ -35,7 +35,6 @@ fun CreatedTagLabel() {
             .padding(layoutMargins)
     )
     {
-
         Box(
             modifier = Modifier
                 .width(191.dp)

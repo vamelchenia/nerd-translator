@@ -25,10 +25,13 @@ class CreateTagSheetViewModel :
                 }
             }
 
+            is CreateTagSheetContract.Event.SetIsCreated -> {
+                setIsCreated(event.isCreated)
+            }
         }
     }
 
-    fun setIsCreated(isCreated: Boolean) {
+    private fun setIsCreated(isCreated: Boolean) {
         setState {
             copy(isCreated = isCreated)
         }

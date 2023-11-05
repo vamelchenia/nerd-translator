@@ -57,7 +57,6 @@ fun CreateTagInput() {
             .padding(layoutMargins)
     )
     {
-
         Box(
             modifier = Modifier
                 .width(286.dp)
