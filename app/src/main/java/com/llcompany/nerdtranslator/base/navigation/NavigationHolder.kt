@@ -26,6 +26,7 @@ import org.koin.androidx.compose.getViewModel
 
 
 private val bottomSheetMargins = PaddingValues(top = 70.dp)
+private val bottomSheetModifier = Modifier.padding(bottomSheetMargins)
 
 @Composable
 fun NavigationHolder() {
@@ -33,7 +34,7 @@ fun NavigationHolder() {
     val navController = rememberNavController()
     val appBarViewModel = getViewModel<TopAppBarViewModel>()
     val bottomSheetViewModel = getViewModel<BottomSheetViewModel>()
-    val sheetState = rememberModalBottomSheetState(true)
+    val bottomSheetState = rememberModalBottomSheetState(true)
     var bottomSheetRoute by remember { mutableStateOf("") }
 
     Scaffold(
@@ -58,9 +59,8 @@ fun NavigationHolder() {
                     Navigation.Routes.CREATE_TAG_SHEET -> {
                         ModalBottomSheet(
                             onDismissRequest = { bottomSheetRoute = "" },
-                            sheetState = sheetState,
-                            modifier = Modifier
-                                .padding(bottomSheetMargins),
+                            sheetState = bottomSheetState,
+                            modifier = bottomSheetModifier,
                         ) {
                             CreateTagSheetDestination(
                                 createNewTag = {
@@ -77,9 +77,8 @@ fun NavigationHolder() {
                     Navigation.Routes.TAG_CREATED_SHEET -> {
                         ModalBottomSheet(
                             onDismissRequest = { bottomSheetRoute = "" },
-                            sheetState = sheetState,
-                            modifier = Modifier
-                                .padding(bottomSheetMargins),
+                            sheetState = bottomSheetState,
+                            modifier = bottomSheetModifier,
                         ) {
                             CreateTagSheetDestination(
                                 createNewTag = {},

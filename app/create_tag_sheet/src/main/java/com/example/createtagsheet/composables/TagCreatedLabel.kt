@@ -33,8 +33,7 @@ fun CreatedTagLabel() {
     ConstraintLayout(
         modifier = Modifier
             .padding(layoutMargins)
-    )
-    {
+    ) {
         Box(
             modifier = Modifier
                 .width(191.dp)

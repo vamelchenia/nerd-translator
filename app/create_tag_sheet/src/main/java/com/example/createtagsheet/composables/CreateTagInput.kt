@@ -55,8 +55,7 @@ fun CreateTagInput() {
     ConstraintLayout(
         modifier = Modifier
             .padding(layoutMargins)
-    )
-    {
+    ) {
         Box(
             modifier = Modifier
                 .width(286.dp)
