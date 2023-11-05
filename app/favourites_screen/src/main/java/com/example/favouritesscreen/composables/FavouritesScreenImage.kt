@@ -18,10 +18,9 @@ import androidx.compose.ui.unit.sp
 import com.example.favouritesscreen.R
 
 private val textMargins = PaddingValues(0.dp, 48.dp, 0.dp, 72.dp)
-private val textColor = Color(0xFF001F35)
 
 @Composable
-private fun underImageHintTextStyle(hintColor: Color = textColor) = MaterialTheme.typography.titleLarge.copy(
+private fun underImageHintTextStyle(hintColor: Color = MaterialTheme.colorScheme.primary) = MaterialTheme.typography.titleLarge.copy(
     fontSize = 18.sp,
     lineHeight = 26.sp,
     textAlign = TextAlign.Center,

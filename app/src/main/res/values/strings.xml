@@ -5,4 +5,5 @@
     <string name="top_app_bar_title">Nerd Translator</string>
     <string name="favourites_icon_content_desc">Go to Favourites</string>
     <string name="settings_icon_content_desc">Go to Settings</string>
+    <string name="back_sheet_icon_content_desc">Go to Back</string>
 </resources>

@@ -1,6 +1,7 @@
 package com.example.favouritesscreen.composables
 
 import androidx.compose.foundation.layout.PaddingValues
+import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.shape.RoundedCornerShape
@@ -16,12 +17,11 @@ import androidx.compose.ui.unit.dp
 import com.example.favouritesscreen.R
 
 private val buttonColorPrimaryNormal = Color(0xFFF2575D)
-private val buttonTextColor = Color(0xFFFFFFFF)
 private val buttonPaddings = PaddingValues(30.dp, 15.dp, 30.dp, 15.dp)
 
 @Composable
 private fun createButtonTextStyle() = MaterialTheme.typography.titleSmall.copy(
-    color = buttonTextColor,
+    color = MaterialTheme.colorScheme.background,
 )
 
 @Composable
@@ -30,14 +30,15 @@ private fun createButtonColors() = ButtonDefaults.buttonColors(
 )
 
 @Composable
-fun CreateButton() {
+fun CreateTag(onCreateTagClick: () -> Unit) {
     Button(
-        onClick = {},
+        onClick = { onCreateTagClick() },
         contentPadding = buttonPaddings,
         shape = RoundedCornerShape(size = 32.dp),
         modifier = Modifier
             .width(137.dp)
-            .height(48.dp),
+            .height(48.dp)
+            .fillMaxSize(),
         colors = createButtonColors()
     ) {
         Text(

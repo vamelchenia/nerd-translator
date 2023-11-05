@@ -41,7 +41,7 @@ private val roundingSize = 20.dp
 
 @Composable
 fun inputViewTextStyle(
-    textColor: Color = Color(0xFF001F35)
+    textColor: Color = MaterialTheme.colorScheme.primary
 ) = MaterialTheme.typography.bodyLarge.copy(
     color = textColor
 )

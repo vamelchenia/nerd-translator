@@ -11,6 +11,6 @@ fun MainScreenDestination() {
     MainScreen(
         viewModel.getState().value,
         viewModel.currentEffect,
-        onEventSent = { event -> viewModel.onEventReceived(event)  }
+        onEventSent = { event -> viewModel.onEventReceived(event) }
     )
 }

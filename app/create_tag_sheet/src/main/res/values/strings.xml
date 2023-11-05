@@ -1,0 +1,15 @@
+<resources>
+    <string name="app_name">CreateTagSheetScreen</string>
+
+    <string name="create_tag_image">Create Tag Sheet Image</string>
+    <string name="create_tag_title">Create tag</string>
+    <string name="create_tag_hint">Create tag for adding translations to Favourites\n in an organised manner.</string>
+    <string name="create_tag_label">Please fill in this field.</string>
+    <string name="additional_hint">You can always manage your tags by renaming, adding,\n or deleting them in the Favourites section.</string>
+    <string name="create_button_name">Create</string>
+
+    <string name="tag_created_image">Tag Created Sheet Image</string>
+    <string name="tag_created_title">Your tag has been created!</string>
+    <string name="tag_created_hint">Now you can add the translation to Favourites\n using this tag.</string>
+    <string name="tag_created_button_name">Done</string>
+</resources>
