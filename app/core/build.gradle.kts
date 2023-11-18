@@ -57,6 +57,7 @@ dependencies {
     val nav_version = "2.7.1"
     val koin_version = "3.1.5"
     val retrofit_version = "2.9.0"
+    val logging_interceptor_version = "4.10.0"
 
     val coroutines_version = "1.7.1"
 
@@ -81,6 +82,7 @@ dependencies {
 
     api("com.squareup.retrofit2:retrofit:$retrofit_version")
     api("com.squareup.retrofit2:converter-gson:$retrofit_version")
+    api("com.squareup.okhttp3:logging-interceptor:$logging_interceptor_version")
 
     api("io.insert-koin:koin-android:$koin_version")
     api("io.insert-koin:koin-androidx-compose:$koin_version")
