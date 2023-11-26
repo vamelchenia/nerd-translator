@@ -23,7 +23,6 @@ fun CreateTagSheet(
             when (effect) {
                 is CreateTagSheetContract.Effect.Navigation.CreateTag -> {
                     createNewTag()
-                    onEventSent(CreateTagSheetContract.Event.SetIsCreated(true))
                 }
 
                 is CreateTagSheetContract.Effect.Navigation.TagCreated -> {
@@ -34,8 +33,7 @@ fun CreateTagSheet(
     }
 
     ConstraintLayout(
-        modifier = Modifier
-            .fillMaxSize()
+        modifier = Modifier.fillMaxSize()
     ) {
         if (state.isCreated) {
             TagCreatedView(onEventSent = onEventSent)

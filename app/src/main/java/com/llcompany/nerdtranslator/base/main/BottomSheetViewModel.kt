@@ -13,19 +13,17 @@ class BottomSheetViewModel : BaseViewModel<
 
     override fun onEventReceived(event: BottomSheetContract.Event) {
         when (event) {
-            BottomSheetContract.Event.CreateTagOnFavouritesActionClick -> {
+            BottomSheetContract.Event.FavouritesScreenCreateTagActionClick -> {
                 applyEffect {
-                    BottomSheetContract.Effect.Navigation.ToCreateTag
+                    BottomSheetContract.Effect.Navigation.ToCreateTagOnFavouritesScreen
                 }
             }
 
-            BottomSheetContract.Event.CreateTagActionClick -> {
-                applyEffect {
-                    BottomSheetContract.Effect.Navigation.ToTagCreated
-                }
-            }
+            BottomSheetContract.Event.CreateTagOnFavouritesScreenActionClick -> {}
 
-            BottomSheetContract.Event.TagCreatedActionClick -> {}
+            BottomSheetContract.Event.CreateTagOnMainScreenActionClick -> {}
+
+            BottomSheetContract.Event.TagCreatedOnMainScreenActionClick -> {}
         }
     }
 }

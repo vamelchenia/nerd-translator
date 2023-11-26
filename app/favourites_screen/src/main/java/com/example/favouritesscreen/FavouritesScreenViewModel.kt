@@ -8,7 +8,10 @@ class FavouritesScreenViewModel : BaseViewModel<
         FavouritesScreenContract.Effect>() {
 
     override fun setInitialState(): FavouritesScreenContract.State {
-        return FavouritesScreenContract.State(isValid = true)
+        return FavouritesScreenContract.State(
+            isValid = true,
+            tagCount = 0
+        )
     }
 
     override fun onEventReceived(event: FavouritesScreenContract.Event) {

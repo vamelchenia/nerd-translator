@@ -2,22 +2,16 @@ package com.llcompany.nerdtranslator.base.navigation
 
 import androidx.compose.runtime.Composable
 import com.example.favouritesscreen.FavouritesScreenViewModel
-import com.example.favouritesscreen.composables.FavouritesScreen
+import com.example.favouritesscreen.composables.FavouritesTagsScreen
 import org.koin.androidx.compose.getViewModel
 
 @Composable
-fun FavouritesScreenDestination(
-    navigateToNoTagsScreen: () -> Unit,
-    navigateToFirstTagScreen: () -> Unit,
-    navigateToTagsScreen: () -> Unit,
-) {
+fun FavouritesTagsScreenDestination(navigateToCreateTagSheet: () -> Unit) {
     val viewModel = getViewModel<FavouritesScreenViewModel>()
-    FavouritesScreen(
+    FavouritesTagsScreen(
         viewModel.getState().value,
         viewModel.currentEffect,
         onEventSent = { event -> viewModel.onEventReceived(event) },
-        navigateToNoTagsScreen = navigateToNoTagsScreen,
-        navigateToFirstTagScreen = navigateToFirstTagScreen,
-        navigateToTagsScreen = navigateToTagsScreen,
+        navigateToCreateTagSheet = navigateToCreateTagSheet
     )
 }

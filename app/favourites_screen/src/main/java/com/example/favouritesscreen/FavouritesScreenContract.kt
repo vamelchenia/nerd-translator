@@ -11,7 +11,8 @@ class FavouritesScreenContract {
     }
 
     data class State(
-        val isValid: Boolean
+        val isValid: Boolean,
+        val tagCount: Int
     ) : ViewState
 
     sealed class Effect : ViewEffect {

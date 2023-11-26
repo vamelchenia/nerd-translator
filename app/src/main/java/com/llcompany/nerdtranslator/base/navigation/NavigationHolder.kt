@@ -37,59 +37,72 @@ fun NavigationHolder() {
     val bottomSheetState = rememberModalBottomSheetState(true)
     var bottomSheetRoute by remember { mutableStateOf("") }
 
-    Scaffold(
-        containerColor = MaterialTheme.colorScheme.surface,
-        topBar = {
-            NerdTranslatorAppBar(
-                state = appBarViewModel.getState().value,
-                effectFlow = appBarViewModel.currentEffect,
-                onEventSent = { appBarViewModel.onEventReceived(it) },
-                navigateToFavourites = { navController.navigateToFavourites() },
-                navigateToSettings = {},
-                navigateToBackSheet = { navController.popBackStack() }
-            )
+    Scaffold(containerColor = MaterialTheme.colorScheme.surface, topBar = {
+        NerdTranslatorAppBar(state = appBarViewModel.getState().value,
+            effectFlow = appBarViewModel.currentEffect,
+            onEventSent = { appBarViewModel.onEventReceived(it) },
+            navigateToFavourites = { navController.navigateToFavourites() },
+            navigateToSettings = {},
+            navigateToBackSheet = { navController.popBackStack() })
 
-            NerdTranslatorBottomSheet(
-                state = bottomSheetViewModel.getState().value,
-                effectFlow = bottomSheetViewModel.currentEffect,
-                onEventSent = { bottomSheetViewModel.onEventReceived(it) },
-                bottomSheetNavigation = { route -> bottomSheetRoute = route },
-            ) {
-                when (bottomSheetRoute) {
-                    Navigation.Routes.CREATE_TAG_SHEET -> {
-                        ModalBottomSheet(
-                            onDismissRequest = { bottomSheetRoute = "" },
-                            sheetState = bottomSheetState,
-                            modifier = bottomSheetModifier,
-                        ) {
-                            CreateTagSheetDestination(
-                                createNewTag = {
-                                    bottomSheetRoute = ""
-                                    bottomSheetViewModel.onEventReceived(
-                                        BottomSheetContract.Event.CreateTagActionClick
-                                    )
-                                },
-                                tagCreated = {},
-                            )
-                        }
+        NerdTranslatorBottomSheet(
+            state = bottomSheetViewModel.getState().value,
+            effectFlow = bottomSheetViewModel.currentEffect,
+            onEventSent = { bottomSheetViewModel.onEventReceived(it) },
+            bottomSheetNavigation = { route -> bottomSheetRoute = route },
+        ) {
+            when (bottomSheetRoute) {
+                Navigation.BottomSheetRoutes.CREATE_TAG_ON_FAVOURITES_SCREEN -> {
+                    ModalBottomSheet(
+                        onDismissRequest = { bottomSheetRoute = "" },
+                        sheetState = bottomSheetState,
+                        modifier = bottomSheetModifier,
+                    ) {
+                        CreateTagSheetDestination(
+                            createNewTag = {
+                                bottomSheetRoute = ""
+                                bottomSheetViewModel.onEventReceived(
+                                    BottomSheetContract.Event.CreateTagOnFavouritesScreenActionClick
+                                )
+                            },
+                            tagCreated = {},
+                        )
                     }
+                }
 
-                    Navigation.Routes.TAG_CREATED_SHEET -> {
-                        ModalBottomSheet(
-                            onDismissRequest = { bottomSheetRoute = "" },
-                            sheetState = bottomSheetState,
-                            modifier = bottomSheetModifier,
-                        ) {
-                            CreateTagSheetDestination(
-                                createNewTag = {},
-                                tagCreated = { bottomSheetRoute = "" },
-                            )
-                        }
+                Navigation.BottomSheetRoutes.CREATE_TAG_ON_MAIN_SCREEN -> {
+                    ModalBottomSheet(
+                        onDismissRequest = { bottomSheetRoute = "" },
+                        sheetState = bottomSheetState,
+                        modifier = bottomSheetModifier,
+                    ) {
+                        CreateTagSheetDestination(
+                            createNewTag = {
+                                bottomSheetRoute = ""
+                                bottomSheetViewModel.onEventReceived(
+                                    BottomSheetContract.Event.CreateTagOnMainScreenActionClick
+                                )
+                            },
+                            tagCreated = {},
+                        )
+                    }
+                }
+
+                Navigation.BottomSheetRoutes.TAG_CREATED_ON_MAIN_SCREEN -> {
+                    ModalBottomSheet(
+                        onDismissRequest = { bottomSheetRoute = "" },
+                        sheetState = bottomSheetState,
+                        modifier = bottomSheetModifier,
+                    ) {
+                        CreateTagSheetDestination(
+                            createNewTag = {},
+                            tagCreated = { bottomSheetRoute = "" },
+                        )
                     }
                 }
             }
         }
-    ) { paddingValues ->
+    }) { paddingValues ->
         NavHost(
             navController,
             startDestination = Navigation.Routes.MAIN_SCREEN,
@@ -105,11 +118,40 @@ fun NavigationHolder() {
                 route = Navigation.Routes.FAVOURITES_SCREEN
             ) {
                 FavouritesScreenDestination(
-                    navigateToCreateTagSheet = {
-                        bottomSheetViewModel.onEventReceived(
-                            BottomSheetContract.Event.CreateTagOnFavouritesActionClick
-                        )
-                    })
+                    navigateToNoTagsScreen = { navController.navigateToFavouritesNoTagsScreen() },
+                    navigateToFirstTagScreen = { navController.navigateToFavouritesFirstTagScreen() },
+                    navigateToTagsScreen = { navController.navigateToFavouritesTagsScreen() },
+                )
+            }
+
+            composable(
+                route = Navigation.FavouritesRoutes.NO_TAGS
+            ) {
+                FavouritesNoTagsScreenDestination(navigateToCreateTagSheet = {
+                    bottomSheetViewModel.onEventReceived(
+                        BottomSheetContract.Event.FavouritesScreenCreateTagActionClick
+                    )
+                })
+            }
+
+            composable(
+                route = Navigation.FavouritesRoutes.FIRST_TAG
+            ) {
+                FavouritesFirstTagScreenDestination(navigateToCreateTagSheet = {
+                    bottomSheetViewModel.onEventReceived(
+                        BottomSheetContract.Event.FavouritesScreenCreateTagActionClick
+                    )
+                })
+            }
+
+            composable(
+                route = Navigation.FavouritesRoutes.TAGS
+            ) {
+                FavouritesTagsScreenDestination(navigateToCreateTagSheet = {
+                    bottomSheetViewModel.onEventReceived(
+                        BottomSheetContract.Event.FavouritesScreenCreateTagActionClick
+                    )
+                })
             }
         }
     }
@@ -120,13 +162,41 @@ object Navigation {
     object Routes {
         const val MAIN_SCREEN = "main"
         const val FAVOURITES_SCREEN = "favourites"
-        const val CREATE_TAG_SHEET = "create_tag"
-        const val TAG_CREATED_SHEET = "created_tag"
+    }
+
+    object FavouritesRoutes {
+        const val NO_TAGS = "favourites_no_tags"
+        const val FIRST_TAG = "favourites_first_tag"
+        const val TAGS = "favourites_tags"
+    }
+
+    object BottomSheetRoutes {
+        const val CREATE_TAG_ON_FAVOURITES_SCREEN = "create_tag_on_favourites_screen"
+        const val CREATE_TAG_ON_MAIN_SCREEN = "create_tag_on_main_screen"
+        const val TAG_CREATED_ON_MAIN_SCREEN = "created_tag_on_main_screen"
     }
 }
 
 fun NavController.navigateToFavourites() {
     navigate(
         route = Navigation.Routes.FAVOURITES_SCREEN
+    )
+}
+
+fun NavController.navigateToFavouritesNoTagsScreen() {
+    navigate(
+        route = Navigation.FavouritesRoutes.NO_TAGS
+    )
+}
+
+fun NavController.navigateToFavouritesFirstTagScreen() {
+    navigate(
+        route = Navigation.FavouritesRoutes.FIRST_TAG
+    )
+}
+
+fun NavController.navigateToFavouritesTagsScreen() {
+    navigate(
+        route = Navigation.FavouritesRoutes.TAGS
     )
 }
