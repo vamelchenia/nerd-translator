@@ -1,4 +1,4 @@
-package com.example.tagscreen.composables
+package com.example.core.ui.composables
 
 import androidx.compose.foundation.layout.IntrinsicSize
 import androidx.compose.foundation.layout.PaddingValues
