@@ -8,12 +8,12 @@ class FavouritesScreenContract {
 
     sealed class Event : ViewEvent {
         data object CreateTagActionClick : Event()
-        data object RefreshValuesFromRepository : Event()
+        data object RefreshRepositoryValues : Event()
     }
 
     data class State(
         val isValid: Boolean,
-        val tagCount: Int
+        val tagsNumber: Int
     ) : ViewState
 
     sealed class Effect : ViewEffect {

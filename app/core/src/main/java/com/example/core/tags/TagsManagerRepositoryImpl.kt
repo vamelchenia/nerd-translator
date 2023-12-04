@@ -1,14 +1,14 @@
 package com.example.core.tags
 
 class TagsManagerRepositoryImpl(
-    private var tagCount: Int = 0
+    private var tagsNumber: Int = 0
 ) : TagsManagerRepository {
-    override fun getTagCount(): Int {
-        return tagCount
+    override fun getTagsNumber(): Int {
+        return tagsNumber
     }
 
     override fun createTag(): Boolean {
-        tagCount += 1
+        tagsNumber += 1
         return true
     }
 }

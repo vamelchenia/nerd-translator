@@ -13,7 +13,7 @@ class FavouritesScreenViewModel(
     override fun setInitialState(): FavouritesScreenContract.State {
         return FavouritesScreenContract.State(
             isValid = true,
-            tagCount = 0
+            tagsNumber = 0
         )
     }
 
@@ -25,10 +25,10 @@ class FavouritesScreenViewModel(
                 }
             }
 
-            FavouritesScreenContract.Event.RefreshValuesFromRepository -> {
-                val updatedTagCount = tagsRepository.getTagCount()
+            FavouritesScreenContract.Event.RefreshRepositoryValues -> {
+                val updatedTagsNumber = tagsRepository.getTagsNumber()
                 setState {
-                    copy(tagCount = updatedTagCount)
+                    copy(tagsNumber = updatedTagsNumber)
                 }
             }
         }

@@ -12,9 +12,9 @@ fun FavouritesScreen(
     navigateToCreateTagSheet: () -> Unit
 ) {
 
-    onEventSent(FavouritesScreenContract.Event.RefreshValuesFromRepository)
+    onEventSent(FavouritesScreenContract.Event.RefreshRepositoryValues)
 
-    when (state.tagCount) {
+    when (state.tagsNumber) {
         0 -> FavouritesNoTagsScreen(
             state,
             effectFlow,
