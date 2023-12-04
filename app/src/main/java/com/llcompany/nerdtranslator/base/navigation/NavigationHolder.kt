@@ -24,7 +24,6 @@ import com.llcompany.nerdtranslator.base.main.ui.composables.NerdTranslatorAppBa
 import com.llcompany.nerdtranslator.base.main.ui.composables.NerdTranslatorBottomSheet
 import org.koin.androidx.compose.getViewModel
 
-
 private val bottomSheetMargins = PaddingValues(top = 70.dp)
 private val bottomSheetModifier = Modifier.padding(bottomSheetMargins)
 
@@ -50,6 +49,7 @@ fun NavigationHolder() {
             effectFlow = bottomSheetViewModel.currentEffect,
             onEventSent = { bottomSheetViewModel.onEventReceived(it) },
             bottomSheetNavigation = { route -> bottomSheetRoute = route },
+            navigateToFavourites = { navController.navigateToFavourites() },
         ) {
             when (bottomSheetRoute) {
                 Navigation.BottomSheetRoutes.CREATE_TAG_ON_FAVOURITES_SCREEN -> {
@@ -117,37 +117,7 @@ fun NavigationHolder() {
             composable(
                 route = Navigation.Routes.FAVOURITES_SCREEN
             ) {
-                FavouritesScreenDestination(
-                    navigateToNoTagsScreen = { navController.navigateToFavouritesNoTagsScreen() },
-                    navigateToFirstTagScreen = { navController.navigateToFavouritesFirstTagScreen() },
-                    navigateToTagsScreen = { navController.navigateToFavouritesTagsScreen() },
-                )
-            }
-
-            composable(
-                route = Navigation.FavouritesRoutes.NO_TAGS
-            ) {
-                FavouritesNoTagsScreenDestination(navigateToCreateTagSheet = {
-                    bottomSheetViewModel.onEventReceived(
-                        BottomSheetContract.Event.FavouritesScreenCreateTagActionClick
-                    )
-                })
-            }
-
-            composable(
-                route = Navigation.FavouritesRoutes.FIRST_TAG
-            ) {
-                FavouritesFirstTagScreenDestination(navigateToCreateTagSheet = {
-                    bottomSheetViewModel.onEventReceived(
-                        BottomSheetContract.Event.FavouritesScreenCreateTagActionClick
-                    )
-                })
-            }
-
-            composable(
-                route = Navigation.FavouritesRoutes.TAGS
-            ) {
-                FavouritesTagsScreenDestination(navigateToCreateTagSheet = {
+                FavouritesScreenDestination(navigateToCreateTagSheet = {
                     bottomSheetViewModel.onEventReceived(
                         BottomSheetContract.Event.FavouritesScreenCreateTagActionClick
                     )
@@ -164,12 +134,6 @@ object Navigation {
         const val FAVOURITES_SCREEN = "favourites"
     }
 
-    object FavouritesRoutes {
-        const val NO_TAGS = "favourites_no_tags"
-        const val FIRST_TAG = "favourites_first_tag"
-        const val TAGS = "favourites_tags"
-    }
-
     object BottomSheetRoutes {
         const val CREATE_TAG_ON_FAVOURITES_SCREEN = "create_tag_on_favourites_screen"
         const val CREATE_TAG_ON_MAIN_SCREEN = "create_tag_on_main_screen"
@@ -180,23 +144,5 @@ object Navigation {
 fun NavController.navigateToFavourites() {
     navigate(
         route = Navigation.Routes.FAVOURITES_SCREEN
-    )
-}
-
-fun NavController.navigateToFavouritesNoTagsScreen() {
-    navigate(
-        route = Navigation.FavouritesRoutes.NO_TAGS
-    )
-}
-
-fun NavController.navigateToFavouritesFirstTagScreen() {
-    navigate(
-        route = Navigation.FavouritesRoutes.FIRST_TAG
-    )
-}
-
-fun NavController.navigateToFavouritesTagsScreen() {
-    navigate(
-        route = Navigation.FavouritesRoutes.TAGS
     )
 }

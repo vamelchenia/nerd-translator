@@ -40,7 +40,7 @@ fun FavouritesTagsScreen(
         horizontalAlignment = Alignment.CenterHorizontally,
         modifier = Modifier.fillMaxSize()
     ) {
-        TagList()
+        TagList(state)
         ConstraintLayout(
             modifier = Modifier
                 .padding(layoutMargins)

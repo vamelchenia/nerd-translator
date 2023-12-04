@@ -6,18 +6,12 @@ import com.example.favouritesscreen.composables.FavouritesScreen
 import org.koin.androidx.compose.getViewModel
 
 @Composable
-fun FavouritesScreenDestination(
-    navigateToNoTagsScreen: () -> Unit,
-    navigateToFirstTagScreen: () -> Unit,
-    navigateToTagsScreen: () -> Unit,
-) {
+fun FavouritesScreenDestination(navigateToCreateTagSheet: () -> Unit) {
     val viewModel = getViewModel<FavouritesScreenViewModel>()
     FavouritesScreen(
         viewModel.getState().value,
         viewModel.currentEffect,
         onEventSent = { event -> viewModel.onEventReceived(event) },
-        navigateToNoTagsScreen = navigateToNoTagsScreen,
-        navigateToFirstTagScreen = navigateToFirstTagScreen,
-        navigateToTagsScreen = navigateToTagsScreen,
+        navigateToCreateTagSheet = navigateToCreateTagSheet
     )
 }

@@ -8,6 +8,7 @@ class FavouritesScreenContract {
 
     sealed class Event : ViewEvent {
         data object CreateTagActionClick : Event()
+        data object RefreshValuesFromRepository : Event()
     }
 
     data class State(

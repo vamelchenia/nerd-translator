@@ -14,6 +14,7 @@ fun NerdTranslatorBottomSheet(
     effectFlow: Flow<BottomSheetContract.Effect>?,
     onEventSent: (event: BottomSheetContract.Event) -> Unit,
     bottomSheetNavigation: (String) -> Unit,
+    navigateToFavourites: () -> Unit,
     content: @Composable () -> Unit
 ) {
 
@@ -22,6 +23,9 @@ fun NerdTranslatorBottomSheet(
             when (effect) {
                 is BottomSheetContract.Effect.Navigation.ToCreateTagOnFavouritesScreen -> {
                     bottomSheetNavigation(Navigation.BottomSheetRoutes.CREATE_TAG_ON_FAVOURITES_SCREEN)
+                }
+                is BottomSheetContract.Effect.Navigation.ToTagCreatedOnFavouritesScreen -> {
+                    navigateToFavourites()
                 }
                 is BottomSheetContract.Effect.Navigation.ToCreateTagOnMainScreen -> {
                     bottomSheetNavigation(Navigation.BottomSheetRoutes.CREATE_TAG_ON_MAIN_SCREEN)

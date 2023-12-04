@@ -61,7 +61,7 @@ fun FavouritesFirstTagScreen(
         horizontalAlignment = Alignment.CenterHorizontally,
         modifier = Modifier.fillMaxSize()
     ) {
-        TagList()
+        TagList(state)
 
         Text(
             modifier = Modifier.padding(labelMargins),

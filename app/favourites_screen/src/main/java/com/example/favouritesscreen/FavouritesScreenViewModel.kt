@@ -1,8 +1,11 @@
 package com.example.favouritesscreen
 
 import com.example.core.arch.BaseViewModel
+import com.example.core.tags.TagsManagerRepository
 
-class FavouritesScreenViewModel : BaseViewModel<
+class FavouritesScreenViewModel(
+    private val tagsRepository: TagsManagerRepository
+) : BaseViewModel<
         FavouritesScreenContract.State,
         FavouritesScreenContract.Event,
         FavouritesScreenContract.Effect>() {
@@ -21,6 +24,14 @@ class FavouritesScreenViewModel : BaseViewModel<
                     FavouritesScreenContract.Effect.Navigation.ToCreateTagSheet
                 }
             }
+
+            FavouritesScreenContract.Event.RefreshValuesFromRepository -> {
+                val updatedTagCount = tagsRepository.getTagCount()
+                setState {
+                    copy(tagCount = updatedTagCount)
+                }
+            }
         }
     }
 }
+

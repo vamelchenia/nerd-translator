@@ -18,6 +18,7 @@ class BottomSheetContract {
     sealed class Effect : ViewEffect {
         sealed class Navigation : Effect() {
             data object ToCreateTagOnFavouritesScreen : Effect()
+            data object ToTagCreatedOnFavouritesScreen : Effect()
             data object ToCreateTagOnMainScreen : Effect()
             data object ToTagCreatedOnMainScreen : Effect()
         }

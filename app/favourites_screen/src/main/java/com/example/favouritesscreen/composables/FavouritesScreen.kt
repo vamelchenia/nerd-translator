@@ -9,13 +9,31 @@ fun FavouritesScreen(
     state: FavouritesScreenContract.State,
     effectFlow: Flow<FavouritesScreenContract.Effect>?,
     onEventSent: (event: FavouritesScreenContract.Event) -> Unit,
-    navigateToNoTagsScreen: () -> Unit,
-    navigateToFirstTagScreen: () -> Unit,
-    navigateToTagsScreen: () -> Unit,
+    navigateToCreateTagSheet: () -> Unit
 ) {
+
+    onEventSent(FavouritesScreenContract.Event.RefreshValuesFromRepository)
+
     when (state.tagCount) {
-        0 -> navigateToNoTagsScreen()
-        1 -> navigateToFirstTagScreen()
-        else -> navigateToTagsScreen()
+        0 -> FavouritesNoTagsScreen(
+            state,
+            effectFlow,
+            onEventSent,
+            navigateToCreateTagSheet
+        )
+
+        1 -> FavouritesFirstTagScreen(
+            state,
+            effectFlow,
+            onEventSent,
+            navigateToCreateTagSheet
+        )
+
+        else -> FavouritesTagsScreen(
+            state,
+            effectFlow,
+            onEventSent,
+            navigateToCreateTagSheet
+        )
     }
 }

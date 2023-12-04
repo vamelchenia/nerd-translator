@@ -1,8 +1,11 @@
 package com.llcompany.nerdtranslator.base.main
 
 import com.example.core.arch.BaseViewModel
+import com.example.core.tags.TagsManagerRepository
 
-class BottomSheetViewModel : BaseViewModel<
+class BottomSheetViewModel(
+    private val tagsRepository: TagsManagerRepository
+) : BaseViewModel<
         BottomSheetContract.State,
         BottomSheetContract.Event,
         BottomSheetContract.Effect>() {
@@ -19,7 +22,13 @@ class BottomSheetViewModel : BaseViewModel<
                 }
             }
 
-            BottomSheetContract.Event.CreateTagOnFavouritesScreenActionClick -> {}
+            BottomSheetContract.Event.CreateTagOnFavouritesScreenActionClick -> {
+                if (tagsRepository.createTag()) {
+                    applyEffect {
+                        BottomSheetContract.Effect.Navigation.ToTagCreatedOnFavouritesScreen
+                    }
+                }
+            }
 
             BottomSheetContract.Event.CreateTagOnMainScreenActionClick -> {}
 

@@ -15,7 +15,7 @@ val viewModelModule =
         }
 
         viewModel {
-            BottomSheetViewModel()
+            BottomSheetViewModel(get())
         }
 
         viewModel {
@@ -23,7 +23,7 @@ val viewModelModule =
         }
 
         viewModel {
-            FavouritesScreenViewModel()
+            FavouritesScreenViewModel(get())
         }
 
         viewModel {
