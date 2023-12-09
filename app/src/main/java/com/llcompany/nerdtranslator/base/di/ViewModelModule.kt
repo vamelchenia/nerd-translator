@@ -15,7 +15,7 @@ val viewModelModule =
         }
 
         viewModel {
-            BottomSheetViewModel(get())
+            BottomSheetViewModel()
         }
 
         viewModel {
@@ -27,6 +27,6 @@ val viewModelModule =
         }
 
         viewModel {
-            CreateTagSheetViewModel()
+            CreateTagSheetViewModel(get())
         }
     }

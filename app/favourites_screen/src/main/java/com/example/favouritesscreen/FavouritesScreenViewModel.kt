@@ -1,5 +1,8 @@
 package com.example.favouritesscreen
 
+import androidx.compose.runtime.getValue
+import androidx.compose.runtime.mutableIntStateOf
+import androidx.compose.runtime.mutableStateOf
 import com.example.core.arch.BaseViewModel
 import com.example.core.tags.TagsManagerRepository
 
@@ -16,10 +19,7 @@ class FavouritesScreenViewModel(
             areTagsExisting = false,
             isFirstTag = false,
             tagsNumber = 0,
-            tagsState = getTagsState(
-                isFirstTag = false,
-                areTagsExisting = false
-            )
+            tagsState = FavouritesScreenContract.TagsState.NoTags
         )
     }
 
@@ -33,20 +33,15 @@ class FavouritesScreenViewModel(
 
             FavouritesScreenContract.Event.RefreshRepositoryValues -> {
                 setState {
-                    copy(areTagsExisting = tagsRepository.areTagsExisting())
-                }
-                setState {
-                    copy(isFirstTag = tagsRepository.isFirstTag())
-                }
-                setState {
-                    copy(tagsNumber = tagsRepository.getTagsNumber())
-                }
-                setState {
+                    val areTagsExisting by mutableStateOf(tagsRepository.areTagsExisting())
+                    val isFirstTag by mutableStateOf(tagsRepository.isFirstTag())
+                    val tagsNumber by mutableIntStateOf(tagsRepository.getTagsNumber())
+                    val tagsState by mutableStateOf(getTagsState(isFirstTag, areTagsExisting))
                     copy(
-                        tagsState = getTagsState(
-                            isFirstTag,
-                            areTagsExisting
-                        )
+                        areTagsExisting = areTagsExisting,
+                        isFirstTag = isFirstTag,
+                        tagsNumber = tagsNumber,
+                        tagsState = tagsState
                     )
                 }
             }

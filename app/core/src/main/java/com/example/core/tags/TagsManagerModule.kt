@@ -1,9 +1,10 @@
 package com.example.core.tags
 
+import org.koin.android.ext.koin.androidContext
 import org.koin.dsl.module
 
 val tagsManagerModule = module {
     single<TagsManagerRepository> {
-        return@single TagsManagerRepositoryImpl()
+        return@single TagsManagerRepositoryImpl(this.androidContext())
     }
 }

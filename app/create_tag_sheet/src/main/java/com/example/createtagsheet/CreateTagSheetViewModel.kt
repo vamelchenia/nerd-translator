@@ -1,9 +1,14 @@
 package com.example.createtagsheet
 
 import com.example.core.arch.BaseViewModel
+import com.example.core.tags.TagsManagerRepository
 
-class CreateTagSheetViewModel :
-    BaseViewModel<CreateTagSheetContract.State, CreateTagSheetContract.Event, CreateTagSheetContract.Effect>() {
+class CreateTagSheetViewModel(
+    private val tagsRepository: TagsManagerRepository
+) : BaseViewModel<
+        CreateTagSheetContract.State,
+        CreateTagSheetContract.Event,
+        CreateTagSheetContract.Effect>() {
 
     override fun setInitialState(): CreateTagSheetContract.State {
         return CreateTagSheetContract.State(
@@ -13,7 +18,8 @@ class CreateTagSheetViewModel :
 
     override fun onEventReceived(event: CreateTagSheetContract.Event) {
         when (event) {
-            CreateTagSheetContract.Event.CreateButtonActionClick -> {
+            is CreateTagSheetContract.Event.CreateButtonActionClick -> {
+                tagsRepository.createTag(event.tagName)
                 applyEffect {
                     CreateTagSheetContract.Effect.Navigation.CreateTag
                 }

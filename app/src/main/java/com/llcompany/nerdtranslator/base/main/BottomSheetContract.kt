@@ -8,9 +8,9 @@ class BottomSheetContract {
 
     sealed class Event : ViewEvent {
         data object FavouritesScreenCreateTagActionClick : Event()
-        data object CreateTagOnFavouritesScreenActionClick : Event()
         data object CreateTagOnMainScreenActionClick : Event()
         data object TagCreatedOnMainScreenActionClick : Event()
+        data object CreateTagOnFavouritesScreenActionClick : Event()
     }
 
     object State : ViewState

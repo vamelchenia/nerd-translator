@@ -49,7 +49,7 @@ private fun labelTextStyle(defaultTextColor: Color = borderColor) =
     )
 
 @Composable
-fun CreateTagInput() {
+fun CreateTagInput(onTagValueChanged: (String) -> Unit) {
     var textFieldValue by remember { mutableStateOf(TextFieldValue("")) }
 
     ConstraintLayout(
@@ -68,7 +68,10 @@ fun CreateTagInput() {
         ) {
             BasicTextField(
                 value = textFieldValue,
-                onValueChange = { textFieldValue = it },
+                onValueChange = {
+                    textFieldValue = it
+                    onTagValueChanged(it.text)
+                },
                 textStyle = textStyle(),
                 modifier = Modifier
                     .fillMaxSize()
