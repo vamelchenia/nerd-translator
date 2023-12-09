@@ -13,7 +13,13 @@ class FavouritesScreenViewModel(
     override fun setInitialState(): FavouritesScreenContract.State {
         return FavouritesScreenContract.State(
             isValid = true,
-            tagsNumber = 0
+            areTagsExisting = false,
+            isFirstTag = false,
+            tagsNumber = 0,
+            tagsState = getTagsState(
+                isFirstTag = false,
+                areTagsExisting = false
+            )
         )
     }
 
@@ -26,12 +32,39 @@ class FavouritesScreenViewModel(
             }
 
             FavouritesScreenContract.Event.RefreshRepositoryValues -> {
-                val updatedTagsNumber = tagsRepository.getTagsNumber()
                 setState {
-                    copy(tagsNumber = updatedTagsNumber)
+                    copy(areTagsExisting = tagsRepository.areTagsExisting())
+                }
+                setState {
+                    copy(isFirstTag = tagsRepository.isFirstTag())
+                }
+                setState {
+                    copy(tagsNumber = tagsRepository.getTagsNumber())
+                }
+                setState {
+                    copy(
+                        tagsState = getTagsState(
+                            isFirstTag,
+                            areTagsExisting
+                        )
+                    )
                 }
             }
         }
+    }
+
+    private fun getTagsState(
+        isFirstTag: Boolean,
+        areTagsExisting: Boolean
+    ): FavouritesScreenContract.TagsState {
+        var result = FavouritesScreenContract.TagsState.NoTags
+        if (areTagsExisting) {
+            result = when (isFirstTag) {
+                true -> FavouritesScreenContract.TagsState.FirstTag
+                false -> FavouritesScreenContract.TagsState.ExistingTags
+            }
+        }
+        return result
     }
 }
 

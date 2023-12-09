@@ -37,7 +37,8 @@ fun NavigationHolder() {
     var bottomSheetRoute by remember { mutableStateOf("") }
 
     Scaffold(containerColor = MaterialTheme.colorScheme.surface, topBar = {
-        NerdTranslatorAppBar(state = appBarViewModel.getState().value,
+        NerdTranslatorAppBar(
+            state = appBarViewModel.getState().value,
             effectFlow = appBarViewModel.currentEffect,
             onEventSent = { appBarViewModel.onEventReceived(it) },
             navigateToFavourites = { navController.navigateToFavourites() },
@@ -117,11 +118,12 @@ fun NavigationHolder() {
             composable(
                 route = Navigation.Routes.FAVOURITES_SCREEN
             ) {
-                FavouritesScreenDestination(navigateToCreateTagSheet = {
-                    bottomSheetViewModel.onEventReceived(
-                        BottomSheetContract.Event.FavouritesScreenCreateTagActionClick
-                    )
-                })
+                FavouritesScreenDestination(
+                    navigateToCreateTagSheet = {
+                        bottomSheetViewModel.onEventReceived(
+                            BottomSheetContract.Event.FavouritesScreenCreateTagActionClick
+                        )
+                    })
             }
         }
     }

@@ -44,5 +44,6 @@ android {
 
 dependencies {
     implementation(project(":app:core"))
+    //TODO: delete after using TagList from Core
     implementation(project(":app:tag_screen"))
 }

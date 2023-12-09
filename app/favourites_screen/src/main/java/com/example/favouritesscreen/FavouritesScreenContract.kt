@@ -13,12 +13,21 @@ class FavouritesScreenContract {
 
     data class State(
         val isValid: Boolean,
-        val tagsNumber: Int
+        val areTagsExisting: Boolean,
+        val isFirstTag: Boolean,
+        val tagsNumber: Int,
+        val tagsState: TagsState,
     ) : ViewState
 
     sealed class Effect : ViewEffect {
         sealed class Navigation : Effect() {
             data object ToCreateTagSheet : Effect()
         }
+    }
+
+    enum class TagsState {
+        NoTags,
+        FirstTag,
+        ExistingTags
     }
 }

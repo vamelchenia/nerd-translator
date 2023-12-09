@@ -23,10 +23,9 @@ class BottomSheetViewModel(
             }
 
             BottomSheetContract.Event.CreateTagOnFavouritesScreenActionClick -> {
-                if (tagsRepository.createTag()) {
-                    applyEffect {
-                        BottomSheetContract.Effect.Navigation.ToTagCreatedOnFavouritesScreen
-                    }
+                tagsRepository.createTag()
+                applyEffect {
+                    BottomSheetContract.Effect.Navigation.ToTagCreatedOnFavouritesScreen
                 }
             }
 

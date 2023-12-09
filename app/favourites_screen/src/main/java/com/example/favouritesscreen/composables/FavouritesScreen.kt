@@ -14,22 +14,22 @@ fun FavouritesScreen(
 
     onEventSent(FavouritesScreenContract.Event.RefreshRepositoryValues)
 
-    when (state.tagsNumber) {
-        0 -> FavouritesNoTagsScreen(
+    when (state.tagsState) {
+        FavouritesScreenContract.TagsState.NoTags -> FavouritesNoTagsScreen(
             state,
             effectFlow,
             onEventSent,
             navigateToCreateTagSheet
         )
 
-        1 -> FavouritesFirstTagScreen(
+        FavouritesScreenContract.TagsState.FirstTag -> FavouritesFirstTagScreen(
             state,
             effectFlow,
             onEventSent,
             navigateToCreateTagSheet
         )
 
-        else -> FavouritesTagsScreen(
+        FavouritesScreenContract.TagsState.ExistingTags -> FavouritesTagsScreen(
             state,
             effectFlow,
             onEventSent,
