@@ -1,18 +1,14 @@
 package com.example.core.tags
 
-import android.content.Context
 import com.example.core.shared_preferences.PreferencesConstant
 import com.example.core.shared_preferences.PreferencesManager
 
 class TagsManagerRepositoryImpl(
-    private val context: Context,
+    private var preferencesManager: PreferencesManager,
     private var tagsNumber: Int = 0
 ) : TagsManagerRepository {
 
-    private lateinit var preferencesManager: PreferencesManager
-
     override fun createTag(tagName: String?): Boolean {
-        preferencesManager = PreferencesManager(context)
         preferencesManager.put(
             tagName,
             PreferencesConstant.TEST_TEXT

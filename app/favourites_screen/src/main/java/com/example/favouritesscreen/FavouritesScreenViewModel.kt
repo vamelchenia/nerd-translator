@@ -33,10 +33,14 @@ class FavouritesScreenViewModel(
 
             FavouritesScreenContract.Event.RefreshRepositoryValues -> {
                 setState {
-                    val areTagsExisting by mutableStateOf(tagsRepository.areTagsExisting())
-                    val isFirstTag by mutableStateOf(tagsRepository.isFirstTag())
-                    val tagsNumber by mutableIntStateOf(tagsRepository.getTagsNumber())
-                    val tagsState by mutableStateOf(getTagsState(isFirstTag, areTagsExisting))
+//                    val areTagsExisting by mutableStateOf(tagsRepository.areTagsExisting())
+//                    val isFirstTag by mutableStateOf(tagsRepository.isFirstTag())
+//                    val tagsNumber by mutableIntStateOf(tagsRepository.getTagsNumber())
+//                    val tagsState by mutableStateOf(getTagsState(isFirstTag, areTagsExisting))
+                    val areTagsExisting = tagsRepository.areTagsExisting()
+                    val isFirstTag = tagsRepository.isFirstTag()
+                    val tagsNumber = tagsRepository.getTagsNumber()
+                    val tagsState = getTagsState(isFirstTag, areTagsExisting)
                     copy(
                         areTagsExisting = areTagsExisting,
                         isFirstTag = isFirstTag,

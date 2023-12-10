@@ -8,7 +8,7 @@ class CreateTagSheetContract {
 
     sealed class Event : ViewEvent {
         data class CreateButtonActionClick(
-            val tagName: String?
+            val tagName: String
         ) : Event()
 
         data object TagCreatedButtonActionClick : Event()
