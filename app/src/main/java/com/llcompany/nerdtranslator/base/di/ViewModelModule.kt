@@ -23,10 +23,10 @@ val viewModelModule =
         }
 
         viewModel {
-            FavouritesScreenViewModel()
+            FavouritesScreenViewModel(get())
         }
 
         viewModel {
-            CreateTagSheetViewModel()
+            CreateTagSheetViewModel(get())
         }
     }

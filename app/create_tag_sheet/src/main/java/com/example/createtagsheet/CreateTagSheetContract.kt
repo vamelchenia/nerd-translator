@@ -7,7 +7,10 @@ import com.example.core.arch.ViewState
 class CreateTagSheetContract {
 
     sealed class Event : ViewEvent {
-        data object CreateButtonActionClick : Event()
+        data class CreateButtonActionClick(
+            val tagName: String
+        ) : Event()
+
         data object TagCreatedButtonActionClick : Event()
         data class SetIsCreated(val isCreated: Boolean) : Event()
     }

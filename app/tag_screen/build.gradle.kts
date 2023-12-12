@@ -42,6 +42,5 @@ android {
 }
 
 dependencies {
-
     implementation(project(":app:core"))
 }

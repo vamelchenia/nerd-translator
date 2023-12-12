@@ -8,15 +8,26 @@ class FavouritesScreenContract {
 
     sealed class Event : ViewEvent {
         data object CreateTagActionClick : Event()
+        data object RefreshRepositoryValues : Event()
     }
 
     data class State(
-        val isValid: Boolean
+        val isValid: Boolean,
+        val areTagsExisting: Boolean,
+        val isFirstTag: Boolean,
+        val tagsNumber: Int,
+        val tagsState: TagsState,
     ) : ViewState
 
     sealed class Effect : ViewEffect {
         sealed class Navigation : Effect() {
             data object ToCreateTagSheet : Effect()
         }
+    }
+
+    enum class TagsState {
+        NoTags,
+        FirstTag,
+        ExistingTags
     }
 }

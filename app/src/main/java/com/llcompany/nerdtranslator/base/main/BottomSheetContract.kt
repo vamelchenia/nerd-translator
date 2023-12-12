@@ -7,17 +7,20 @@ import com.example.core.arch.ViewState
 class BottomSheetContract {
 
     sealed class Event : ViewEvent {
-        data object CreateTagOnFavouritesActionClick : Event()
-        data object CreateTagActionClick : Event()
-        data object TagCreatedActionClick : Event()
+        data object FavouritesScreenCreateTagActionClick : Event()
+        data object CreateTagOnMainScreenActionClick : Event()
+        data object TagCreatedOnMainScreenActionClick : Event()
+        data object CreateTagOnFavouritesScreenActionClick : Event()
     }
 
     object State : ViewState
 
     sealed class Effect : ViewEffect {
         sealed class Navigation : Effect() {
-            data object ToCreateTag : Effect()
-            data object ToTagCreated : Effect()
+            data object ToCreateTagOnFavouritesScreen : Effect()
+            data object ToTagCreatedOnFavouritesScreen : Effect()
+            data object ToCreateTagOnMainScreen : Effect()
+            data object ToTagCreatedOnMainScreen : Effect()
         }
     }
 
