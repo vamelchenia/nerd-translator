@@ -43,7 +43,7 @@ private fun tagCountTextStyle() = MaterialTheme.typography.titleSmall.copy(
 
 
 @Composable
-fun Tag(
+fun TagView(
     tagName: String = "TagElement",
     tagCount: Int = 8,
     isActive: Boolean = false

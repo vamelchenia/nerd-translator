@@ -7,12 +7,8 @@ import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
-import com.example.core.ui.data.TagInformation
 import com.example.core.ui.data.TagListState
-import java.util.Date
-import java.util.LinkedList
 
 private val containerMargins = PaddingValues(9.dp, 0.dp, 10.dp, 72.dp)
 
@@ -27,7 +23,7 @@ fun TagList(
             .fillMaxWidth()
     ) {
        state.tagsInformation.forEach {
-               tagInfo -> Tag(
+               tagInfo -> TagView(
                     tagInfo.tagName,
                     tagInfo.tagCount,
                    false
