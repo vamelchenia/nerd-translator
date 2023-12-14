@@ -1,4 +1,4 @@
-package com.example.tagscreen.composables
+package com.example.core.ui.composables
 
 import androidx.compose.foundation.layout.IntrinsicSize
 import androidx.compose.foundation.layout.PaddingValues
@@ -43,7 +43,7 @@ private fun tagCountTextStyle() = MaterialTheme.typography.titleSmall.copy(
 
 
 @Composable
-fun Tag(
+fun TagView(
     tagName: String = "TagElement",
     tagCount: Int = 8,
     isActive: Boolean = false
